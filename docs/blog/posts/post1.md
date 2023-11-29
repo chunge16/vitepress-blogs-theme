@@ -1,7 +1,8 @@
 ---
-date: 2023-12-29
+date: 2022-12-01
 title: 'Markdown: The Language of the Web'
-category: Document
+author: Robot Editor
+category: Tutorial
 tags:
   - vue
   - web development

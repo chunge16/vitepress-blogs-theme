@@ -24,7 +24,7 @@ const path = theme.blog?.path ?? '/blog/'
         Next Article
       </h2>
       <div class="link">
-        <a :href="`${nextPost.url}`">{{ nextPost.title }}</a>
+        <a :href="`${withBase(nextPost.url)}`">{{ nextPost.title }}</a>
       </div>
     </div>
     <div v-if="prevPost" class="py-3">
@@ -32,11 +32,11 @@ const path = theme.blog?.path ?? '/blog/'
         Previous Article
       </h2>
       <div class="link">
-        <a :href="`${prevPost.url}`"> {{ prevPost.title }}</a>
+        <a :href="`${withBase(prevPost.url)}`"> {{ prevPost.title }}</a>
       </div>
     </div>
     <div class="pt-3">
-      <a class="link" :href="path">← Back to the blog</a>
+      <a class="link" :href="withBase(path)">← Back to the blog</a>
     </div>
   </footer>
 </template>
