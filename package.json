@@ -1,0 +1,58 @@
+{
+  "name": "@chunge16/vitepress-blogs-theme",
+  "type": "module",
+  "description": "VitePress easy to use blog theme",
+  "version": "0.1.11",
+  "main": "src/theme/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "changelogen --release --push && pnpm publish --access public --no-git-checks",
+    "release:minor": "changelogen --release --minor --push && pnpm publish --access public --no-git-checks",
+    "release:major": "changelogen --release --major --push && pnpm publish --access public --no-git-checks",
+    "release:patch": "changelogen --release --patch --push && pnpm publish --access public --no-git-checks",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "author": "chunge16 (https://github.com/chunge16)",
+  "license": "MIT",
+  "homepage": "https://github.com/chunge16/vitepress-blogs/vitepress-blogs-theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunge16/vitepress-blogs.git"
+  },
+  "keywords": [
+    "vite",
+    "vue",
+    "vitepress",
+    "theme",
+    "blog"
+  ],
+  "exports": {
+    ".": "./theme/index.js",
+    "./config": "./config/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/config",
+    "src/theme"
+  ],
+  "devDependencies": {
+    "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
+    "changelogen": "^0.5.4",
+    "vitepress": "1.0.0-rc.31"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "dependencies": {
+    "@iconify-json/carbon": "^1.1.23",
+    "@iconify-json/logos": "^1.1.40",
+    "autoprefixer": "^10.4.16",
+    "tailwindcss": "^3.3.5",
+    "vue": "^3.3.9"
+  }
+}
