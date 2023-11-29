@@ -37,11 +37,10 @@ export { usePosts } from './composables/usePosts';
 export { useTags } from './composables/useTags';
 
 const theme = {
-    ...DefaultTheme,
+    extends: DefaultTheme,
     Layout: VPBLayout,
     enhanceApp({ app, router, siteData }) {
         // call the base themes enhanceApp
-        DefaultTheme.enhanceApp({ app, router, siteData });
         app.component('VPBHome', VPBHome);
         app.component('VPBArchives', VPBArchives);
         app.component('VPBTags', VPBTags);

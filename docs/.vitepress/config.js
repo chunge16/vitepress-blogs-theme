@@ -2,9 +2,7 @@ import { defineConfig } from 'vitepress'
 import {processData} from "../../src/config/index.js";
 
 // https://vitepress.dev/reference/site-config
-const base = "/blog-website/";
 export default defineConfig({
-  base,
   cleanUrls: true,
   title: "My Awesome Project",
   description: "A VitePress Site",
