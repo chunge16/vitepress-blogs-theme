@@ -16,10 +16,10 @@
   },
   "author": "chunge16 (https://github.com/chunge16)",
   "license": "MIT",
-  "homepage": "https://github.com/chunge16/vitepress-blogs/vitepress-blogs-theme",
+  "homepage": "https://github.com/chunge16/vitepress-blogs-theme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chunge16/vitepress-blogs.git"
+    "url": "git+https://github.com/chunge16/vitepress-blogs-theme.git"
   },
   "keywords": [
     "vite",
@@ -29,9 +29,9 @@
     "blog"
   ],
   "exports": {
-    ".": "./theme/index.js",
-    "./config": "./config/index.js",
-    "./package.json": "./package.json"
+    ".": "./src/theme/index.js",
+    "./config": "./src/config/index.js",
+    "./package.json": "./src/package.json"
   },
   "files": [
     "src/config",
