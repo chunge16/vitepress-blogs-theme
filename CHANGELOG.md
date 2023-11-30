@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.13
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.12...v0.1.13)
+
+### 📖 Documentation
+
+- 📝  更新package.json的内容 ([67d387d](https://github.com/chunge16/vitepress-blogs-theme/commit/67d387d))
+
+### ❤️  Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.1.12
 
 
