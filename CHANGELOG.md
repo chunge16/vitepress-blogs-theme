@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.15
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.14...v0.1.15)
+
+### 💅 Refactors
+
+- ♻️  去掉log的代码 ([c0c38dd](https://github.com/chunge16/vitepress-blogs-theme/commit/c0c38dd))
+
+### ❤️  Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.1.14
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.13...v0.1.14)
