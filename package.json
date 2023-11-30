@@ -34,13 +34,15 @@
     "./package.json": "./src/package.json"
   },
   "files": [
-    "src/config",
-    "src/theme"
+    "src"
   ],
   "devDependencies": {
     "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
     "changelogen": "^0.5.4",
     "vitepress": "1.0.0-rc.31"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-rc.31"
   },
   "postcss": {
     "plugins": {

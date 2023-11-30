@@ -31,10 +31,10 @@ export { default as VPBTags } from './components/VPBTags.vue';
 
 
 // composables
-export { useArchives } from './composables/useArchives';
-export { useAuthors } from './composables/useAuthors';
-export { usePosts } from './composables/usePosts';
-export { useTags } from './composables/useTags';
+export { useArchives } from './composables/useArchives.js';
+export { useAuthors } from './composables/useAuthors.js';
+export { usePosts } from './composables/usePosts.js';
+export { useTags } from './composables/useTags.js';
 
 const theme = {
     extends: DefaultTheme,

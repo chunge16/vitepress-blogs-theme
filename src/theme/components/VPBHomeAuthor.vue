@@ -14,7 +14,6 @@ const author = computed(() => {
   return findByName(props?.name)
 })
 
-console.log("author", author);
 </script>
 
 <template>

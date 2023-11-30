@@ -5,7 +5,6 @@ defineProps<{
   category: string
 }>()
 const { theme } = useData()
-console.log('theme', theme.blog?.categoryIcons);
 </script>
 
 <template>
