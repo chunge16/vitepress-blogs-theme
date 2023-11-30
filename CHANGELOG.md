@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.12
+
+
+### 🩹 Fixes
+
+- 🐛  修复部分页面URL错误的问题 ([bf0200b](https://github.com/chunge16/vitepress-blogs/commit/bf0200b))
+- 🐛  修复头像字段 avatar 错误的问题 ([df6150f](https://github.com/chunge16/vitepress-blogs/commit/df6150f))
+
+### 💅 Refactors
+
+- ♻️  更新.gitignore ([4038e61](https://github.com/chunge16/vitepress-blogs/commit/4038e61))
+- ♻️  优化自定义主题为继承方式 ([8ffe4f6](https://github.com/chunge16/vitepress-blogs/commit/8ffe4f6))
+
+### ❤️  Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.1.11
 
 [compare changes](https://github.com/chunge16/vitepress-blogs/compare/v0.1.10...v0.1.11)
