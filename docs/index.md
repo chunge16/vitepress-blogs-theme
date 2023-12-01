@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/what-is-vitepressblog
+      link: /guide/what-is-vitepress-blog
     - theme: alt
       text: View on GitHub
       link: https://github.com/chunge16/vitepress-blogs-theme
