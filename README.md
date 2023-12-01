@@ -13,7 +13,7 @@ I was looking for a VitePress blog that had a fair bit of features. Decided to t
 
 ## Documentation
 
-To check out docs, visit [vitepress-blogs-theme-site](https://github.com/chunge16/vitepress-blogs-theme).
+To check out docs, visit [vitepress-blogs-theme-site](https://chunge16.github.io/vitepress-blogs-theme/).
 
 ## Changelog
 
