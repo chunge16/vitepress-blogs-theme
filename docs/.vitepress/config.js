@@ -4,6 +4,7 @@ const pkg = require('../../package.json');
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/vitepress-blogs-theme/",
   cleanUrls: true,
   title: 'VitePress Blog',
   description: '一个 VitePress 博客主题',
@@ -48,6 +49,10 @@ export default defineConfig({
           {
             text: 'api-examples',
             link: '/api-examples',
+          },
+          {
+            text: 'Theme Test',
+            link: '/theme-test',
           },
         ],
       },

@@ -1,6 +1,6 @@
-# Author Front Matter
+# 作者前置信息
 
-Each author at the top of its Markdown file can have frontmatter set. You can use any frontmatter provided by VitePress as well. These are the ones that VitePress Blog deals with.
+每个Markdown文件的顶部可以设置作者前置信息。您可以使用VitePress提供的任何前置信息。以下是VitePress博客处理的前置信息。
 
 ```yaml
 ---
@@ -13,20 +13,25 @@ twitter: '@twitter'
 
 ## name
 
-The author's name, also used in [posts](./frontmatter-post) to connect to the author's details.
+作者的姓名，也用于连接到[文章](./frontmatter-post)以获取作者的详细信息。
 
 ## avatar
 
-Link to any image file you wish to show for the author
+链接到您希望为作者显示的任何图片文件。
 
 ## gravatar
 
-If you prefer to use gravatar, simply put the gravatar id here
+如果您希望使用Gravatar，请在此处放置Gravatar ID。
 
 ## twitter
 
-Use to include a link to a twitter account
+用于包含Twitter账号的链接。
 
 ## tags
 
-Tags for this post, can be listed comma separated or individually
+用于此文章的标签，可以逗号分隔或单独列出。
+
+
+    
+    
+

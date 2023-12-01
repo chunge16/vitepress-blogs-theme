@@ -8,6 +8,9 @@ hero:
   name: VitePress Blog
   text: 基于 VitePress 的静态博客网站
   tagline: 简单、强大、快速。为最好的静态网站生成器框架添加博客功能。
+  image:
+      src: /logo.svg
+      alt: logo
   actions:
     - theme: brand
       text: Get Started
