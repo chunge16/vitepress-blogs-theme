@@ -13,7 +13,8 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "commit": "git add -A && czg"
+    "commit": "git add -A && czg",
+    "prepare": "husky install"
   },
   "author": "chunge16 (https://github.com/chunge16)",
   "license": "MIT",
@@ -38,9 +39,12 @@
     "src"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
     "changelogen": "^0.5.4",
     "cz-git": "^1.7.1",
+    "husky": "^8.0.0",
     "vitepress": "1.0.0-rc.31"
   },
   "peerDependencies": {
