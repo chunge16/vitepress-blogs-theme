@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 import {processData} from "../../src/config/index.js";
 const pkg = require('../../package.json');
 
@@ -116,7 +116,7 @@ export default defineConfig({
   async transformPageData(pageData, ctx) {
     await processData(pageData, ctx);
   },
-})
+});
 
 
 function sidebarGuide() {
@@ -146,7 +146,7 @@ function sidebarGuide() {
       text: 'Config & API Reference',
       link: '/reference/config',
     },
-  ]
+  ];
 }
 
 function sidebarReference() {
@@ -159,5 +159,5 @@ function sidebarReference() {
         { text: 'Icons', link: '/reference/icons' },
       ],
     },
-  ]
+  ];
 }

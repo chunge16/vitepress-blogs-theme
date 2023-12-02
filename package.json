@@ -14,6 +14,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "commit": "git add -A && czg",
+    "lint:eslint": "eslint . --ext .ts,.js,.vue --fix",
     "prepare": "husky install"
   },
   "author": "chunge16 (https://github.com/chunge16)",
@@ -44,7 +45,10 @@
     "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
     "changelogen": "^0.5.4",
     "cz-git": "^1.7.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
     "husky": "^8.0.0",
+    "lint-staged": "^15.1.0",
     "vitepress": "1.0.0-rc.31"
   },
   "peerDependencies": {
@@ -68,5 +72,10 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "lint-staged": {
+    "*.{cjs,js,ts,vue}": [
+      "npm run lint:eslint"
+    ]
   }
 }
