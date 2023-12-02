@@ -12,7 +12,8 @@
     "release:patch": "changelogen --release --patch --push && pnpm publish --access public --no-git-checks",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "commit": "git add -A && czg"
   },
   "author": "chunge16 (https://github.com/chunge16)",
   "license": "MIT",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
     "changelogen": "^0.5.4",
+    "cz-git": "^1.7.1",
     "vitepress": "1.0.0-rc.31"
   },
   "peerDependencies": {
@@ -54,8 +56,13 @@
     "@iconify-json/carbon": "^1.1.23",
     "@iconify-json/logos": "^1.1.40",
     "autoprefixer": "^10.4.16",
-    "tailwindcss": "^3.3.5",
     "date-fns": "^2.30.0",
+    "tailwindcss": "^3.3.5",
     "vue": "^3.3.9"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
