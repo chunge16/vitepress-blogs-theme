@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.1.16
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.15...v0.1.16)
+
+### 🚀 Enhancements
+
+- ✨  新增主题文档说明 ([d43b8e5](https://github.com/chunge16/vitepress-blogs-theme/commit/d43b8e5))
+- ✨  新增说明文档 ([174ead4](https://github.com/chunge16/vitepress-blogs-theme/commit/174ead4))
+- ✨  add czg ([8dd0c53](https://github.com/chunge16/vitepress-blogs-theme/commit/8dd0c53))
+- ✨  add husky ([dc27522](https://github.com/chunge16/vitepress-blogs-theme/commit/dc27522))
+- ✨  add eslint and fix bug ([f3ccb8c](https://github.com/chunge16/vitepress-blogs-theme/commit/f3ccb8c))
+
+### 🩹 Fixes
+
+- 🐛  修复 Get Started 按钮地址错误的问题 ([e39ff53](https://github.com/chunge16/vitepress-blogs-theme/commit/e39ff53))
+
+### 📖 Documentation
+
+- 📝  更新README ([a27a58e](https://github.com/chunge16/vitepress-blogs-theme/commit/a27a58e))
+- 📝  修复Documentation地址错误 ([f8d71c7](https://github.com/chunge16/vitepress-blogs-theme/commit/f8d71c7))
+
+### 📦 Build
+
+- 📦️  pack.json add  "date-fns" ([796e043](https://github.com/chunge16/vitepress-blogs-theme/commit/796e043))
+
+### ❤️  Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.1.15
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.14...v0.1.15)
