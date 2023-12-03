@@ -9,7 +9,7 @@ Everything is configured and ready to go for you with our [starter template](htt
 The `tailwind.config.js` is very simple:
 
 ```js
-import { defineTailwindConfig } from '@jcamp/vitepress-blog-theme/config'
+import { defineTailwindConfig } from '@chunge16/vitepress-blogs-theme/config'
 
 module.exports = defineTailwindConfig()
 ```
@@ -39,7 +39,7 @@ This function returns a list of needed paths to ensure VitePress Blog's componen
 
 ```js
 return [
-  './node_modules/@jcamp/vitepress-blog-theme/src/**/*.{js,ts,vue}',
+  './node_modules/@chunge16/vitepress-blogs-theme/config/src/**/*.{js,ts,vue}',
   path.join(base, '**/*.md'),
   path.join(base, '.vitepress/**/*.{js,ts,vue}'),
 ]
@@ -51,7 +51,7 @@ If you want to completely, customize your Tailwind config, please be sure the fo
 
 ```js
 import icons from '@jcamp/tailwindcss-plugin-icons'
-import { defineTailwindContent } from '@jcamp/vitepress-blog-theme/config'
+import { defineTailwindContent } from '@chunge16/vitepress-blogs-theme/config/config'
 
 return {
   darkMode: 'class',

@@ -1,8 +1,5 @@
 # Getting Started
 
-## Try It Online
-
-You can try VitePress Blog directly in your browser on [StackBlitz](https://stackblitz.com/github/jcamp-code/starter-vitepress-blog?file=README.md).
 
 ## Installation
 
@@ -13,20 +10,20 @@ You can try VitePress Blog directly in your browser on [StackBlitz](https://stac
 - Text Editor with [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax support.
   - [VSCode](https://code.visualstudio.com/) is recommended, along with the [official Vue extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 
-VitePress Blog can be used on its own, or be installed into an existing project. You need to install both `vitepress` and `@jcamp/vitepress-blog-theme` In both cases, you can install it with:
+VitePress Blog can be used on its own, or be installed into an existing project. You need to install both `vitepress` and `@chunge16/vitepress-blogs-theme` In both cases, you can install it with:
 
 ::: code-group
 
 ```sh [npm]
-$ npm install -D vitepress @jcamp/vitepress-blog-theme
+$ npm install -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 ```sh [pnpm]
-$ pnpm add -D vitepress @jcamp/vitepress-blog-theme
+$ pnpm add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 ```sh [yarn]
-$ yarn add -D vitepress @jcamp/vitepress-blog-theme
+$ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 :::
@@ -38,7 +35,8 @@ If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This 
 "pnpm": {
   "peerDependencyRules": {
     "ignoreMissing": [
-      "@algolia/client-search"
+      "@algolia/client-search",
+      "search-insights"
     ]
   }
 }
@@ -50,18 +48,18 @@ If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This 
 
 We have a starter template repo available on GitHub:
 
-https://github.com/jcamp-code/starter-vitepress-blog
+https://github.com/chunge16/vitepress-blogs-theme-template
 
 You can click the large green `Use This Template` button GitHub or use `degit` to get started:
 
 ::: code-group
 
 ```sh [npm]
-$ npx degit https://github.com/jcamp-code/starter-vitepress-blog
+$ npx degit https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
 ```sh [pnpm]
-$ pnpm exec https://github.com/jcamp-code/starter-vitepress-blog
+$ pnpm exec https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
 :::

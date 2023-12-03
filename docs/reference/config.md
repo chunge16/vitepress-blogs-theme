@@ -4,29 +4,45 @@ This section will explain the configuration options provided by VitePress Blog. 
 
 VPB's Theme config lets you customize your theme. All of our config options are available under the `themeConfig.blog` property of the standard VitePress config:
 
-```ts
+```js
+
+import {defineConfig} from 'vitepress';
+import {processData} from '@chunge16/vitepress-blogs-theme/config';
+
 export default defineConfig({
-  // standard VitePress config here
-  themeConfig: {
-    // standard VitePress default theme config here
-    blog: {
-      // All of VitePress Blog config options.
-      title: 'Blog Title',
-      description: 'All these articles were written by me!',
-      defaultAuthor: 'Me, Myself, and I',
+    // ...vitepress config
+    themeConfig: {
+        blog: {
+            title: 'Blog',
+            description: 'All these articles were written by AI Writer',
+            defaultAuthor: 'AI Writer',
+            categoryIcons: {
+                article: 'i-[carbon/notebook]',
+                tutorial: 'i-[carbon/book]',
+                document: 'i-[carbon/document]',
+            },
+            tagIcons: {
+                github: 'i-[carbon/logo-github]',
+                vue: 'i-[logos/vue]',
+                javascript: 'i-[logos/javascript]',
+             
+            },
+        },
     },
-  },
+    // fix vite 
+    vite: {
+        optimizeDeps: {
+            exclude: ['@chunge16/vitepress-blogs-theme'],
+        },
+        ssr: {
+            noExternal: ['@chunge16/vitepress-blogs-theme']
+        },
+    },
+
+    async transformPageData(pageData, ctx) {
+        await processData(pageData, ctx);
+    },
 })
-```
-
-**Note that in order to provide config typing, you must use the `defineConfig` provided by VitePress Blog**
-
-This sets the necessary Vite configuration as well as post processing and feed generation. If you wish to customize this further, you can review our [source code](https://github.com/jcamp-code/vitepress-blog-theme/blob/7430889b3b9ff2318b8d9b7d80e2b3e93f2cc276/src/config/index.ts#L101).
-
-```ts
-import { defineConfig } from '@jcamp/vitepress-blog-theme/config'
-
-export default defineConfig({})
 ```
 
 ## title
@@ -105,87 +121,158 @@ Category icons, used in category's class attribute - [More Details](./icons)
 
 Tag icons, used in tag's class attribute - [More Details](./icons)
 
-## feed
+[//]: # (## feed &#40;TODO&#41;)
 
-Config options related to the blog's generated RSS feed
+[//]: # ()
+[//]: # (Config options related to the blog's generated RSS feed)
 
-This is a separate object with the following options:
+[//]: # ()
+[//]: # (This is a separate object with the following options:)
 
-```ts
-export interface VPBFeedConfig {
-  /**
-   * baseUrl
-   *
-   * @example 'https://vitepress.site/blog'
-   * @default 'localhost/blog'  Feed won't have accurate links
-   */
-  baseUrl?: string
+[//]: # ()
+[//]: # (```ts)
 
-  /**
-   * The output path for the generated feed file
-   *
-   * @example '/blog/feed.rss'
-   * @default '/feed.rss'
-   */
-  outputPath?: string
+[//]: # (export interface VPBFeedConfig {)
 
-  /**
-   * The title of the feed
-   *
-   * @example 'My Blog Feed'
-   * @default blog.title
-   */
-  title?: string
+[//]: # (  /**)
 
-  /**
-   * The description of the feed
-   *
-   * @example 'My Blog Feeds Description'
-   * @default blog.description
-   */
-  description?: string
+[//]: # (   * baseUrl)
 
-  /**
-   * The id of the feed
-   *
-   * @default baseUrl
-   */
-  id?: string
+[//]: # (   *)
 
-  /**
-   * The link of the feed
-   *
-   * @default baseUrl
-   */
-  link?: string
+[//]: # (   * @example 'https://vitepress.site/blog')
 
-  /**
-   * The language of the feed
-   *
-   * @default 'en'
-   */
-  language?: string
+[//]: # (   * @default 'localhost/blog'  Feed won't have accurate links)
 
-  /**
-   * The image of the feed
-   *
-   * @default ''
-   */
-  image?: string
+[//]: # (   */)
 
-  /**
-   * The favicon used in the RSS feed, added to the baseUrl
-   *
-   * @example '/feedfavicon.ico'
-   * @default '/favicon.ico'
-   */
-  favicon?: string
+[//]: # (  baseUrl?: string)
 
-  /**
-   * The copyright used in the RSS feed
-   *
-   * @example 'Copyright (c) 2023-present, Me and blog contributors'
-   */
-  copyright?: string
-}
-```
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The output path for the generated feed file)
+
+[//]: # (   *)
+
+[//]: # (   * @example '/blog/feed.rss')
+
+[//]: # (   * @default '/feed.rss')
+
+[//]: # (   */)
+
+[//]: # (  outputPath?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The title of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @example 'My Blog Feed')
+
+[//]: # (   * @default blog.title)
+
+[//]: # (   */)
+
+[//]: # (  title?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The description of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @example 'My Blog Feeds Description')
+
+[//]: # (   * @default blog.description)
+
+[//]: # (   */)
+
+[//]: # (  description?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The id of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @default baseUrl)
+
+[//]: # (   */)
+
+[//]: # (  id?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The link of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @default baseUrl)
+
+[//]: # (   */)
+
+[//]: # (  link?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The language of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @default 'en')
+
+[//]: # (   */)
+
+[//]: # (  language?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The image of the feed)
+
+[//]: # (   *)
+
+[//]: # (   * @default '')
+
+[//]: # (   */)
+
+[//]: # (  image?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The favicon used in the RSS feed, added to the baseUrl)
+
+[//]: # (   *)
+
+[//]: # (   * @example '/feedfavicon.ico')
+
+[//]: # (   * @default '/favicon.ico')
+
+[//]: # (   */)
+
+[//]: # (  favicon?: string)
+
+[//]: # ()
+[//]: # (  /**)
+
+[//]: # (   * The copyright used in the RSS feed)
+
+[//]: # (   *)
+
+[//]: # (   * @example 'Copyright &#40;c&#41; 2023-present, Me and blog contributors')
+
+[//]: # (   */)
+
+[//]: # (  copyright?: string)
+
+[//]: # (})
+
+[//]: # (```)
