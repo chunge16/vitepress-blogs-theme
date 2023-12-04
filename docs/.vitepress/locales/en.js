@@ -84,7 +84,11 @@ export default {
         darkModeSwitchLabel: 'Appearance',
         sidebarMenuLabel: 'Menu',
         lastUpdatedText: 'Last updated',
+        search: {
+            provider: 'local',
+        },
     },
+
 };
 
 

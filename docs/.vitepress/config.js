@@ -25,9 +25,6 @@ export default defineConfig({
         vue: 'i-[carbon/logo-vue]',
       },
     },
-    search: {
-      provider: 'local',
-    },
     // https://vitepress.dev/reference/default-theme-config
 
     socialLinks: [
@@ -36,6 +33,9 @@ export default defineConfig({
         link: 'https://github.com/chunge16/vitepress-blogs-theme',
       },
     ],
+    search: {
+      provider: 'local',
+    },
 
   },
   vite: {
