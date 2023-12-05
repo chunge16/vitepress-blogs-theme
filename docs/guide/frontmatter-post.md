@@ -1,6 +1,6 @@
 # Post Front Matter
 
-Each post at the top of its Markdown file can have frontmatter set. You can use any frontmatter provided by VitePress as well. These are the ones that VitePress Blog deals with.
+Each post at the top of its Markdown file can have `frontmatter` set. You can use any [frontmatter](https://vitepress.dev/reference/frontmatter-config) provided by VitePress as well. These are the ones that VitePress Blog deals with.
 
 ```yaml
 ---
@@ -35,3 +35,20 @@ Specify what category you want for the post, limited to one. A default category 
 ## tags
 
 Tags for this post, can be listed comma separated or individually
+
+```yaml
+---
+tags:
+  - vue
+  - web development
+    
+---
+
+or
+
+---
+tags: vue, 'web development'
+
+---
+
+```

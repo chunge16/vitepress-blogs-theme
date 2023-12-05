@@ -8,6 +8,9 @@ hero:
   name: VitePress Blog
   text: VitePress Powered Static Blog Site
   tagline: Simple, powerful, and fast. Adds blog functionality to the best SSG framework.
+  image:
+    src: /logo.svg
+    alt: logo
   actions:
     - theme: brand
       text: Get Started

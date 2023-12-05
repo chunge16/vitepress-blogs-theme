@@ -103,16 +103,15 @@ function sidebarGuide() {
                     link: '/guide/what-is-vitepress-blog',
                 },
                 { text: 'Getting Started', link: '/guide/getting-started' },
-                { text: 'Roadmap', link: '/guide/roadmap' },
                 { text: 'Credits', link: '/guide/credits' },
             ],
         },
         {
-            text: 'Front Matter',
+            text: 'Frontmatter Config',
             collapsed: false,
             items: [
-                { text: 'Post Front Matter', link: '/guide/frontmatter-post' },
-                { text: 'Author Front Matter', link: '/guide/frontmatter-author' },
+                { text: 'Post Frontmatter', link: '/guide/frontmatter-post' },
+                { text: 'Author Frontmatter', link: '/guide/frontmatter-author' },
             ],
         },
         {

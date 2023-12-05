@@ -1,6 +1,6 @@
-# Post Front Matter
+# Post 前置内容
 
-Each post at the top of its Markdown file can have frontmatter set. You can use any frontmatter provided by VitePress as well. These are the ones that VitePress Blog deals with.
+每篇文章在其Markdown文件的顶部可以设置前置内容。你也可以使用VitePress提供的任何[frontmatter](https://vitepress.dev/reference/frontmatter-config)。这些都是VitePress博客会处理的`frontmatter`
 
 ```yaml
 ---
@@ -15,23 +15,41 @@ tags:
 ---
 ```
 
-## date
+## 日期
 
-The post's date, in yyyy-mm-dd format.
+文章的日期，采用 yyyy-mm-dd 格式。
 
-## title
+## 标题
 
-The post's title
+文章的标题
 
-## author
+## 作者
+为文章指定作者。可以在作者文件中设置额外的详细信息。默认的作者可以在配置中设置。
 
-Specify the author for the post. Additional details can set in the authors file. A default author can be set in config.
-This should match the name in one of the [author](./frontmatter-author) files to ensure additional information shown.
+这应该与 [author](./frontmatter-author) 文件中的一个名字相匹配，以确保显示额外的信息。
 
-## category
 
-Specify what category you want for the post, limited to one. A default category can be set in config.
+## 文章分类
+为文章指定你想要的类别，限制为一个。默认的类别可以在配置中设置。
 
-## tags
+## 文章标签
 
-Tags for this post, can be listed comma separated or individually
+为这篇文章设置标签，可以用逗号分隔列出，或者单独列出。
+
+
+```yaml
+---
+tags:
+  - vue
+  - web development
+    
+---
+
+or
+
+---
+tags: vue, 'web development'
+
+---
+
+```

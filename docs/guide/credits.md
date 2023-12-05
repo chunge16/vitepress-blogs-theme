@@ -1,13 +1,12 @@
-# 鸣谢
+# Credits
 
-我们都在学习和借鉴别人的代码。我尽力为他们提供应有的赞誉。
-
+We all learn and build off of each other's code. I try to always give credit where due.
 
 Code Ideas From: \
 [VitePress Blog Starter](https://github.com/sfxcode/vitepress-blog-starter) \
 [Vue Blog](https://github.com/vuejs/blog) \
 [clark-cui](https://github.com/clark-cui/vitepress-blog-zaun/) \
-[Charles7c](https://github.com/Charles7c/charles7c.github.io/)
+[Charles7c](https://github.com/Charles7c/charles7c.github.io/)  \
 [vitepress-blog-theme](https://github.com/jcamp-code/vitepress-blog-theme)
 
-所有演示博客内容均由[Anyword](anyword.com)创建
+All demo blog content created by [Anyword](anyword.com)

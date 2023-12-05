@@ -115,24 +115,23 @@ function sidebarGuide() {
             collapsed: false,
             items: [
                 {
-                    text: 'What is VitePress Blog?',
+                    text: '什么是 VitePress Blog?',
                     link: '/zh/guide/what-is-vitepress-blog',
                 },
-                { text: 'Getting Started', link: '/zh/guide/getting-started' },
-                { text: 'Roadmap', link: '/zh/guide/roadmap' },
-                { text: 'Credits', link: '/zh/guide/credits' },
+                { text: '开始', link: '/zh/guide/getting-started' },
+                { text: '致谢', link: '/zh/guide/credits' },
             ],
         },
         {
-            text: '前置元数据',
+            text: 'Frontmatter 配置',
             collapsed: false,
             items: [
-                { text: 'Post Front Matter', link: '/zh/guide/frontmatter-post' },
-                { text: 'Author Front Matter', link: '/zh/guide/frontmatter-author' },
+                { text: '博客 Frontmatter', link: '/zh/guide/frontmatter-post' },
+                { text: '作者 Frontmatter', link: '/zh/guide/frontmatter-author' },
             ],
         },
         {
-            text: 'Config & API Reference',
+            text: '配置和API参考',
             link: '/zh/reference/config',
         },
     ];
@@ -143,7 +142,7 @@ function sidebarReference() {
         {
             text: '参考',
             items: [
-                { text: 'Site Config', link: '/zh/reference/config' },
+                { text: '站点配置', link: '/zh/reference/config' },
                 { text: 'Tailwind', link: '/zh/reference/tailwind' },
                 { text: 'Icons', link: '/zh/reference/icons' },
             ],
