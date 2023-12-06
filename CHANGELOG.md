@@ -1,6 +1,34 @@
 # Changelog
 
 
+## v0.1.17
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.16...v0.1.17)
+
+### 🚀 Enhancements
+
+- ✨  文档新增国际化翻译 ([6202a9c](https://github.com/chunge16/vitepress-blogs-theme/commit/6202a9c))
+- ✨  新增 搜索模块翻译 ([ec90d90](https://github.com/chunge16/vitepress-blogs-theme/commit/ec90d90))
+
+### 🩹 Fixes
+
+- 🐛  修复中文文档地址错误的问题 ([79d8938](https://github.com/chunge16/vitepress-blogs-theme/commit/79d8938))
+
+### 💅 Refactors
+
+- ♻️  优化博客配置 ([b1a7434](https://github.com/chunge16/vitepress-blogs-theme/commit/b1a7434))
+
+### 📖 Documentation
+
+- 📝  更新文档内容 ([b99fd84](https://github.com/chunge16/vitepress-blogs-theme/commit/b99fd84))
+- 📝  更新 关于guide部分的中文翻译 ([dc701c5](https://github.com/chunge16/vitepress-blogs-theme/commit/dc701c5))
+- 📝  文档添加图标 ([5d85400](https://github.com/chunge16/vitepress-blogs-theme/commit/5d85400))
+- 📝  新增配置的中文翻译 ([2444419](https://github.com/chunge16/vitepress-blogs-theme/commit/2444419))
+
+### ❤️  Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.1.16
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.15...v0.1.16)
