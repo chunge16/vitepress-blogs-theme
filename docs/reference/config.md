@@ -10,7 +10,7 @@ import {defineConfig} from 'vitepress';
 import {processData} from '@chunge16/vitepress-blogs-theme/config';
 
 export default defineConfig({
-    // ...vitepress config
+    // ...vitepress other config
     themeConfig: {
         blog: {
             title: 'Blog',
@@ -29,16 +29,17 @@ export default defineConfig({
             },
         },
     },
-    // fix vite 
     vite: {
+        // https://cn.vitejs.dev/config/dep-optimization-options.html#optimizedeps-exclude
         optimizeDeps: {
             exclude: ['@chunge16/vitepress-blogs-theme'],
         },
+        // https://cn.vitejs.dev/config/ssr-options.html
         ssr: {
             noExternal: ['@chunge16/vitepress-blogs-theme']
         },
     },
-
+    // https://vitepress.dev/reference/site-config#transformpagedata
     async transformPageData(pageData, ctx) {
         await processData(pageData, ctx);
     },
@@ -81,9 +82,21 @@ The authors path relative to the site
 ## tagsPath
 
 - Type: `string`
-- Default: `/blog/tags`
+- Default: `/blog/tags.md`
 
 The page to use to show the tags
+
+```md
+<!--- /blog/tags.md --->
+
+---
+layout: home
+---
+
+<VPBTags />
+
+
+```
 
 ## defaultAuthor
 
@@ -121,158 +134,4 @@ Category icons, used in category's class attribute - [More Details](./icons)
 
 Tag icons, used in tag's class attribute - [More Details](./icons)
 
-[//]: # (## feed &#40;TODO&#41;)
 
-[//]: # ()
-[//]: # (Config options related to the blog's generated RSS feed)
-
-[//]: # ()
-[//]: # (This is a separate object with the following options:)
-
-[//]: # ()
-[//]: # (```ts)
-
-[//]: # (export interface VPBFeedConfig {)
-
-[//]: # (  /**)
-
-[//]: # (   * baseUrl)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'https://vitepress.site/blog')
-
-[//]: # (   * @default 'localhost/blog'  Feed won't have accurate links)
-
-[//]: # (   */)
-
-[//]: # (  baseUrl?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The output path for the generated feed file)
-
-[//]: # (   *)
-
-[//]: # (   * @example '/blog/feed.rss')
-
-[//]: # (   * @default '/feed.rss')
-
-[//]: # (   */)
-
-[//]: # (  outputPath?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The title of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'My Blog Feed')
-
-[//]: # (   * @default blog.title)
-
-[//]: # (   */)
-
-[//]: # (  title?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The description of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'My Blog Feeds Description')
-
-[//]: # (   * @default blog.description)
-
-[//]: # (   */)
-
-[//]: # (  description?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The id of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default baseUrl)
-
-[//]: # (   */)
-
-[//]: # (  id?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The link of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default baseUrl)
-
-[//]: # (   */)
-
-[//]: # (  link?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The language of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default 'en')
-
-[//]: # (   */)
-
-[//]: # (  language?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The image of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default '')
-
-[//]: # (   */)
-
-[//]: # (  image?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The favicon used in the RSS feed, added to the baseUrl)
-
-[//]: # (   *)
-
-[//]: # (   * @example '/feedfavicon.ico')
-
-[//]: # (   * @default '/favicon.ico')
-
-[//]: # (   */)
-
-[//]: # (  favicon?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The copyright used in the RSS feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'Copyright &#40;c&#41; 2023-present, Me and blog contributors')
-
-[//]: # (   */)
-
-[//]: # (  copyright?: string)
-
-[//]: # (})
-
-[//]: # (```)

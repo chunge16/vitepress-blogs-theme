@@ -1,41 +1,44 @@
-# VPB Tailwind Configuration
+# VPB Tailwind 配置
 
-VitePress Blog uses [Tailwind CSS](https://tailwindcss.com).
+VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com).
 
-Everything is configured and ready to go for you with our [starter template](https://github.com/jcamp-code/starter-vitepress-blog)
+一切都已配置完毕，随时可以使用我们的 [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)
 
 ### Tailwind.config.js
 
-The `tailwind.config.js` is very simple:
+`tailwind.config.js` 的配置非常简单:
 
 ```js
 import { defineTailwindConfig } from '@chunge16/vitepress-blogs-theme/config'
 
 module.exports = defineTailwindConfig()
 ```
+这设置了所需的内容路径并包括 [icons](./icons) 图标插件
 
-This sets the needed content paths and includes the tailwind css [icons](./icons) plugin
 
 ### defineTailwindConfig
 
-If you want to customize `tailwind.config.js` further, you can pass options to `defineTailwindConfig`
+如果你想进一步自定义 `tailwind.config.js`，你可以将 `config` 选项传递给defineTailwindConfig
 
-```ts
-defineTailwindConfig(base = './src', config: Partial<Config>)
+
+```js
+defineTailwindConfig(base = './docs', config={})
 ```
 
-- base: the path your vitepress source is
-- config: standard Tailwind config object.
+- base: `VitePress` 站点的项目根目录
+  - 
+- config: 标准的 Tailwind 配置对象
 
 ### defineTailwindContent
 
-```ts
-defineTailwindContent((base = './src'))
+```js
+defineTailwindContent((base = './docs'))
 ```
 
-- base: the path your vitepress source is
+- base: `VitePress` 站点的项目根目录
 
-This function returns a list of needed paths to ensure VitePress Blog's components are included in Tailwind's processing:
+此函数返回所需路径列表，以确保 `VitePress Blog` 的组件包含在 `Tailwind` 的处理范围中：
+
 
 ```js
 return [
@@ -45,17 +48,19 @@ return [
 ]
 ```
 
-### Full customization
+### 完全自定义
 
-If you want to completely, customize your Tailwind config, please be sure the following are included:
+如果您想完全自定义您的 Tailwind 配置，请确保 `Tailwind.config.js` 包含以下内容：
+
 
 ```js
 import icons from '@jcamp/tailwindcss-plugin-icons'
 import { defineTailwindContent } from '@chunge16/vitepress-blogs-theme/config/config'
 
+const base = './docs' 
+
 return {
   darkMode: 'class',
-  // @ts-expect-error icons works once transpiled
   plugins: [icons()],
   content: defineTailwindContent(base),
 }

@@ -1,8 +1,8 @@
-# VPB Theme Config
+# VPB 主题配置
 
-This section will explain the configuration options provided by VitePress Blog. All of the standard [VitePress configuration options](https://vitepress.dev/reference/site-config) are available as well.
+本节将解释 VitePress 博客提供的配置选项。所有标准的 [VitePress 配置选项](https://vitepress.dev/reference/site-config)也可用
 
-VPB's Theme config lets you customize your theme. All of our config options are available under the `themeConfig.blog` property of the standard VitePress config:
+VPB 的主题配置可让您自定义主题。我们所有的配置选项都可以在标准 VitePress 配置的属性下使用：`themeConfig.blog`
 
 ```js
 
@@ -48,63 +48,75 @@ export default defineConfig({
 ## title
 
 - Type: `string`
-
-You can customize this item to set the blog title.
+  您可以自定义此项以设置博客标题
 
 ## description
 
 - Type: `string`
 
-The description of the blog, used as a subtitle on the blog's home page
+博客的描述，用作博客主页的副标题
 
 ## path
 
 - Type: `string`
 - Default: `/blog`
 
-The blog's path relative to the site
+博客相对于站点的路径
 
 ## postsPath
 
 - Type: `string`
 - Default: `/blog/posts`
 
-The posts path relative to the site
+  相对于 `path` 的博客路径
+
 
 ## authorsPath
 
 - Type: `string`
 - Default: `/blog/authors`
 
-The authors path relative to the site
+相对于 `path` 的作者路径
 
 ## tagsPath
 
 - Type: `string`
-- Default: `/blog/tags`
+- Default: `/blog/tags.md`
 
-The page to use to show the tags
+用于显示标签的页面
+
+```md
+<!--- /blog/tags.md --->
+
+---
+layout: home
+---
+
+<VPBTags />
+
+
+```
 
 ## defaultAuthor
 
 - Type: `string`
 - Default: `Unknown`
 
-The default author name to use on posts without an author
+在没有作者的博客上使用的默认作者的姓名
 
 ## defaultCategory
 
 - Type: `string`
 - Default: `Article`
 
-The default category name to use on posts without a category
+在没有类别的博客上使用的默认的类别名称
 
 ## categoryIcons
 
 - Type: `Record<string, string>`
 - Default: `none`
 
-Category icons, used in category's class attribute - [More Details](./icons)
+类别图标，用于类别的类属性。- [More Details](./icons)
 
 ```
 {
@@ -119,160 +131,4 @@ Category icons, used in category's class attribute - [More Details](./icons)
 - Type: `Record<string, string>`
 - Default: `none`
 
-Tag icons, used in tag's class attribute - [More Details](./icons)
-
-[//]: # (## feed &#40;TODO&#41;)
-
-[//]: # ()
-[//]: # (Config options related to the blog's generated RSS feed)
-
-[//]: # ()
-[//]: # (This is a separate object with the following options:)
-
-[//]: # ()
-[//]: # (```ts)
-
-[//]: # (export interface VPBFeedConfig {)
-
-[//]: # (  /**)
-
-[//]: # (   * baseUrl)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'https://vitepress.site/blog')
-
-[//]: # (   * @default 'localhost/blog'  Feed won't have accurate links)
-
-[//]: # (   */)
-
-[//]: # (  baseUrl?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The output path for the generated feed file)
-
-[//]: # (   *)
-
-[//]: # (   * @example '/blog/feed.rss')
-
-[//]: # (   * @default '/feed.rss')
-
-[//]: # (   */)
-
-[//]: # (  outputPath?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The title of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'My Blog Feed')
-
-[//]: # (   * @default blog.title)
-
-[//]: # (   */)
-
-[//]: # (  title?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The description of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'My Blog Feeds Description')
-
-[//]: # (   * @default blog.description)
-
-[//]: # (   */)
-
-[//]: # (  description?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The id of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default baseUrl)
-
-[//]: # (   */)
-
-[//]: # (  id?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The link of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default baseUrl)
-
-[//]: # (   */)
-
-[//]: # (  link?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The language of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default 'en')
-
-[//]: # (   */)
-
-[//]: # (  language?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The image of the feed)
-
-[//]: # (   *)
-
-[//]: # (   * @default '')
-
-[//]: # (   */)
-
-[//]: # (  image?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The favicon used in the RSS feed, added to the baseUrl)
-
-[//]: # (   *)
-
-[//]: # (   * @example '/feedfavicon.ico')
-
-[//]: # (   * @default '/favicon.ico')
-
-[//]: # (   */)
-
-[//]: # (  favicon?: string)
-
-[//]: # ()
-[//]: # (  /**)
-
-[//]: # (   * The copyright used in the RSS feed)
-
-[//]: # (   *)
-
-[//]: # (   * @example 'Copyright &#40;c&#41; 2023-present, Me and blog contributors')
-
-[//]: # (   */)
-
-[//]: # (  copyright?: string)
-
-[//]: # (})
-
-[//]: # (```)
+标签图标，用于标签的类属性 - [More Details](./icons)
