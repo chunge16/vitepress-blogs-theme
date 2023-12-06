@@ -1,5 +1,19 @@
 # Getting Started
 
+
+<p align="left">
+    <a target="_blank" href="https://www.npmjs.com/package/@chunge16/vitepress-blogs-theme">
+        <img style="display:inline-block;margin:0.2em;" alt="npm" src="https://img.shields.io/npm/v/%40chunge16%2Fvitepress-blogs-theme?logo=npm">
+    </a>
+    <a target="_blank" href="https://github.com/chunge16/vitepress-blogs-theme/blob/main/LICENSE">
+        <img style="display:inline-block;margin:0.2em;" alt="LICENSE" src="https://img.shields.io/github/license/chunge16/vitepress-blogs-theme?logo=github">
+    </a>
+     <a target="_blank" href="https://www.npmjs.com/package/@chunge16/vitepress-blogs-them">
+        <img style="display:inline-block;margin:0.2em;" alt="LICENSE" src="https://img.shields.io/npm/dm/%40chunge16/vitepress-blogs-theme?logo=npm&label=vitepress-blogs-theme">
+    </a>
+</p>
+
+
 ## Try It Online
 
 You can try VitePress Blog directly in your browser on [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template).
