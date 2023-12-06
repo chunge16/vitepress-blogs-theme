@@ -1,4 +1,7 @@
-import { descriptionZH } from "../meta.js";
+import {
+    descriptionZH,
+    siteCN,
+} from "../meta.js";
 import pkg from "../../../package.json";
 export default {
     title: 'VitePress Blog',
@@ -102,9 +105,19 @@ export default {
                     }
                 }
             }
-        }
+        },
+        footer: {
+            message: '我只是尽力将工具做得更好，如果可以的话欢迎给一个 <a c-orange-5 target="_blank" href="https://github.com/chunge16/vitepress-blogs-theme">star ⭐</a>',
+            copyright: `MIT Licensed | 版权所有 © 2023-${new Date().getFullYear()} <a target="_blank" href="https://github.com/chunge16">chunge16</a>`,
+        },
 
     },
+    head: [
+        ['meta', { property: 'og:description', content: descriptionZH }],
+        ['meta', { property: 'og:url', content: siteCN }],
+        ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    ],
+
 };
 
 

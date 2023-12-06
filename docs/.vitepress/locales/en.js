@@ -1,4 +1,5 @@
 import {
+    site,
     descriptionEN
 } from "../meta.js";
 import pkg from "../../../package.json";
@@ -87,7 +88,17 @@ export default {
         search: {
             provider: 'local',
         },
+        footer: {
+            message: 'I just try my best to make thing well, Could you give a <a c-orange-5 target="_blank" href="https://github.com/chunge16/vitepress-blogs-theme">star ⭐</a>',
+            copyright: `MIT Licensed | Copyright © 2023-${new Date().getFullYear()} <a target="_blank" href="https://github.com/chunge16">chunge16</a>`,
+        },
     },
+    head: [
+        ['meta', { property: 'og:description', content: descriptionEN }],
+        ['meta', { property: 'og:url', content: site }],
+        ['meta', { property: 'og:locale', content: 'en_US' }],
+    ],
+
 
 };
 
