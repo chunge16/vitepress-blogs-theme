@@ -82,7 +82,7 @@ The authors path relative to the site
 ## tagsPath
 
 - Type: `string`
-- Default: `/blog/tags.md`
+- Default: `/blog/tags`
 
 The page to use to show the tags
 

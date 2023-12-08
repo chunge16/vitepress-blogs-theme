@@ -81,7 +81,7 @@ export default defineConfig({
 ## tagsPath
 
 - Type: `string`
-- Default: `/blog/tags.md`
+- Default: `/blog/tags`
 
 用于显示标签的页面
 
