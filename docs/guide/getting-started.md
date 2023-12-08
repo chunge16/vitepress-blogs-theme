@@ -34,15 +34,15 @@ You need to install both `vitepress` and `@chunge16/vitepress-blogs-theme` In bo
 ::: code-group
 
 ```sh [npm]
-$ npm install -D vitepress @chunge16/vitepress-blog-theme
+$ npm install -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 ```sh [pnpm]
-$ pnpm add -D vitepress @chunge16/vitepress-blog-theme
+$ pnpm add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 ```sh [yarn]
-$ yarn add -D vitepress @chunge16/vitepress-blog-theme
+$ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 :::
