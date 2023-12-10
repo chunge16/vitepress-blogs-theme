@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.1.18
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.17...v0.1.18)
+
+### 🩹 Fixes
+
+- 🐛  修复npm地址错误的问题 ([d0f1777](https://github.com/chunge16/vitepress-blogs-theme/commit/d0f1777))
+
+### 📖 Documentation
+
+- 📝  更正tags文档内容 ([117f630](https://github.com/chunge16/vitepress-blogs-theme/commit/117f630))
+
+### 📦 Build
+
+- 📦️  更正pack.json的部分包 ([d07d25a](https://github.com/chunge16/vitepress-blogs-theme/commit/d07d25a))
+- 📦️  更新lock文件 ([3392982](https://github.com/chunge16/vitepress-blogs-theme/commit/3392982))
+
+### ❤️ Contributors
+
+- Chunge1945 <chunge1945@outlook.com>
+- Chunge <1362598656@qq.com>
+
 ## v0.1.17
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.16...v0.1.17)
