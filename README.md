@@ -6,14 +6,14 @@
 
 ---
 
-A blog theme for [Vitepress](https://github.com/chunge16/vitepress-blogs-theme)
+A blog theme for [Vitepress](https://vitepress.dev/)
 
 I was looking for a VitePress blog that had a fair bit of features. Decided to try to put together my own and see what happens. Having fun coding along the way 😀
 
 
 ## Documentation
 
-To check out docs, visit [vitepress-blogs-theme-site](https://chunge16.github.io/vitepress-blogs-theme/).
+To check out docs, visit [Documentation](https://chunge16.github.io/vitepress-blogs-theme/).
 
 ## Changelog
 
@@ -27,7 +27,7 @@ Code Ideas From: \
 [Vue Blog](https://github.com/vuejs/blog) \
 [clark-cui](https://github.com/clark-cui/vitepress-blog-zaun/) \
 [Charles7c](https://github.com/Charles7c/charles7c.github.io/) \
-[jcamp-code/vitepress-blog-them](https://github.com/jcamp-code/vitepress-blog-theme)
+[jcamp-code/vitepress-blog-theme](https://github.com/jcamp-code/vitepress-blog-theme)
 
 All demo blog content created by [vitepressblog](https://vitepressblog.dev)
 
