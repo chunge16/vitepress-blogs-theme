@@ -4,7 +4,7 @@ VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com).
 
 一切都已配置完毕，随时可以使用我们的 [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)
 
-### Tailwind.config.js
+## Tailwind.config.js
 
 `tailwind.config.js` 的配置非常简单:
 
@@ -16,7 +16,7 @@ module.exports = defineTailwindConfig()
 这设置了所需的内容路径并包括 [icons](./icons) 图标插件
 
 
-### defineTailwindConfig
+## defineTailwindConfig
 
 如果你想进一步自定义 `tailwind.config.js`，你可以将 `config` 选项传递给defineTailwindConfig
 
@@ -29,7 +29,7 @@ defineTailwindConfig(base = './docs', config={})
   - 
 - config: 标准的 Tailwind 配置对象
 
-### defineTailwindContent
+## defineTailwindContent
 
 ```js
 defineTailwindContent((base = './docs'))
@@ -48,7 +48,7 @@ return [
 ]
 ```
 
-### 完全自定义
+## 完全自定义
 
 如果您想完全自定义您的 Tailwind 配置，请确保 `Tailwind.config.js` 包含以下内容：
 
@@ -65,3 +65,23 @@ return {
   content: defineTailwindContent(base),
 }
 ```
+
+## PostCSS
+[Tailwind CSS 安装](https://tailwindcss.com/docs/installation/using-postcss) 为 `PostCSS` 插件
+
+`package.json` 添加postcss的配置内容
+
+```json
+// package.json
+{
+  "postcss":{
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  }
+}
+
+
+```
+

@@ -4,7 +4,7 @@ VitePress Blog uses [Tailwind CSS](https://tailwindcss.com).
 
 Everything is configured and ready to go for you with our [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)
 
-### Tailwind.config.js
+## Tailwind.config.js
 
 The `tailwind.config.js` is very simple:
 
@@ -16,7 +16,7 @@ module.exports = defineTailwindConfig()
 
 This sets the needed content paths and includes the tailwind css [icons](./icons) plugin
 
-### defineTailwindConfig
+## defineTailwindConfig
 
 If you want to customize `tailwind.config.js` further, you can pass options to `defineTailwindConfig`
 
@@ -28,7 +28,7 @@ defineTailwindConfig(base = './docs', config={})
 - base: the path your `vitepress` source is
 - config: standard Tailwind config object.
 
-### defineTailwindContent
+## defineTailwindContent
 
 ```js
 defineTailwindContent((base = './docs'))
@@ -46,7 +46,7 @@ return [
 ]
 ```
 
-### Full customization
+## Full customization
 
 If you want to fully customize your Tailwind configuration, make sure `Tailwind.config.js` contains the following:
 
@@ -61,4 +61,22 @@ return {
   plugins: [icons()],
   content: defineTailwindContent(base),
 }
+```
+
+## PostCSS
+[Tailwind CSS installation](https://tailwindcss.com/docs/installation/using-postcss) is a PostCSS plugin.
+
+Add the configuration content for postcss in `package.json`
+
+```json
+// package.json
+{
+  "postcss":{
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  }
+}
+
 ```
