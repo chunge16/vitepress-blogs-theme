@@ -11,9 +11,9 @@ export const shareConfig = defineConfig({
             description: 'All these articles were written by AI!',
             defaultAuthor: 'AI Writer',
             categoryIcons: {
-                article: 'i-[heroicons-outline/book-open]',
-                tutorial: 'i-[heroicons-outline/academic-cap]',
-                document: 'i-[heroicons-outline/annotation]',
+                article: 'i-[carbon/notebook]',
+                tutorial: 'i-[carbon/book]',
+                document: 'i-[carbon/document]',
             },
             tagIcons: {
                 github: 'i-[carbon/logo-github]',
