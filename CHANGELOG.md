@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.1.19
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.18...v0.1.19)
+
+### 🩹 Fixes
+
+- 🐛  fix examples icon missing ([92b7b2e](https://github.com/chunge16/vitepress-blogs-theme/commit/92b7b2e))
+
+### 📖 Documentation
+
+- **Tailwind:** 📝  change Tailwind doc content ([446705f](https://github.com/chunge16/vitepress-blogs-theme/commit/446705f))
+- **icons:** 📝  up icons docs content ([1a3e81f](https://github.com/chunge16/vitepress-blogs-theme/commit/1a3e81f))
+- **readme:** 📝  up readme ([9abc96d](https://github.com/chunge16/vitepress-blogs-theme/commit/9abc96d))
+
+### ❤️ Contributors
+
+- Chunge1945 <chunge1945@outlook.com>
+
 ## v0.1.18
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.17...v0.1.18)
