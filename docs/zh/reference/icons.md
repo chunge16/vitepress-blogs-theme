@@ -6,7 +6,7 @@ VitePress Blog 使用 [tailwind-css-icons](https://github.com/jcamp-code/tailwin
 
 
 
-使用格式 是 `i=[library/icon name]` - [更多详情](https://github.com/jcamp-code/tailwindcss-plugin-icons#readme)
+使用格式 是 `i-[library/icon name]` - [更多详情](https://github.com/jcamp-code/tailwindcss-plugin-icons#readme)
 
 
 - `carbon/notebook` <span class="i-[carbon/notebook]"></span>

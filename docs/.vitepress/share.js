@@ -18,6 +18,8 @@ export const shareConfig = defineConfig({
             tagIcons: {
                 github: 'i-[carbon/logo-github]',
                 vue: 'i-[carbon/logo-vue]',
+                'web development': 'i-[carbon/development]',
+                javascript: 'i-[logos/javascript]',
             },
         },
         // https://vitepress.dev/reference/default-theme-config

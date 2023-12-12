@@ -4,7 +4,7 @@ VitePress Blog uses [tailwind-css-icons](https://github.com/jcamp-code/tailwindc
 
 All icons from [iconify](https://iconify.design) are available.
 
-Format is `i=[library/icon name]` - [More Details](https://github.com/jcamp-code/tailwindcss-plugin-icons#readme)
+Format is `i-[library/icon name]` - [More Details](https://github.com/jcamp-code/tailwindcss-plugin-icons#readme)
 
 
 - `carbon/notebook` <span class="i-[carbon/notebook]"></span>
