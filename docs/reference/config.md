@@ -8,6 +8,7 @@ VPB's Theme config lets you customize your theme. All of our config options are 
 
 import {defineConfig} from 'vitepress';
 import {processData} from '@chunge16/vitepress-blogs-theme/config';
+import { enUS } from "date-fns/locale";
 
 export default defineConfig({
     // ...vitepress other config
@@ -25,8 +26,12 @@ export default defineConfig({
                 github: 'i-[carbon/logo-github]',
                 vue: 'i-[logos/vue]',
                 javascript: 'i-[logos/javascript]',
-             
             },
+            dateConfig: {
+                format: 'yyyy/MM/dd',
+                locale: enUS
+            }
+            
         },
     },
     vite: {
@@ -121,9 +126,9 @@ Category icons, used in category's class attribute - [More Details](./icons)
 
 ```
 {
-  article: 'i-[heroicons-outline/book-open]',
-  tutorial: 'i-[heroicons-outline/academic-cap]',
-  document: 'i-[heroicons-outline/document]',
+  article: 'i-[carbon/notebook]',
+  tutorial: 'i-[carbon/book]',
+  document: 'i-[carbon/document]',
 }
 ```
 
@@ -133,5 +138,14 @@ Category icons, used in category's class attribute - [More Details](./icons)
 - Default: `none`
 
 Tag icons, used in tag's class attribute - [More Details](./icons)
+
+
+## :date:  dateConfig
+
+- Type: `object`
+- Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
+
+Date  formatting options - [More Details](https://date-fns.org/v2.16.1/docs/format)
+
 
 

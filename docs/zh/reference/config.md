@@ -8,9 +8,10 @@ VPB 的主题配置可让您自定义主题。我们所有的配置选项都可�
 
 import {defineConfig} from 'vitepress';
 import {processData} from '@chunge16/vitepress-blogs-theme/config';
+import { enUS } from "date-fns/locale";
 
 export default defineConfig({
-    // ...vitepress config
+    // ...vitepress other config
     themeConfig: {
         blog: {
             title: 'Blog',
@@ -25,20 +26,25 @@ export default defineConfig({
                 github: 'i-[carbon/logo-github]',
                 vue: 'i-[logos/vue]',
                 javascript: 'i-[logos/javascript]',
-             
             },
+            dateConfig: {
+                format: 'yyyy/MM/dd',
+                locale: enUS
+            }
+            
         },
     },
-    // fix vite 
     vite: {
+        // https://cn.vitejs.dev/config/dep-optimization-options.html#optimizedeps-exclude
         optimizeDeps: {
             exclude: ['@chunge16/vitepress-blogs-theme'],
         },
+        // https://cn.vitejs.dev/config/ssr-options.html
         ssr: {
             noExternal: ['@chunge16/vitepress-blogs-theme']
         },
     },
-
+    // https://vitepress.dev/reference/site-config#transformpagedata
     async transformPageData(pageData, ctx) {
         await processData(pageData, ctx);
     },
@@ -120,9 +126,9 @@ layout: home
 
 ```
 {
-  article: 'i-[heroicons-outline/book-open]',
-  tutorial: 'i-[heroicons-outline/academic-cap]',
-  document: 'i-[heroicons-outline/document]',
+  article: 'i-[carbon/notebook]',
+  tutorial: 'i-[carbon/book]',
+  document: 'i-[carbon/document]',
 }
 ```
 
@@ -132,3 +138,11 @@ layout: home
 - Default: `none`
 
 标签图标，用于标签的类属性 - [More Details](./icons)
+
+
+## :date:  dateConfig
+
+- Type: `object`
+- Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
+
+日期格式 - [More Details](https://date-fns.org/v2.16.1/docs/format)

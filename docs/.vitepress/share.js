@@ -1,6 +1,6 @@
 import { defineConfig} from "vitepress";
 import {base, keywords, name} from "./meta.js";
-import { zhCN } from "date-fns/locale";
+import { enUS } from "date-fns/locale";
 
 export const shareConfig = defineConfig({
     base,
@@ -21,10 +21,11 @@ export const shareConfig = defineConfig({
                 vue: 'i-[carbon/logo-vue]',
                 'web development': 'i-[carbon/development]',
                 javascript: 'i-[logos/javascript]',
+                html: 'i-[logos/html-5]',
             },
             dateConfig: {
-                format: 'PPP',
-                locale: zhCN
+                format: 'yyyy/MM/dd',
+                locale: enUS
             }
         },
         // https://vitepress.dev/reference/default-theme-config
