@@ -76,7 +76,9 @@ We have a starter template repo available on GitHub:
 
 https://github.com/chunge16/vitepress-blogs-theme-template
 
-You can click the large green `Use This Template` button GitHub or use `degit` to get started:
+- You can click the large green `Use This Template` button GitHub 
+- use ` npx degit` to get started
+- use `git clone` to get started
 
 ::: code-group
 
@@ -84,8 +86,8 @@ You can click the large green `Use This Template` button GitHub or use `degit` t
 $ npx degit https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
-```sh [pnpm]
-$ pnpm exec https://github.com/chunge16/vitepress-blogs-theme-template
+```sh [Git]
+$ git clone https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
 :::

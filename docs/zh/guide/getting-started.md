@@ -78,9 +78,9 @@ VitePress 是一个仅支持 ESM 的包。不要使用 `require()` 来导入它�
 
 https://github.com/chunge16/vitepress-blogs-theme-template
 
-你可以点击 GitHub 上的绿色 `Use This Template` 按钮，或者使用 `degit` 来开始:
-
-
+- 你可以点击 GitHub 上的绿色 `Use This Template` 按钮，
+- 使用 `npx degit` 来开始
+- 使用 `git clone` 来开始
 
 ::: code-group
 
@@ -88,8 +88,8 @@ https://github.com/chunge16/vitepress-blogs-theme-template
 $ npx degit https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
-```sh [pnpm]
-$ pnpm exec https://github.com/chunge16/vitepress-blogs-theme-template
+```sh [Git]
+$ git clone https://github.com/chunge16/vitepress-blogs-theme-template
 ```
 
 :::
