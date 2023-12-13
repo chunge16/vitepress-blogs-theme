@@ -1,6 +1,25 @@
 # Changelog
 
 
+## v0.1.20
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.19...v0.1.20)
+
+### 🚀 Enhancements
+
+- ✨  add post date Config ([203f0bd](https://github.com/chunge16/vitepress-blogs-theme/commit/203f0bd))
+
+### 📖 Documentation
+
+- 📝  up package.json homeage ([732b50e](https://github.com/chunge16/vitepress-blogs-theme/commit/732b50e))
+- 📝  up frontmatter-post content ([d644720](https://github.com/chunge16/vitepress-blogs-theme/commit/d644720))
+- 📝  up getting-started docs ([4632d33](https://github.com/chunge16/vitepress-blogs-theme/commit/4632d33))
+- 📝  add dateConfig docs ([40267d0](https://github.com/chunge16/vitepress-blogs-theme/commit/40267d0))
+
+### ❤️ Contributors
+
+- Chunge1945 <chunge1945@outlook.com>
+
 ## v0.1.19
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.18...v0.1.19)
