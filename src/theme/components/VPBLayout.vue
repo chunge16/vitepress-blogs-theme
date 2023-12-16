@@ -7,6 +7,7 @@ import VPBLayoutPostAsideTop from './VPBLayoutPostAsideTop.vue';
 import VPBLayoutPostAsideBottom from './VPBLayoutPostAsideBottom.vue';
 import VPBLayoutAuthorAsideBottom from './VPBLayoutAuthorAsideBottom.vue';
 import VPBLayoutAuthorTop from './VPBLayoutAuthorTop.vue';
+import VPBGiscus from "./VPBGiscus.vue";
 
 const { Layout } = DefaultTheme;
 const { frontmatter } = useData();
@@ -17,6 +18,9 @@ const { frontmatter } = useData();
     <template #doc-before>
       <VPBLayoutPostTop v-if="frontmatter.blog === 'post'" />
       <VPBLayoutAuthorTop v-if="frontmatter.blog === 'author'" />
+    </template>
+    <template #doc-after>
+      <VPBGiscus v-if="frontmatter.blog === 'post'"/>
     </template>
     <template #doc-footer-before>
       <VPBLayoutPostBottom v-if="frontmatter.blog === 'post'" />

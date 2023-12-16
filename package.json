@@ -59,6 +59,7 @@
     }
   },
   "dependencies": {
+    "@giscus/vue": "^2.3.0",
     "@iconify-json/carbon": "^1.1.23",
     "@iconify-json/logos": "^1.1.40",
     "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
