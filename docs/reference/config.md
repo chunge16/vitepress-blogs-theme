@@ -30,7 +30,18 @@ export default defineConfig({
             dateConfig: {
                 format: 'yyyy/MM/dd',
                 locale: enUS
-            }
+            },
+            giscus: {
+                repo: 'your github repository',
+                repoId: 'your repository id',
+                categoryId: 'your category id',
+                category: 'your category', // default: `General`
+                mapping: 'pathname', // default: `pathname`
+                inputPosition: 'top', // default: `top`
+                lang: 'en', // default: `zh-CN`
+                lightTheme: 'light', // default: `light`
+                darkTheme: 'transparent_dark', // default: `transparent_dark`
+            },
             
         },
     },
@@ -148,4 +159,31 @@ Tag icons, used in tag's class attribute - [More Details](./icons)
 Date  formatting options - [More Details](https://date-fns.org/v2.16.1/docs/format)
 
 
+## :open_mouth: giscus
 
+- Type: `object`
+- Default
+    - repo: 'your github repository'
+    - repoId: 'your repository id'
+    - categoryId: 'your category id'
+    - category: 'General'
+    - mapping: 'pathname'
+    - inputPosition: 'top'
+    - lang: 'zh-CN'
+    - lightTheme: 'light'
+    - darkTheme: 'transparent_dark'
+    - defaultEnable : true
+
+Comment section functionality configuration
+
+For the parameter acquisition method of `giscus`, please refer to：[giscus configuration](https://giscus.app/)
+
+::: tip defaultEnable
+
+Whether all 'post' start the comment section
+
+- The default is true, which means enabled, this parameter can be ignored;If it is false, it means it is not enabled.
+- It can be enabled separately with 'comment: true' in [post frontmatter](/guide/frontmatter-post)
+
+
+:::

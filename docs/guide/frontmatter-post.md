@@ -52,3 +52,21 @@ tags: vue, 'web development'
 ---
 
 ```
+
+## comment
+
+When the configuration option enables the comment area by default, add the following code, the comment area will not be generated
+
+```md
+---
+comment: false
+---
+```
+
+When the configuration options do not enable the comment area by default, you can still enable the comment area on the current page through the following code
+
+```md
+---
+comment: true
+---
+```

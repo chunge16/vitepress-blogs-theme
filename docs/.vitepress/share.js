@@ -37,7 +37,7 @@ export const shareConfig = defineConfig({
                 lang: 'zh-CN', // default: `zh-CN`
                 lightTheme: 'light', // 默认: `light`
                 darkTheme: 'transparent_dark', // 默认: `transparent_dark`
-                defaultEnable: false, // 默认： true
+                defaultEnable: true, // 默认： true
             }
         },
         // https://vitepress.dev/reference/default-theme-config

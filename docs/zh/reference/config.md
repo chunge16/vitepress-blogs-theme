@@ -30,7 +30,18 @@ export default defineConfig({
             dateConfig: {
                 format: 'yyyy/MM/dd',
                 locale: enUS
-            }
+            },
+            giscus: {
+               repo: 'your github repository',
+               repoId: 'your repository id',
+               categoryId: 'your category id',
+               category: 'your category', // default: `General`
+               mapping: 'pathname', // default: `pathname`
+               inputPosition: 'top', // default: `top`
+               lang: 'en', // default: `zh-CN`
+               lightTheme: 'light', // default: `light`
+               darkTheme: 'transparent_dark', // default: `transparent_dark`
+            },
             
         },
     },
@@ -146,3 +157,37 @@ layout: home
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
 日期格式 - [More Details](https://date-fns.org/v2.16.1/docs/format)
+
+
+## :open_mouth: giscus
+
+- Type: `object`
+- Default
+  - repo: '你的仓库地址'
+  - repoId: '你的仓库id'
+  - categoryId: '你的分类id'
+  - category: 'General'
+  - mapping: 'pathname'
+  - inputPosition: 'top'
+  - lang: 'zh-CN'
+  - lightTheme: 'light' 
+  - darkTheme: 'transparent_dark'
+  - defaultEnable : true
+
+评论区功能配置
+
+`giscus` 参数获取方式请看：[Giscus 配置获取](https://giscus.app/)
+
+::: tip defaultEnable
+
+是否全部`post`启动评论区
+
+- 默认为 true，表示启用，此参数可忽略； 如果为 false，表示不启用。
+- 可以在 [post frontmatter](/guide/frontmatter-post) 使用 `comment: true` 单独启用
+
+
+:::
+
+
+
+
