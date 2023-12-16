@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.20...v0.2.0)
+
+### 🚀 Enhancements
+
+- ✨  add Giscus comments ([16acc27](https://github.com/chunge16/vitepress-blogs-theme/commit/16acc27))
+
+### 📖 Documentation
+
+- 📝  add giscus docs ([03e3d71](https://github.com/chunge16/vitepress-blogs-theme/commit/03e3d71))
+
+### ❤️ Contributors
+
+- Chunge1945 <chunge1945@outlook.com>
+
 ## v0.1.20
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.19...v0.1.20)
