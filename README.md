@@ -36,7 +36,7 @@ All demo blog content created by [vitepressblog](https://vitepressblog.dev)
 - Blog with Posts, Authors, Tags, Categories
 - [TailwindCSS](https://tailwindcss.com) for Styling
 - No HTML needed in posts or authors pages
-- A comments system powered by [Giscus]（https://giscus.app/）
+- A comments system powered by [Giscus](https://giscus.app/)
 
 
 ## License
