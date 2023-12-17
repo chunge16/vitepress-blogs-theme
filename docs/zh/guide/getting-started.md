@@ -7,7 +7,7 @@
     <a target="_blank" href="https://github.com/chunge16/vitepress-blogs-theme/blob/main/LICENSE">
         <img style="display:inline-block;margin:0.2em;" alt="LICENSE" src="https://img.shields.io/github/license/chunge16/vitepress-blogs-theme?logo=github">
     </a>
-     <a target="_blank" href="https://www.npmjs.com/package/@chunge16/vitepress-blogs-them">
+     <a target="_blank" href="https://www.npmjs.com/package/@chunge16/vitepress-blogs-theme">
         <img style="display:inline-block;margin:0.2em;" alt="LICENSE" src="https://img.shields.io/npm/dm/%40chunge16/vitepress-blogs-theme?logo=npm&label=vitepress-blogs-theme">
     </a>
 </p>
