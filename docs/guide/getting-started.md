@@ -70,6 +70,33 @@ VitePress is an ESM-only package. Don't use `require()` to import it, and make s
 :::
 
 
+## File Structure
+If you use the scaffolding of the VitePress project to build a project, the generated file structure should look like this: `./docs`
+
+- The `blog` directory is the content directory for the `VitePress Blog`. It serves as a reserved location for the Posts and Authors directory of the VitePress Blog.
+
+
+```
+├── docs
+│   ├── .vitepress
+│   │   ├── theme
+│   │   └── config.js
+│   ├── blog
+│   │   ├── authors
+│   │   ├── posts
+│   │   ├── archives.md
+│   │   ├── index.md
+│   │   └── tags.md
+│   ├── api-examples.md
+│   ├── index.md
+│   └── markdown-examples.md
+├── package.json
+
+```
+
+The directory is considered the project root of the VitePress site. The directory is a reserved location for VitePress' config file, dev server cache, build output, and optional theme customization code`.docs`  `.vitepress`
+
+
 ### Start Repo
 
 We have a starter template repo available on GitHub:
