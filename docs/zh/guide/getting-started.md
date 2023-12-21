@@ -127,21 +127,21 @@ $ git clone https://github.com/chunge16/vitepress-blogs-theme-template
 如果你打算执行使用 Vue 组件或 API 的定制，你也应该明确地将 vue 安装为开发依赖
 :::
 
-### 文章和作者
+### Posts and Authors
 
 存储在 `/blog/posts` 下的文件会被转换为博客文章，而存储在 `/blog/authors` 下的文件会被视为作者详细信息。这些路径可以根据需要进行配置。
 
 如果你不想为每篇文章都指定作者，比如，如果只有一个作者，你也可以设置一个默认作者
 
 
-### 分类 和 标签
+### Categories and Tags
 
 该类别是顶级项目，并且是可选的。例如，这可以是文章、文档、教程，无论你想要什么。
 
 每个帖子都指定了标签，每个帖子可以有任意数量的标签。
 
 
-### 配置文件
+### The Config File
 
 配置文件 (`.vitepress/config.js`) 允许您自定义 VitePress 网站的各个方面，最基本的选项是网站的标题和描述
 
@@ -159,7 +159,8 @@ export default {
 }
 ```
 
-## 启动并运行
+## Up and Running
+
 如果您在设置过程中允许它这样做，该工具还应该将以下 npm 脚本注入到您的`package.json`中
 
 ```json
@@ -209,6 +210,6 @@ $ pnpm exec vitepress dev docs
 开发服务器应在 上运行。访问浏览器中的 URL，查看新网站的运行情况！`http://localhost:5173`
 
 
-## 下一步是什么？
+## What's Next?
 - 有关 VitePress 及其部署的完整详细信息，请参阅 [VitePress Guide](https://vitepress.dev/guide/getting-started)
 
