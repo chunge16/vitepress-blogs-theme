@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.2.3
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.2...v0.2.3)
+
+### 🩹 Fixes
+
+- 🐛  修复用户头像 没有添加 base路径的问题 ([f393937](https://github.com/chunge16/vitepress-blogs-theme/commit/f393937))
+
+### 📦 Build
+
+- 📦️  升级 vitepress 版本 ([80d8a2c](https://github.com/chunge16/vitepress-blogs-theme/commit/80d8a2c))
+
+### ❤️ Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.2.2
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.1...v0.2.2)

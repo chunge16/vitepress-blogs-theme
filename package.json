@@ -2,7 +2,7 @@
   "name": "@chunge16/vitepress-blogs-theme",
   "type": "module",
   "description": "VitePress easy to use blog theme",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "src/theme/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
