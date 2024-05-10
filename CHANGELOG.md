@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.2
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.1...v0.2.2)
+
+### 🩹 Fixes
+
+- 🐛  修复打包动态加载报错的问题 ([4793b5d](https://github.com/chunge16/vitepress-blogs-theme/commit/4793b5d))
+
+### ❤️ Contributors
+
+- Chunge <1362598656@qq.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.0...v0.2.1)
