@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.2.1
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.0...v0.2.1)
+
+### 🩹 Fixes
+
+- 🐛  fix shields dm url mistake ([56b9222](https://github.com/chunge16/vitepress-blogs-theme/commit/56b9222))
+- 🐛  修复头像在配置base路径错误的问题 ([33f66be](https://github.com/chunge16/vitepress-blogs-theme/commit/33f66be))
+
+### 📖 Documentation
+
+- 📝  up README ([aaf978a](https://github.com/chunge16/vitepress-blogs-theme/commit/aaf978a))
+- 📝  fix Giscus url ([49ba6bb](https://github.com/chunge16/vitepress-blogs-theme/commit/49ba6bb))
+- 📝  add getting started File Structure content ([1331339](https://github.com/chunge16/vitepress-blogs-theme/commit/1331339))
+- 📝  update config.md getting-started.md ([c5a913f](https://github.com/chunge16/vitepress-blogs-theme/commit/c5a913f))
+
+### 📦 Build
+
+- 📦️  up vitepress ([6492a01](https://github.com/chunge16/vitepress-blogs-theme/commit/6492a01))
+
+### ❤️ Contributors
+
+- Chunge <1362598656@qq.com>
+- Chunge1945 ([@chunge16](http://github.com/chunge16))
+
 ## v0.2.0
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.1.20...v0.2.0)
