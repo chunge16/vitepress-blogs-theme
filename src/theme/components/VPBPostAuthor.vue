@@ -35,7 +35,7 @@ const author = computed(() => {
           />
           <img
             v-else-if="author?.avatar"
-            :src="author?.avatar"
+            :src="withBase(author?.avatar)"
             alt="author image"
             class="h-10 w-10 rounded-full"
           />

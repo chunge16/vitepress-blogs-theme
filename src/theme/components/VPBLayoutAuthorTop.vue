@@ -16,7 +16,7 @@ const { author, prevAuthor, nextAuthor } = useAuthors();
       />
       <img
         v-else-if="author?.avatar"
-        :src="author?.avatar"
+        :src="withBase(author?.avatar)"
         alt="author image"
         class="h-20 w-20 rounded-full"
       />
