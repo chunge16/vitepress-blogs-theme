@@ -1,5 +1,6 @@
 import path from 'node:path';
-import icons from '@jcamp/tailwindcss-plugin-icons';
+const icons = require('@jcamp/tailwindcss-plugin-icons')
+
 
 export async function processData(
     pageData,
