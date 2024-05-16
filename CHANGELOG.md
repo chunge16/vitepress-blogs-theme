@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.2.4
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.3...v0.2.4)
+
+### 🩹 Fixes
+
+- 🐛  修复vitepress 升级到 v1.1.4  css错误的问题 ([ab27a38](https://github.com/chunge16/vitepress-blogs-theme/commit/ab27a38))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.2.3
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.2...v0.2.3)
