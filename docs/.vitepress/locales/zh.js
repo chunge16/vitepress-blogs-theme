@@ -131,7 +131,7 @@ function sidebarGuide() {
                     text: '什么是 VitePress Blog?',
                     link: '/zh/guide/what-is-vitepress-blog',
                 },
-                { text: '开始', link: '/zh/guide/getting-started' },
+                { text: '快速开始', link: '/zh/guide/getting-started' },
                 { text: '致谢', link: '/zh/guide/credits' },
             ],
         },

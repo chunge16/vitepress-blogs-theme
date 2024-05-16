@@ -46,6 +46,149 @@ $ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 
 :::
 
+### 使用主题
+需要在 `.vitepress/theme/index.js`继承 `@chunge16/vitepress-blogs-theme`自定义主题
+
+因为 `VitePress Blog` 本身基于 `vitepress` 官方默认主题进行的扩展，所以可以继承并且同步 `vitepress` 官方主题
+```js
+// .vitepress/theme/index.js
+
+import {VPBTheme} from "@chunge16/vitepress-blogs-theme";
+export default {
+    extends: VPBTheme
+    // 其他 vitepress 主题配置
+    // https://vitepress.dev/zh/guide/custom-theme#theme-resolving
+};
+```
+
+### 配置文件
+在 `.vitepress/config.js` 文件的 `themeConfig/blog`的选项里配置博客主题
+
+`VitePress Blog` 具体配置选项可以查看 [VPB 主题配置](/zh/reference/config)
+
+::: details
+```js
+// .vitepress/config.js
+export default {
+  // vitepress 站点级选项
+  title: 'VitePress',
+  description: 'Just playing around.',
+  themeConfig:{
+      blog: {
+          path: "/blog",
+          title: 'Blog',
+          description: 'All these articles were written by chunge!',
+          defaultAuthor: 'chunge',
+          categoryIcons: {
+              article: 'i-[carbon/notebook]', 
+            tutorial: 'i-[carbon/book]', 
+            document: 'i-[carbon/document]',
+          }, 
+          tagIcons: {
+              github: 'i-[carbon/logo-github]', 
+              vue: 'i-[logos/vue]',
+              javascript: 'i-[logos/javascript]',
+              'web development': 'i-[carbon/development]',
+              html: 'i-[logos/html-5]',
+              git: 'i-[logos/git-icon]',
+              vite: 'i-[logos/vitejs]',
+              locked: 'i-[twemoji/locked]',
+              react: 'i-[logos/react]',
+              blog: 'i-[carbon/blog]',
+              comment: 'i-[carbon/add-comment]',
+          },
+          // 其他` VitePress Blog` 配置选项
+      }
+    
+  }
+}
+```
+:::
+
+
+
+### 创建博客文件夹
+
+`docs`文件夹下同时创建以下文件和文件夹
+
+- 创建 `/blog/posts` 存放博客文件，该文件夹下新建博客 md 文件
+- 创建 `/blog/authors` 存在博客作者，该文件夹下新建以作者名字命名的 md 文件 
+- 创建 `/blog/tags.md` 文件，显示标签页面
+::: details tags.md
+```markdown
+---
+layout: home
+---
+
+<VPBTags />
+
+```
+:::
+
+- 创建  `/blog/archives.md` 文件，显示博客集合页面
+::: details archives.md
+```markdown
+---
+layout: home
+---
+
+<VPBArchives />
+
+
+```
+:::
+- 创建 `/blog/index.md` 文件，显示博客首页
+
+::: details index.md
+```markdown
+---
+layout: home
+---
+
+
+<VPBHome />
+
+
+
+```
+:::
+
+具体文件结构，请看下图
+
+```
+
+├── docs
+│   ├── blog
+│   │   ├── archives.md
+│   │   ├── authors
+│   │   │   └── chunge.md
+│   │   ├── index.md
+│   │   ├── posts
+│   │   │   ├── 2023
+│   │   │   │   ├── git.md
+│   │   │   │   ├── unload-LVSecurityAgent.md
+│   │   │   │   ├── vitepress-Algolia.md
+│   │   │   │   ├── vitepress-blog-theme.md
+│   │   │   │   ├── vitepress-plugin-comment-with-giscus.md
+│   │   │   │   
+│   │   │   └── 2024
+│   │   │       └── Jetbrains-crack.md
+│   │   └── tags.md
+├── package.json
+├── pnpm-lock.yaml
+└── tailwind.config.js
+
+
+```
+
+### Tailwind 配置
+
+因为 `VitePress Blog` 使用 Tailwind CSS. 所以需要单独配置
+
+具体配置请看 [VPB Tailwind 配置](/zh/reference/tailwind)
+
+---
+
 ::: details 获取缺失的对等依赖警告详情？
 如果你使用 PNPM，你会注意到对 `@docsearch/js` 的缺失同级依赖警告。这并不会阻止 `VitePress` 的工作。如果你希望消除这个警告，把以下内容添加到你的 `package.json` 中：
 
@@ -62,6 +205,7 @@ $ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
 :::
+
 
 
 ::: tip 注意

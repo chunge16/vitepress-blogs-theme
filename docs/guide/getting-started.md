@@ -45,7 +45,149 @@ $ pnpm add -D vitepress @chunge16/vitepress-blogs-theme
 $ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
 
+
+### Use themes
+Need to inherit `@chunge16/vitepress-blogs-theme` custom theme in `.vitepress/theme/index.js`
+
+Because `VitePress Blog` itself is an extension based on the `vitepress` official default theme, it can inherit and synchronize with the `vitepress` official theme
+
+```js
+// .vitepress/theme/index.js
+
+import {VPBTheme} from "@chunge16/vitepress-blogs-theme";
+export default {
+    extends: VPBTheme
+    // 其他 vitepress 主题配置
+    // https://vitepress.dev/zh/guide/custom-theme#theme-resolving
+};
+```
+
+### Configuration file
+
+Configure the blog theme in the `themeConfig/blog` option of the `.vitepress/config.js` file
+
+`VitePress Blog` specific configuration options can be viewed in [VPB Theme Configuration](/reference/config)
+
+::: details Configuration file
+```js
+// .vitepress/config.js
+export default {
+  // vitepress 站点级选项
+  title: 'VitePress',
+  description: 'Just playing around.',
+  themeConfig:{
+      blog: {
+          path: "/blog",
+          title: 'Blog',
+          description: 'All these articles were written by chunge!',
+          defaultAuthor: 'chunge',
+          categoryIcons: {
+              article: 'i-[carbon/notebook]', 
+            tutorial: 'i-[carbon/book]', 
+            document: 'i-[carbon/document]',
+          }, 
+          tagIcons: {
+              github: 'i-[carbon/logo-github]', 
+              vue: 'i-[logos/vue]',
+              javascript: 'i-[logos/javascript]',
+              'web development': 'i-[carbon/development]',
+              html: 'i-[logos/html-5]',
+              git: 'i-[logos/git-icon]',
+              vite: 'i-[logos/vitejs]',
+              locked: 'i-[twemoji/locked]',
+              react: 'i-[logos/react]',
+              blog: 'i-[carbon/blog]',
+              comment: 'i-[carbon/add-comment]',
+          },
+          // 其他` VitePress Blog` 配置选项
+      }
+    
+  }
+}
+```
 :::
+
+
+### Create blog folder
+Create the following files and folders under the `docs` folder at the same time
+
+- Create `/blog/posts` to store blog files, and create a new blog md file in this folder
+- Create `/blog/authors` where the blog author exists, and create a new md file named after the author in this folder
+- Create `/blog/tags.md` file and display tags page
+
+::: details tags.md
+```markdown
+---
+layout: home
+---
+
+<VPBTags />
+
+```
+:::
+
+- Create `/blog/archives.md` file to display the blog collection page
+::: details archives.md
+```markdown
+---
+layout: home
+---
+
+<VPBArchives />
+
+
+```
+:::
+
+- Create `/blog/index.md` file to display the blog homepage
+::: details index.md
+```markdown
+---
+layout: home
+---
+
+
+<VPBHome />
+
+
+
+```
+:::
+
+Please see the figure below for the specific file structure.
+
+```
+
+├── docs
+│   ├── blog
+│   │   ├── archives.md
+│   │   ├── authors
+│   │   │   └── chunge.md
+│   │   ├── index.md
+│   │   ├── posts
+│   │   │   ├── 2023
+│   │   │   │   ├── git.md
+│   │   │   │   ├── unload-LVSecurityAgent.md
+│   │   │   │   ├── vitepress-Algolia.md
+│   │   │   │   ├── vitepress-blog-theme.md
+│   │   │   │   ├── vitepress-plugin-comment-with-giscus.md
+│   │   │   │   
+│   │   │   └── 2024
+│   │   │       └── Jetbrains-crack.md
+│   │   └── tags.md
+├── package.json
+├── pnpm-lock.yaml
+└── tailwind.config.js
+
+```
+
+### Tailwind configuration
+
+Because `VitePress Blog` uses Tailwind CSS. So it needs to be configured separately.
+
+For specific configuration, please see [VPB Tailwind Configuration](/reference/tailwind)
+
+---
 
 ::: details Getting missing peer deps warnings?
 If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This does not prevent VitePress from working. If you wish to suppress this warning, add the following to your `package.json`:
