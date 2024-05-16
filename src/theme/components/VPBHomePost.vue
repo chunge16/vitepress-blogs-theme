@@ -40,3 +40,12 @@ defineProps<{
     </div>
   </article>
 </template>
+<style scoped>
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h2 {
+  margin-top: 0;
+}
+</style>

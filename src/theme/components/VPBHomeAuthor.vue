@@ -41,4 +41,9 @@ const author = computed(() => {
   <div v-else />
 </template>
 
-<style scoped></style>
+<style scoped>
+a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>

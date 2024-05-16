@@ -29,3 +29,9 @@ const { theme } = useData();
     </div>
   </div>
 </template>
+<style scoped>
+h2 {
+  border-top: none;
+  margin-top: 0;
+}
+</style>

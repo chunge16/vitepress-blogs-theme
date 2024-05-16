@@ -85,3 +85,13 @@ if (inBrowser) {
     </div>
   </ClientOnly>
 </template>
+<style scoped>
+h2 {
+  border-top: none;
+  margin-top: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+</style>

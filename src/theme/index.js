@@ -29,7 +29,7 @@ export { default as VPBPostLinks } from './components/VPBPostLinks.vue';
 export { default as VPBTagIcon } from './components/VPBTagIcon.vue';
 export { default as VPBTags } from './components/VPBTags.vue';
 
-
+import "./style.css";
 // composables
 export { useArchives } from './composables/useArchives.js';
 export { useAuthors } from './composables/useAuthors.js';
