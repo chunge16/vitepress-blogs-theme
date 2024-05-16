@@ -9,4 +9,4 @@ Code Ideas From: \
 [Charles7c](https://github.com/Charles7c/charles7c.github.io/)  \
 [vitepress-blog-theme](https://github.com/jcamp-code/vitepress-blog-theme)
 
-All demo blog content created by [Anyword](anyword.com)
+All demo blog content created by [Anyword](https://anyword.com/)
