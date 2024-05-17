@@ -66,7 +66,7 @@ export default {
 
 `VitePress Blog` 具体配置选项可以查看 [VPB 主题配置](/zh/reference/config)
 
-::: details
+::: details Configuration file
 ```js
 // .vitepress/config.js
 export default {

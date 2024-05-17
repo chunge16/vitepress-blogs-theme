@@ -44,6 +44,7 @@ $ pnpm add -D vitepress @chunge16/vitepress-blogs-theme
 ```sh [yarn]
 $ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
+:::
 
 
 ### Use themes
