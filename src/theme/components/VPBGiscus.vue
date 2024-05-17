@@ -30,7 +30,7 @@ const {
   isDark,
   frontmatter,
 } = useData();
-const giscus  = theme.value.blog.giscus;
+const giscus  = theme.value.blog?.giscus;
 const lightTheme = giscus?.lightTheme || 'light';
 const darkTheme = giscus?.darkTheme || 'transparent_dark';
 
@@ -54,7 +54,7 @@ const defaultProps = ref({
 // You can use `comment: true` preface to enable it separately on the page.
 const isShowGiscus = computed(() => {
   // Whether to activate the comment area on all posts. default is true
-  const defaultEnable = typeof giscus.defaultEnable === 'boolean' ? giscus.defaultEnable : true;
+  const defaultEnable = typeof giscus?.defaultEnable === 'boolean' ? giscus.defaultEnable : true;
   // You can use `comment: true` preface to enable it separately on the page.
   const comment = frontmatter.value.comment;
 
