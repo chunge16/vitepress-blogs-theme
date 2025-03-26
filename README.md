@@ -112,17 +112,20 @@ defineTailwindConfig(base = './docs', config: Partial<Config>)
 - base：你的vitepress源的路径
 - config：标准Tailwind配置对象。
 
-### [icons 配置](https://vitepressblog.dev/reference/icons)
+### [icons 配置](https://iconify.design/docs/)
 
-VitePress 博客使用[tailwind-css-icons](https://github.com/jcamp-code/tailwindcss-plugin-icons)允许您在 Markdown 或组件中包含任何您想要的图标。
+VitePress 博客使用[Iconify for Tailwind CSS](https://iconify.design/docs/usage/css/tailwind/tailwind3/)允许您在 Markdown 或组件中包含任何您想要的图标。
 
 [iconify](https://iconify.design/)中的所有图标均可用。
 
-> 格式为i=[library/icon name]
+
+> 格式为 i-[{prefix}--{name}] 
+
+> 其中 “{prefix}” 是图标集前缀，“{name}” 是图标名称。
 
 ```html
 // 例子
-<span class="i-[carbon/logo-vue]">
+<span class="i-[carbon--add-comment]">
 
 ```
 

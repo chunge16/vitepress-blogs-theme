@@ -1,5 +1,4 @@
-const icons = require('@jcamp/tailwindcss-plugin-icons')
-
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 export const tailwindContent = [
     './src/theme/**/*.{js,ts,vue}',
     './docs/**/*.md',
@@ -9,5 +8,5 @@ export const tailwindContent = [
 module.exports = {
     content: [...tailwindContent],
     darkMode: 'class',
-    plugins: [icons()],
+    plugins: [addDynamicIconSelectors({ prefix: 'i' })],
 }

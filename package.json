@@ -38,7 +38,7 @@
     "src/theme"
   ],
   "devDependencies": {
-    "@jcamp/tailwindcss-plugin-icons": "^0.6.2",
+    "@iconify/tailwind": "^1.2.0",
     "changelogen": "^0.5.4",
     "vitepress": "^1.6.3"
   },

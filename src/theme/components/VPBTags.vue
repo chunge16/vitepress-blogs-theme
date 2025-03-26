@@ -71,7 +71,7 @@ if (inBrowser) {
           v-for="(post, index) in postsByTag[selectedTag]"
           :key="index"
           :href="withBase(post.url)"
-          class="m-2 flex cursor-pointer items-center justify-between leading-6"
+          class="m-2 flex cursor-pointer items-center justify-between leading-6 hover:text-[color:var(--vp-c-brand)]"
         >
           <div class="cursor-pointer leading-6">
             <div class="title-o"></div>

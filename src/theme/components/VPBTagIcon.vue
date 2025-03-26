@@ -6,7 +6,7 @@ import { useData } from 'vitepress';
 
 const { theme } = useData();
 
-console.log("theme", theme?.blog);
+console.log("theme", theme);
 
 </script>
 
@@ -14,6 +14,8 @@ console.log("theme", theme?.blog);
   <div
     v-if="theme.blog?.tagIcons && theme.blog.tagIcons[tag.toLowerCase()]"
     :class="theme.blog.tagIcons[tag.toLowerCase()]"
-    class="mr-2"
+    class="mr-2 w-[1.2em] h-[1.2em] inline-block align-middle"
   ></div>
 </template>
+<style scoped>
+</style>

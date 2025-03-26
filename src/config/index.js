@@ -1,5 +1,5 @@
 import path from 'node:path';
-import icons from '@jcamp/tailwindcss-plugin-icons';
+import { addDynamicIconSelectors } from '@iconify/tailwind'
 
 export async function processData(
     pageData,
@@ -45,7 +45,11 @@ export function defineTailwindConfig(base = './docs', config) {
     return {
         darkMode: 'class',
         // @ts-expect-error icons works once transpiled
-        plugins: [icons()],
+        plugins: [
+            addDynamicIconSelectors({
+                prefix: 'i',
+            })
+        ],
         content: defineTailwindContent(base),
         ...config,
     };
