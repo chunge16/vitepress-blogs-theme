@@ -23,8 +23,15 @@ export default createContentLoader(pattern, {
                 tags: formatTags(frontmatter?.tags),
                 category: frontmatter?.category ?? blogConfig?.defaultCategory ?? 'Article',
                 date: formatDate(frontmatter?.date, dateConfig),
+                top: frontmatter?.top ?? false,
+                sticky: frontmatter?.sticky ?? 0,
             }))
-            .sort((a, b) => b.date.time - a.date.time)
+            .sort((a, b) => {
+                if (a.top && b.top) return b.sticky - a.sticky;
+                if (a.top) return -1;
+                if (b.top) return 1;
+                return b.date.time - a.date.time;
+            })
     },
 })
 
