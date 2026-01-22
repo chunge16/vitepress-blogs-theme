@@ -1,6 +1,40 @@
 # Changelog
 
 
+## v0.3.0
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.4...v0.3.0)
+
+### 🩹 Fixes
+
+- 🐛  修复英文文档下 details 显示错误的问题 ([5200cc4](https://github.com/chunge16/vitepress-blogs-theme/commit/5200cc4))
+
+### 💅 Refactors
+
+- ♻️  优化评论组件参数容错处理 ([fa3ed4f](https://github.com/chunge16/vitepress-blogs-theme/commit/fa3ed4f))
+
+### 📖 Documentation
+
+- 📝  改进文档关于快速开始的描述 ([efce753](https://github.com/chunge16/vitepress-blogs-theme/commit/efce753))
+- 为文档和博客文章添加置顶和置顶顺序标记 ([133df69](https://github.com/chunge16/vitepress-blogs-theme/commit/133df69))
+
+### 📦 Build
+
+- 📦️  修复 encountering dead links 打包报错的问题 ([143a12e](https://github.com/chunge16/vitepress-blogs-theme/commit/143a12e))
+
+### 🏡 Chore
+
+- 升级 vitepress 依赖至 1.6.4 版本 ([c442f5b](https://github.com/chunge16/vitepress-blogs-theme/commit/c442f5b))
+
+### 🤖 CI
+
+- 更新 GitHub Pages 部署工作流中的 actions 版本 ([4699c1c](https://github.com/chunge16/vitepress-blogs-theme/commit/4699c1c))
+- 更新 GitHub Actions 工作流中的 actions 版本至 v4 ([fadc8f9](https://github.com/chunge16/vitepress-blogs-theme/commit/fadc8f9))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.2.4
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.3...v0.2.4)
