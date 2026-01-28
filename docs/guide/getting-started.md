@@ -22,7 +22,7 @@ You can try VitePress Blog directly in your browser on [StackBlitz](https://stac
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) version 16 or higher.
+- [Node.js](https://nodejs.org/) version 18 or higher.
 - Terminal for accessing VitePress via its command line interface (CLI).
 - Text Editor with [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax support.
   - [VSCode](https://code.visualstudio.com/) is recommended, along with the [official Vue extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
@@ -62,6 +62,65 @@ export default {
     // https://vitepress.dev/zh/guide/custom-theme#theme-resolving
 };
 ```
+
+### Setup Wizard
+
+VitePress Blog comes with a command line setup wizard to help you build a Blog folder. Once installed, launch the Wizard by running the following command
+
+::: code-group
+
+```sh [npm]
+$ npx vitepress-blog-init
+```
+
+```sh [pnpm]
+$ pnpm vitepress-blog-init
+```
+
+```sh [yarn]
+$ yarn vitepress-blog-init
+```
+:::
+
+You will be greeted with a few simple questions:
+
+```
+┌   VitePress Blog Theme Init 
+│
+◇  Where should VitePress initialize the config?
+│  ./docs
+│
+◇  Site title:
+│  My Awesome Blog
+│
+◇  Site description:
+│  A VitePress Blog with Theme
+│
+◇  Site base URL:
+│  /
+│
+◇  Choose site language:
+│  简体中文 (zh-CN)
+│
+◇  Default author name:
+│  Blog Author
+│
+◇  Enable Giscus comments?
+│  No
+│
+◇  Add VitePress npm scripts to package.json?
+│  yes
+│
+◇  Date format:
+│  yyyy/MM/dd (e.g., 2024/01/26)
+│
+└  Done! Now run:
+
+  pnpm install
+  pnpm run docs:dev
+  
+```
+
 
 ### Configuration file
 

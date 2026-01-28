@@ -21,7 +21,7 @@
 
 ### 前提条件
 
-- [Node.js](https://nodejs.org/) 版本 16 以上.
+- [Node.js](https://nodejs.org/) 版本 18 以上.
 - 通过命令行界面 (CLI) 访问 VitePress 的终端.
 - 支持 [Markdown](https://en.wikipedia.org/wiki/Markdown) 语法的文本编辑器。
   - 推荐使用 [VSCode](https://code.visualstudio.com/), 以及Vue官方插件 [volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
@@ -59,6 +59,62 @@ export default {
     // 其他 vitepress 主题配置
     // https://vitepress.dev/zh/guide/custom-theme#theme-resolving
 };
+```
+### 安装向导
+VitePress Blog 附带一个命令行设置向导，可以帮助你构建一个博客文件夹。安装后，通过运行以下命令启动向导
+::: code-group
+
+```sh [npm]
+$ npx vitepress-blog-init
+```
+
+```sh [pnpm]
+$ pnpm vitepress-blog-init
+```
+
+```sh [yarn]
+$ yarn vitepress-blog-init
+```
+
+:::
+
+将需要回答几个简单的问题：
+
+```
+┌   VitePress Blog Theme Init 
+│
+◇  Where should VitePress initialize the config?
+│  ./docs
+│
+◇  Site title:
+│  My Awesome Blog
+│
+◇  Site description:
+│  A VitePress Blog with Theme
+│
+◇  Site base URL:
+│  /
+│
+◇  Choose site language:
+│  简体中文 (zh-CN)
+│
+◇  Default author name:
+│  Blog Author
+│
+◇  Enable Giscus comments?
+│  No
+│
+◇  Add VitePress npm scripts to package.json?
+│  yes
+│
+◇  Date format:
+│  yyyy/MM/dd (e.g., 2024/01/26)
+│
+└  Done! Now run:
+
+  pnpm install
+  pnpm run docs:dev
+  
 ```
 
 ### 配置文件

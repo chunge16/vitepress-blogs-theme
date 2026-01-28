@@ -15,7 +15,21 @@ async function writeFile(filePath, content) {
 }
 
 export async function generateTemplate(answers) {
-  const { projectRoot, siteTitle, siteDescription, siteUrl, language, enableGiscus, giscusRepo, giscusRepoId, giscusCategoryId, defaultAuthor, dateLocale, dateFormat } = answers;
+  const {
+    projectRoot,
+    siteTitle,
+    siteDescription,
+    siteUrl,
+    language,
+    enableGiscus,
+    giscusRepo,
+    giscusRepoId,
+    giscusCategoryId,
+    defaultAuthor,
+    dateLocale,
+    dateFormat,
+    addScripts,
+  } = answers;
 
   const base = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
 
@@ -511,12 +525,72 @@ layout: home
 <VPBTags />
 `;
 
+  const packageJson = `{
+  "name": "your-blog-name",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },  
+  "dependencies": {
+    "@chunge16/vitepress-blogs-theme": "latest",
+    "vue": "latest"
+  }
+}
+`;
+
+  const gitignore = `${projectRoot}/.vitepress/cache
+${projectRoot}/.vitepress/dist
+node_modules
+.DS_Store
+`;
+
+  const tailwindConfig = `import {defineTailwindConfig} from "@chunge16/vitepress-blogs-theme/config";
+
+module.exports = defineTailwindConfig();
+`;
+
 
   try {
     await ensureDir(path.join(projectRoot, '.vitepress'));
     await ensureDir(path.join(projectRoot, '.vitepress/theme'));
     await ensureDir(path.join(projectRoot, 'blog/posts'));
     await ensureDir(path.join(projectRoot, 'blog/authors'));
+
+    const pkgPath = path.join(projectRoot, 'package.json');
+    if (addScripts) {
+      try {
+        await fs.access(pkgPath);
+      } catch {
+        await writeFile(pkgPath, packageJson);
+      }
+
+      const tailwindPath = path.join(projectRoot, 'tailwind.config.js');
+      try {
+        await fs.access(tailwindPath);
+      } catch {
+        await writeFile(tailwindPath, tailwindConfig);
+      }
+
+
+      const gitignorePath = path.join(projectRoot, '.gitignore');
+      try {
+        await fs.access(gitignorePath);
+      } catch {
+        await writeFile(gitignorePath, gitignore);
+      }
+    }
 
     await writeFile(path.join(projectRoot, '.vitepress/config.js'), vitepressConfig);
     await writeFile(path.join(projectRoot, '.vitepress/theme/index.js'), themeConfig);
@@ -533,7 +607,6 @@ layout: home
 
     await writeFile(path.join(projectRoot, 'blog/authors/ai-writer.md'), aiWriterMd);
     await writeFile(path.join(projectRoot, 'blog/authors/robot-editor.md'), robotEditorMd);
-
   } catch (error) {
     console.error('\nError generating files:', error.message);
     throw error;

@@ -79,6 +79,15 @@ export async function init() {
           },
         });
       },
+      addScripts: () =>
+        select({
+          message: 'Add VitePress npm scripts to package.json?',
+          options: [
+            { value: true, label: 'yes' },
+            { value: false, label: 'no' },
+          ],
+          initialValue: true,
+        }),
       dateFormat: () =>
         select({
           message: 'Date format:',
@@ -110,6 +119,6 @@ export async function init() {
   await generateTemplate(finalAnswers);
 
   outro(
-    `Done! Now run:\n\n  ${pc.green(`cd ${answers.projectRoot}`)}\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nand start writing.`
+    `Done! Now run:\n\n  ${pc.green(`cd ${finalAnswers.projectRoot}`)}\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nand start writing.`
   );
 }
