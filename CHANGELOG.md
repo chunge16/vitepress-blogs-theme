@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.4.0
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.3.0...v0.4.0)
+
+### 🚀 Enhancements
+
+- **cli:** 新增交互式初始化命令行工具 ([67d1c64](https://github.com/chunge16/vitepress-blogs-theme/commit/67d1c64))
+- **cli:** 在初始化向导中添加 npm 脚本配置选项 ([6c579b6](https://github.com/chunge16/vitepress-blogs-theme/commit/6c579b6))
+
+### 📖 Documentation
+
+- 添加 frontmatter 中 top 和 sticky 字段的文档 ([aa8b0a9](https://github.com/chunge16/vitepress-blogs-theme/commit/aa8b0a9))
+
+### 📦 Build
+
+- 更新 peerDependencies 中的 vitepress 版本至 ^1.6.4 ([b2cc508](https://github.com/chunge16/vitepress-blogs-theme/commit/b2cc508))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.3.0
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.2.4...v0.3.0)
