@@ -7,7 +7,7 @@ export async function init() {
 
   const answers = await group(
     {
-      projectRoot: () =>
+      vitePressProjectRoot: () =>
         text({
           message: 'Where should VitePress initialize the config?',
           placeholder: './docs',

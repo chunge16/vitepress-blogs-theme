@@ -16,7 +16,7 @@ async function writeFile(filePath, content) {
 
 export async function generateTemplate(answers) {
   const {
-    projectRoot,
+    vitePressProjectRoot,
     siteTitle,
     siteDescription,
     siteUrl,
@@ -550,8 +550,8 @@ layout: home
 }
 `;
 
-  const gitignore = `${projectRoot}/.vitepress/cache
-${projectRoot}/.vitepress/dist
+  const gitignore = `${vitePressProjectRoot}/.vitepress/cache
+${vitePressProjectRoot}/.vitepress/dist
 node_modules
 .DS_Store
 `;
@@ -563,12 +563,12 @@ module.exports = defineTailwindConfig();
 
 
   try {
-    await ensureDir(path.join(projectRoot, '.vitepress'));
-    await ensureDir(path.join(projectRoot, '.vitepress/theme'));
-    await ensureDir(path.join(projectRoot, 'blog/posts'));
-    await ensureDir(path.join(projectRoot, 'blog/authors'));
+    await ensureDir(path.join(vitePressProjectRoot, '.vitepress'));
+    await ensureDir(path.join(vitePressProjectRoot, '.vitepress/theme'));
+    await ensureDir(path.join(vitePressProjectRoot, 'blog/posts'));
+    await ensureDir(path.join(vitePressProjectRoot, 'blog/authors'));
 
-    const pkgPath = path.join(projectRoot, 'package.json');
+    const pkgPath = path.join(process.cwd(), 'package.json');
     if (addScripts) {
       try {
         await fs.access(pkgPath);
@@ -576,7 +576,7 @@ module.exports = defineTailwindConfig();
         await writeFile(pkgPath, packageJson);
       }
 
-      const tailwindPath = path.join(projectRoot, 'tailwind.config.js');
+      const tailwindPath = path.join(process.cwd(), 'tailwind.config.js');
       try {
         await fs.access(tailwindPath);
       } catch {
@@ -584,7 +584,7 @@ module.exports = defineTailwindConfig();
       }
 
 
-      const gitignorePath = path.join(projectRoot, '.gitignore');
+      const gitignorePath = path.join(process.cwd(), '.gitignore');
       try {
         await fs.access(gitignorePath);
       } catch {
@@ -592,21 +592,21 @@ module.exports = defineTailwindConfig();
       }
     }
 
-    await writeFile(path.join(projectRoot, '.vitepress/config.js'), vitepressConfig);
-    await writeFile(path.join(projectRoot, '.vitepress/theme/index.js'), themeConfig);
-    await writeFile(path.join(projectRoot, '.vitepress/theme/style.css'), themeStyle);
+    await writeFile(path.join(vitePressProjectRoot, '.vitepress/config.js'), vitepressConfig);
+    await writeFile(path.join(vitePressProjectRoot, '.vitepress/theme/index.js'), themeConfig);
+    await writeFile(path.join(vitePressProjectRoot, '.vitepress/theme/style.css'), themeStyle);
 
-    await writeFile(path.join(projectRoot, 'index.md'), indexMd);
-    await writeFile(path.join(projectRoot, 'markdown-examples.md'), markdownExamplesMd);
-    await writeFile(path.join(projectRoot, 'api-examples.md'), apiExamplesMd);
-    await writeFile(path.join(projectRoot, 'blog/index.md'), blogIndexMd);
-    await writeFile(path.join(projectRoot, 'blog/archives.md'), archivesMd);
-    await writeFile(path.join(projectRoot, 'blog/tags.md'), tagsMd);
-    await writeFile(path.join(projectRoot, 'blog/posts/post1.md'), post1Md);
-    await writeFile(path.join(projectRoot, 'blog/posts/post2.md'), post2Md);
+    await writeFile(path.join(vitePressProjectRoot, 'index.md'), indexMd);
+    await writeFile(path.join(vitePressProjectRoot, 'markdown-examples.md'), markdownExamplesMd);
+    await writeFile(path.join(vitePressProjectRoot, 'api-examples.md'), apiExamplesMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/index.md'), blogIndexMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/archives.md'), archivesMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/tags.md'), tagsMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/posts/post1.md'), post1Md);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/posts/post2.md'), post2Md);
 
-    await writeFile(path.join(projectRoot, 'blog/authors/ai-writer.md'), aiWriterMd);
-    await writeFile(path.join(projectRoot, 'blog/authors/robot-editor.md'), robotEditorMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/authors/ai-writer.md'), aiWriterMd);
+    await writeFile(path.join(vitePressProjectRoot, 'blog/authors/robot-editor.md'), robotEditorMd);
   } catch (error) {
     console.error('\nError generating files:', error.message);
     throw error;
