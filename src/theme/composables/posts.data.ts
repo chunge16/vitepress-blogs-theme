@@ -36,7 +36,7 @@ export default createContentLoader(pattern, {
 })
 
 
-function formatTags(raw) {
+function formatTags(raw: string | string[] | undefined) {
     if (typeof raw === 'string') {
         // @ts-ignore
         if (raw.includes(',')) {
@@ -51,7 +51,7 @@ function formatTags(raw) {
 }
 
 
-function formatDate(raw, dateConfig) {
+function formatDate(raw: string | number | Date, dateConfig?: { format?: string; locale?: Locale }) {
     const date = new Date(raw)
     const formatStr = dateConfig?.format ?? defaultDateFormat;
     const locale = dateConfig?.locale ?? defaultDateLocale
