@@ -535,7 +535,9 @@ layout: home
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.4"
+    "vitepress": "^1.6.4",
+    "@chunge16/vitepress-blogs-theme": "latest",
+    "vue": "^3.3.4",
   },
   "postcss": {
     "plugins": {
