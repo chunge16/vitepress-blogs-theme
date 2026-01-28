@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.4.3
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.2...v0.4.3)
+
+### 📦 Build
+
+- **deps:** 添加博客主题和Vue依赖 ([fdb91e6](https://github.com/chunge16/vitepress-blogs-theme/commit/fdb91e6))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.4.2
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.1...v0.4.2)
