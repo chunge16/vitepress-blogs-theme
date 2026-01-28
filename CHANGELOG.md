@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.4.2
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.1...v0.4.2)
+
+### 💅 Refactors
+
+- **cli:** 重命名 projectRoot 为 vitePressProjectRoot 以明确作用域 ([d1a81e1](https://github.com/chunge16/vitepress-blogs-theme/commit/d1a81e1))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.4.1
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.0...v0.4.1)

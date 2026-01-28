@@ -2,7 +2,7 @@
   "name": "@chunge16/vitepress-blogs-theme",
   "type": "module",
   "description": "VitePress easy to use blog theme",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "src/theme/index.js",
   "bin": {
     "vitepress-blog-init": "./src/cli/index.js"
