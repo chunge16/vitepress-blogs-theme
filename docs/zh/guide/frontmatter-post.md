@@ -9,9 +9,11 @@ title: 'Markdown: The Language of the Web'
 author: Robot Editor
 category: Tutorial
 next: false
+top: true
 tags:
   - vue
   - web development
+
 ---
 ```
 
@@ -72,3 +74,23 @@ comment: false
 comment: true
 ---
 ```
+
+## top
+文章置顶功能
+
+
+```md
+---
+top: true
+sticky: 10
+---
+```
+
+## sticky
+当文章中出现top为true时，按sticky值的大小排序置顶排列，否则按默认的时间倒序排列
+
+```md
+---
+top: true
+sticky: 10
+---
