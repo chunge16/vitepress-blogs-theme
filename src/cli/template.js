@@ -537,7 +537,7 @@ layout: home
   "devDependencies": {
     "vitepress": "^1.6.4",
     "@chunge16/vitepress-blogs-theme": "latest",
-    "vue": "^3.3.4",
+    "vue": "latest"
   },
   "postcss": {
     "plugins": {
