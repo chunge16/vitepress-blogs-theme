@@ -1,5 +1,3 @@
-import path from 'node:path';
-
 export async function processData(
     pageData,
     ctx,
@@ -24,15 +22,4 @@ export async function processData(
         pageData.frontmatter.prev = false;
         pageData.frontmatter.next = false;
     }
-}
-
-export const tailwindThemeContent =
-    './node_modules/@chunge16/vitepress-blogs-theme/src/theme/**/*.{js,ts,vue}';
-
-export function defineTailwindContent(base = './docs') {
-    return [
-        tailwindThemeContent,
-        path.join(base, '**/*.md'),
-        path.join(base, '.vitepress/**/*.{js,ts,vue}'),
-    ];
 }

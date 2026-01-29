@@ -1,10 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import { useData, withBase } from 'vitepress'
-import type { VPBThemeConfig } from '../../index'
 
 const { site } = useData()
 
-const theme = site.value.themeConfig as VPBThemeConfig
+const theme = site.value.themeConfig
 const path = withBase(theme.blog?.path ?? '/blog/')
 </script>
 

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useData } from 'vitepress';
 import { usePosts } from '../composables/usePosts';
 import VPBHomePost from './VPBHomePost.vue';

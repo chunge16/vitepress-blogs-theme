@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { usePosts } from '../composables/usePosts';
 const { post } = usePosts();
 

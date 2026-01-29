@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { withBase } from 'vitepress';
 import { useAuthors } from '../composables/useAuthors';
 

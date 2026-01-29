@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useData, withBase } from 'vitepress';
 import { useArchives } from '../composables/useArchives';
 

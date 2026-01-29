@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useData } from 'vitepress';
 import DefaultTheme from 'vitepress/theme';
 import VPBLayoutPostTop from './VPBLayoutPostTop.vue';

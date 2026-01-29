@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import { usePosts } from '../composables/usePosts'
 import VPBPostCategory from './VPBPostCategory.vue'
 import VPBPostAuthor from './VPBPostAuthor.vue'
 
-defineProps<{
-  insideDoc?: boolean
-}>()
+defineProps({
+  insideDoc: Boolean
+})
 
 const { post } = usePosts()
 </script>

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { usePosts } from '../composables/usePosts';
 import VPBPostDate from './VPBPostDate.vue';
 import VPBPostDetails from './VPBPostDetails.vue';

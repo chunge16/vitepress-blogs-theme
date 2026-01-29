@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { useAuthors } from '../composables/useAuthors'
 
-const props = defineProps<{
-  name: string
-}>()
+const props = defineProps({
+  name: String
+})
 
 const { site } = useData()
 

@@ -1,16 +1,15 @@
-<script setup lang="ts">
+<script setup>
 import { useData, withBase } from 'vitepress'
 import { usePosts } from '../composables/usePosts'
-import type { VPBThemeConfig } from '../../index'
 
-defineProps<{
-  insideDoc?: boolean
-}>()
+defineProps({
+  insideDoc: Boolean
+})
 
 const { site } = useData()
 const { nextPost, prevPost } = usePosts()
 
-const theme = site.value.themeConfig as VPBThemeConfig
+const theme = site.value.themeConfig
 const path = theme.blog?.path ?? '/blog/'
 </script>
 
