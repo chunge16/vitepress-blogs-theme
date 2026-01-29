@@ -3,9 +3,11 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@iconify/tailwind4" {
+  prefix: "i";
+  scale: 1.2;
+}
 
 /**
  * Colors

@@ -11,9 +11,9 @@ console.log("theme", theme?.blog);
 </script>
 
 <template>
-  <div
+  <span
     v-if="theme.blog?.tagIcons && theme.blog?.tagIcons[tag.toLowerCase()]"
     :class="theme.blog?.tagIcons[tag.toLowerCase()]"
     class="mr-2"
-  ></div>
+  ></span>
 </template>

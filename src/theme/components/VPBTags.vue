@@ -34,10 +34,11 @@ if (inBrowser) {
           {{ theme.blog?.description }}
         </p>
       </div>
-      <div class="flex flex-wrap justify-center gap-2 p-4">
+      <div class="flex flex-wrap justify-center gap-2 p-4 ">
         <div
           v-for="(posts, tagName) in postsByTag"
           :key="tagName"
+          class="flex items-center"
           :class="{
             'cursor-pointer rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-600':
               selectedTag !== tagName,
@@ -62,7 +63,7 @@ if (inBrowser) {
 
       <div v-if="selectedTag">
         <div
-          class="px-0 pb-2 pt-4 text-xl font-semibold leading-6 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
+          class="flex items-center px-0 pb-2 pt-4 text-xl font-semibold leading-6 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
         >
           <VPBTagIcon :tag="selectedTag" />{{ selectedTag }}
           <span class="text-xs"> ( {{ postsByTag[selectedTag].length }} )</span>

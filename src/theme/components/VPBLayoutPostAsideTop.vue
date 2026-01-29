@@ -1,14 +1,13 @@
-<script setup lang="ts">
+<script setup>
 import { useData, withBase } from 'vitepress'
 import { usePosts } from '../composables/usePosts'
-import type { VPBThemeConfig } from '../../index'
 import VPBPostAuthor from './VPBPostAuthor.vue'
 import VPBPostCategory from './VPBPostCategory.vue'
 import VPBTagIcon from './VPBTagIcon.vue'
 
 const { site } = useData()
 const { post } = usePosts()
-const theme = site.value.themeConfig as VPBThemeConfig
+const theme = site.value.themeConfig
 const path = theme.blog?.tagsPath ?? '/blog/tags'
 </script>
 
@@ -23,8 +22,8 @@ const path = theme.blog?.tagsPath ?? '/blog/tags'
       <a
         v-for="tagName in post.tags"
         :key="tagName"
-        class="rounded-sm bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600"
-        :href="`${withBase(<string>path)}?init=${tagName}`"
+        class="rounded-sm bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600 flex items-center"
+        :href="`${withBase(path)}?init=${tagName}`"
       >
         <VPBTagIcon :tag="tagName" />
         {{ tagName }}

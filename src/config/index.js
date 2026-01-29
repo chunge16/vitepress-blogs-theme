@@ -1,6 +1,4 @@
 import path from 'node:path';
-import icons from "@jcamp/tailwindcss-plugin-icons";
-
 
 export async function processData(
     pageData,
@@ -37,17 +35,4 @@ export function defineTailwindContent(base = './docs') {
         path.join(base, '**/*.md'),
         path.join(base, '.vitepress/**/*.{js,ts,vue}'),
     ];
-}
-
-export function defineTailwindConfig(base = './docs', config) {
-    if (base === null || base === undefined) {
-        base = './docs';
-    }
-    return {
-        darkMode: 'class',
-        // @ts-expect-error icons works once transpiled
-        plugins: [icons()],
-        content: defineTailwindContent(base),
-        ...config,
-    };
 }

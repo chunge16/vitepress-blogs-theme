@@ -1,20 +1,20 @@
-<script setup lang="ts">
+<script setup>
 import { useData } from 'vitepress'
 
-defineProps<{
-  category: string
-}>()
+defineProps({
+  category: String
+})
 const { theme } = useData()
 </script>
 
 <template>
-  <div>
-    <div
+  <div class="flex items-center">
+    <span
       v-if="
-        theme.blog?.categoryIcons &&
-        theme.blog?.categoryIcons[category.toLowerCase()]
+        theme?.blog?.categoryIcons &&
+        theme?.blog?.categoryIcons[category.toLowerCase()]
       "
-      :class="theme.blog?.categoryIcons[category.toLowerCase()]"
+      :class="theme?.blog?.categoryIcons[category.toLowerCase()]"
       class="mr-2"
     />
     <span>{{ category }}</span>

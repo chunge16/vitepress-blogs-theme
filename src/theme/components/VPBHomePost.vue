@@ -1,12 +1,14 @@
-<script setup lang="ts">
-import type { Post } from '../theme-types'
+<script setup>
 import VPBPostCategory from './VPBPostCategory.vue'
 import VPBHomeAuthor from './VPBHomeAuthor.vue'
 import {withBase} from "vitepress";
 
-defineProps<{
-  post: Post
-}>()
+defineProps({
+  post: {
+    type: Object,
+    default: () => ({})
+  }
+});
 </script>
 
 <template>
