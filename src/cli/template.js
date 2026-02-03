@@ -43,7 +43,6 @@ export default defineConfig({
   description: '${siteDescription}',
   lang: '${language}',
   cleanUrls: true,
-  
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -95,22 +94,22 @@ export default defineConfig({
       description: '${siteDescription}',
       defaultAuthor: '${defaultAuthor}',
       categoryIcons: {
-        article: 'i-[carbon/notebook]',
-        tutorial: 'i-[carbon/book]',
-        document: 'i-[carbon/document]',
+          article: 'i-[carbon--notebook]',
+          tutorial: 'i-[carbon--book]',
+          document: 'i-[carbon--document]',
       },
       tagIcons: {
-        github: 'i-[carbon/logo-github]',
-        vue: 'i-[logos/vue]',
-        javascript: 'i-[logos/javascript]',
-        'web development': 'i-[carbon/development]',
-        html: 'i-[logos/html-5]',
-        git: 'i-[logos/git-icon]',
-        vite: 'i-[logos/vitejs]',
-        locked: 'i-[twemoji/locked]',
-        react: 'i-[logos/react]',
-        blog: 'i-[carbon/blog]',
-        comment: 'i-[carbon/add-comment]',
+        github: 'i-[carbon--logo-github]',
+        vue: 'i-[logos--vue]',
+        javascript: 'i-[logos--javascript]',
+        'web development': 'i-[carbon--development]',
+        html: 'i-[logos--html-5]',
+        git: 'i-[logos--git-icon]',
+        vite: 'i-[logos--vitejs]',
+        locked: 'i-[twemoji--locked]',
+        react: 'i-[logos--react]',
+        blog: 'i-[carbon--blog]',
+        comment: 'i-[carbon--add-comment]',
       },
       dateConfig: {
         format: '${dateFormat}',
