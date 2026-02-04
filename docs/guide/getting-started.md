@@ -1,6 +1,5 @@
 # Getting Started
 
-
 <p align="left">
     <a target="_blank" href="https://www.npmjs.com/package/@chunge16/vitepress-blogs-theme">
         <img style="display:inline-block;margin:0.2em;" alt="npm" src="https://img.shields.io/npm/v/%40chunge16%2Fvitepress-blogs-theme?logo=npm">
@@ -13,10 +12,9 @@
     </a>
 </p>
 
-
 ## Try It Online
 
-You can try VitePress Blog directly in your browser on [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template).
+You can try `VitePress Blog` directly in your browser on [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template).
 
 ## Installation
 
@@ -29,7 +27,9 @@ You can try VitePress Blog directly in your browser on [StackBlitz](https://stac
 
 VitePress Blog can be used on its own, or be installed into an existing project.
 
-You need to install both `vitepress` and `@chunge16/vitepress-blogs-theme` In both cases, you can install it with:
+It is based on [Extending the Default Theme](https://vitepress.dev/guide/custom-theme#consuming-a-custom-theme), and you can add custom configurations in `docs/.vitepress/theme/index.js`.
+
+In both cases, you need to install `vitepress` and `@chunge16/vitepress-blogs-theme`. You can install them with:
 
 ::: code-group
 
@@ -44,28 +44,12 @@ $ pnpm add -D vitepress @chunge16/vitepress-blogs-theme
 ```sh [yarn]
 $ yarn add -D vitepress @chunge16/vitepress-blogs-theme
 ```
+
 :::
-
-
-### Use themes
-Need to inherit `@chunge16/vitepress-blogs-theme` custom theme in `.vitepress/theme/index.js`
-
-Because `VitePress Blog` itself is an extension based on the `vitepress` official default theme, it can inherit and synchronize with the `vitepress` official theme
-
-```js
-// .vitepress/theme/index.js
-
-import {VPBTheme} from "@chunge16/vitepress-blogs-theme";
-export default {
-    extends: VPBTheme
-    // 其他 vitepress 主题配置
-    // https://vitepress.dev/zh/guide/custom-theme#theme-resolving
-};
-```
 
 ### Setup Wizard
 
-VitePress Blog comes with a command line setup wizard to help you build a Blog folder. Once installed, launch the Wizard by running the following command
+VitePress Blog comes with a command line setup wizard to help you build a Blog folder. Once installed, launch the Wizard by running the following command:
 
 ::: code-group
 
@@ -80,6 +64,7 @@ $ pnpm vitepress-blog-init
 ```sh [yarn]
 $ yarn vitepress-blog-init
 ```
+
 :::
 
 You will be greeted with a few simple questions:
@@ -121,168 +106,17 @@ You will be greeted with a few simple questions:
   
 ```
 
-
-### Configuration file
-
-Configure the blog theme in the `themeConfig/blog` option of the `.vitepress/config.js` file
-
-`VitePress Blog` specific configuration options can be viewed in [VPB Theme Configuration](/reference/config)
-
-::: details Configuration file
-```js
-// .vitepress/config.js
-export default {
-  // vitepress 站点级选项
-  title: 'VitePress',
-  description: 'Just playing around.',
-  themeConfig:{
-      blog: {
-          path: "/blog",
-          title: 'Blog',
-          description: 'All these articles were written by chunge!',
-          defaultAuthor: 'chunge',
-          categoryIcons: {
-              article: 'i-[carbon/notebook]', 
-            tutorial: 'i-[carbon/book]', 
-            document: 'i-[carbon/document]',
-          }, 
-          tagIcons: {
-              github: 'i-[carbon/logo-github]', 
-              vue: 'i-[logos/vue]',
-              javascript: 'i-[logos/javascript]',
-              'web development': 'i-[carbon/development]',
-              html: 'i-[logos/html-5]',
-              git: 'i-[logos/git-icon]',
-              vite: 'i-[logos/vitejs]',
-              locked: 'i-[twemoji/locked]',
-              react: 'i-[logos/react]',
-              blog: 'i-[carbon/blog]',
-              comment: 'i-[carbon/add-comment]',
-          },
-          // 其他` VitePress Blog` 配置选项
-      }
-    
-  }
-}
-```
-:::
-
-
-### Create blog folder
-Create the following files and folders under the `docs` folder at the same time
-
-- Create `/blog/posts` to store blog files, and create a new blog md file in this folder
-- Create `/blog/authors` where the blog author exists, and create a new md file named after the author in this folder
-- Create `/blog/tags.md` file and display tags page
-
-::: details tags.md
-```markdown
----
-layout: home
----
-
-<VPBTags />
-
-```
-:::
-
-- Create `/blog/archives.md` file to display the blog collection page
-::: details archives.md
-```markdown
----
-layout: home
----
-
-<VPBArchives />
-
-
-```
-:::
-
-- Create `/blog/index.md` file to display the blog homepage
-::: details index.md
-```markdown
----
-layout: home
----
-
-
-<VPBHome />
-
-
-
-```
-:::
-
-Please see the figure below for the specific file structure.
-
-```
-
-├── docs
-│   ├── blog
-│   │   ├── archives.md
-│   │   ├── authors
-│   │   │   └── chunge.md
-│   │   ├── index.md
-│   │   ├── posts
-│   │   │   ├── 2023
-│   │   │   │   ├── git.md
-│   │   │   │   ├── unload-LVSecurityAgent.md
-│   │   │   │   ├── vitepress-Algolia.md
-│   │   │   │   ├── vitepress-blog-theme.md
-│   │   │   │   ├── vitepress-plugin-comment-with-giscus.md
-│   │   │   │   
-│   │   │   └── 2024
-│   │   │       └── Jetbrains-crack.md
-│   │   └── tags.md
-├── package.json
-├── pnpm-lock.yaml
-└── tailwind.config.js
-
-```
-
-### Tailwind configuration
-
-Because `VitePress Blog` uses Tailwind CSS. So it needs to be configured separately.
-
-For specific configuration, please see [VPB Tailwind Configuration](/reference/tailwind)
-
----
-
-::: details Getting missing peer deps warnings?
-If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This does not prevent VitePress from working. If you wish to suppress this warning, add the following to your `package.json`:
-
-```json
-"pnpm": {
-  "peerDependencyRules": {
-    "ignoreMissing": [
-      "@algolia/client-search",
-      "search-insights"
-    ]
-  }
-}
-```
-
-:::
-
-::: tip NOTE
-
-VitePress is an ESM-only package. Don't use `require()` to import it, and make sure your nearest `package.json` contains `"type": "module"`, or change the file extension of your relevant files like `.vitepress/config.js` to `.mjs`/`.mts`. Refer to [Vite's troubleshooting guide](http://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only) for more details. Also, inside async CJS contexts, you can use `await import('vitepress')` instead.
-
-:::
-
-
 ## File Structure
+
 If you use the scaffolding of the VitePress project to build a project, the generated file structure should look like this: `./docs`
 
-- The `blog` directory is the content directory for the `VitePress Blog`. It serves as a reserved location for the Posts and Authors directory of the VitePress Blog.
-
+The `blog` directory is the content directory for the `VitePress Blog`. It serves as a reserved location for the `Posts` and `Authors` directories of the VitePress Blog.
 
 ```
-├── docs
+├── docs                # Project root
 │   ├── .vitepress
-│   │   ├── theme
-│   │   └── config.js
+│   │   ├── theme       # Theme entry
+│   │   └── config.js   # Configuration file
 │   ├── blog
 │   │   ├── authors
 │   │   ├── posts
@@ -292,72 +126,71 @@ If you use the scaffolding of the VitePress project to build a project, the gene
 │   ├── api-examples.md
 │   ├── index.md
 │   └── markdown-examples.md
+│   └── public
 ├── package.json
-
 ```
 
-The directory is considered the project root of the VitePress site. The directory is a reserved location for VitePress' config file, dev server cache, build output, and optional theme customization code`.docs`  `.vitepress`
+The `docs` directory is considered the project root of the VitePress site. The `.vitepress` directory is a reserved location for VitePress' config file, dev server cache, build output, and optional theme customization code.
 
+### Configuration file
 
-### Start Repo
+Configure the blog theme in the `themeConfig/blog` option of the `.vitepress/config.js` file.
 
-We have a starter template repo available on GitHub:
+`VitePress Blog` specific configuration options can be viewed in [VPB Theme Configuration](/reference/config).
 
-https://github.com/chunge16/vitepress-blogs-theme-template
-
-- You can click the large green `Use This Template` button GitHub 
-- use ` npx degit` to get started
-- use `git clone` to get started
-
-::: code-group
-
-```sh [npm]
-$ npx degit https://github.com/chunge16/vitepress-blogs-theme-template
-```
-
-```sh [Git]
-$ git clone https://github.com/chunge16/vitepress-blogs-theme-template
-```
-
-:::
-
-
-:::tip Vue as dev Dependency
-If you intend to perform customization that uses Vue components or APIs, you should also explicitly install `vue` as a dev dependency.
-:::
-
-### Posts and Authors
-
-Files stored under `/blog/posts` are converted to blog posts, while files stored under `/blog/authors` are treated as author details. These paths can be configured as needed.
-
-You can also set a default author if you don't want to specify an author for every post, for exmple, if there is only one author.
-
-### Categories and Tags
-
-The category is a top level item, and is optional. For example, this can be articles, documentation, tutorials, whatever you want it to be.
-
-Tags are specified on each post and each post can have as many tags as you want.
-
-### The Config File
-
-The config file (`.vitepress/config.js`) allows you to customize various aspects of your VitePress site, with the most basic options being the title and description of the site:
-
+::: details .vitepress/config.js
 ```js
-// .vitepress/config.js
 export default {
-  // site-level options
+  // vitepress site-level options
   title: 'VitePress',
   description: 'Just playing around.',
-
-  themeConfig: {
-    // theme-level options
-  },
+  themeConfig:{
+      blog: {
+          path: "/blog",
+          title: 'Blog',
+          description: 'All these articles were written by chunge!',
+          defaultAuthor: 'chunge',
+          categoryIcons: {
+                article: 'i-[carbon--notebook]',
+                tutorial: 'i-[carbon--book]',
+                document: 'i-[carbon--document]',
+          },
+          tagIcons: {
+                github: 'i-[carbon--logo-github]',
+                vue: 'i-[carbon--logo-vue]',
+                'web development': 'i-[carbon--development]',
+                javascript: 'i-[logos--javascript]',
+                html: 'i-[logos--html-5]',
+          },
+          // Other `VitePress Blog` config options
+      }
+    
+  }
 }
 ```
+:::
+
+### Theme Configuration
+
+`VitePress Blog` itself is based on the official theme extension, and you can add custom configurations in this file.
+
+::: info .vitepress/theme/index.js
+```js
+// https://vitepress.dev/guide/custom-theme
+import { VPBTheme } from '@chunge16/vitepress-blogs-theme';
+
+export default {
+  extends: VPBTheme,
+  enhanceApp({ app, router, siteData }) {
+    // ...
+  }
+};
+```
+:::
 
 ## Up and Running
 
-The tool should have also injected the following npm scripts to your `package.json` if you allowed it to do so during the setup process:
+If you allowed it during the setup process, the tool should have also injected the following npm scripts to your `package.json`:
 
 ```json
 {
@@ -371,7 +204,7 @@ The tool should have also injected the following npm scripts to your `package.js
 }
 ```
 
-The `docs:dev` script will start a local dev server with instant hot updates. Run it with the following command:
+The script will start a local dev server with instant hot updates. Run it with the following command: `docs:dev`
 
 ::: code-group
 
@@ -389,7 +222,7 @@ $ yarn docs:dev
 
 :::
 
-Instead of npm scripts, you can also invoke VitePress directly with:
+Instead of npm scripts, you can also invoke VitePress directly:
 
 ::: code-group
 
@@ -404,6 +237,28 @@ $ pnpm exec vitepress dev docs
 :::
 
 The dev server should be running at `http://localhost:5173`. Visit the URL in your browser to see your new site in action!
+
+### Template Repo
+
+We have a starter template repo available on GitHub:
+
+https://github.com/chunge16/vitepress-blogs-theme-template
+
+- You can click the large green `Use This Template` button on GitHub
+- Use `npx degit` to start
+- Use `git clone` to start
+
+::: code-group
+
+```sh [npm]
+$ npx degit https://github.com/chunge16/vitepress-blogs-theme-template
+```
+
+```sh [Git]
+$ git clone https://github.com/chunge16/vitepress-blogs-theme-template
+```
+
+:::
 
 ## What's Next?
 
