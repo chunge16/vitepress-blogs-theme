@@ -1,6 +1,39 @@
 # Changelog
 
 
+## v0.5.0
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.3...v0.5.0)
+
+### 🩹 Fixes
+
+- **主题:** 修复 posts.data.ts 中 formatTags 和 formatDate 的类型定义 ([0b7cc31](https://github.com/chunge16/vitepress-blogs-theme/commit/0b7cc31))
+
+### 💅 Refactors
+
+- 移除组件中的TypeScript语法以简化配置 ([cf6b4a7](https://github.com/chunge16/vitepress-blogs-theme/commit/cf6b4a7))
+
+### 📖 Documentation
+
+- **guide:** 重构入门指南以改进结构和清晰度 ([722165e](https://github.com/chunge16/vitepress-blogs-theme/commit/722165e))
+- 更新图标和Tailwind配置文档以匹配Tailwind v4.1 ([421e38b](https://github.com/chunge16/vitepress-blogs-theme/commit/421e38b))
+
+### 📦 Build
+
+- 升级 Tailwind CSS 至 v4 并迁移图标插件 ([d17a9ab](https://github.com/chunge16/vitepress-blogs-theme/commit/d17a9ab))
+
+### 🏡 Chore
+
+- 将 Vue 依赖版本固定为 latest ([a439b63](https://github.com/chunge16/vitepress-blogs-theme/commit/a439b63))
+
+### 🎨 Styles
+
+- **template:** 修复图标类名格式并移除多余空行 ([accc98d](https://github.com/chunge16/vitepress-blogs-theme/commit/accc98d))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.4.3
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.4.2...v0.4.3)
