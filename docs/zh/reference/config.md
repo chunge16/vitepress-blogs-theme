@@ -4,8 +4,8 @@
 
 VPB 的主题配置可让您自定义主题。我们所有的配置选项都可以在标准 VitePress 配置的属性下使用：`themeConfig.blog`
 
+::: info 配置示例
 ```js
-
 import {defineConfig} from 'vitepress';
 import {processData} from '@chunge16/vitepress-blogs-theme/config';
 import { enUS } from "date-fns/locale";
@@ -18,14 +18,16 @@ export default defineConfig({
             description: 'All these articles were written by AI Writer',
             defaultAuthor: 'AI Writer',
             categoryIcons: {
-                article: 'i-[carbon/notebook]',
-                tutorial: 'i-[carbon/book]',
-                document: 'i-[carbon/document]',
+                article: 'i-[carbon--notebook]',
+                tutorial: 'i-[carbon--book]',
+                document: 'i-[carbon--document]',
             },
             tagIcons: {
-                github: 'i-[carbon/logo-github]',
-                vue: 'i-[logos/vue]',
-                javascript: 'i-[logos/javascript]',
+                github: 'i-[carbon--logo-github]',
+                vue: 'i-[carbon--logo-vue]',
+                'web development': 'i-[carbon--development]',
+                javascript: 'i-[logos--javascript]',
+                html: 'i-[logos--html-5]',
             },
             dateConfig: {
                 format: 'yyyy/MM/dd',
@@ -61,6 +63,7 @@ export default defineConfig({
     },
 })
 ```
+:::
 ##  giscus  :tada:
 
 - Type: `object`

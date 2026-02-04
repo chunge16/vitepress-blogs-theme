@@ -18,14 +18,16 @@ export default defineConfig({
             description: 'All these articles were written by AI Writer',
             defaultAuthor: 'AI Writer',
             categoryIcons: {
-                article: 'i-[carbon/notebook]',
-                tutorial: 'i-[carbon/book]',
-                document: 'i-[carbon/document]',
+                article: 'i-[carbon--notebook]',
+                tutorial: 'i-[carbon--book]',
+                document: 'i-[carbon--document]',
             },
             tagIcons: {
-                github: 'i-[carbon/logo-github]',
-                vue: 'i-[logos/vue]',
-                javascript: 'i-[logos/javascript]',
+                github: 'i-[carbon--logo-github]',
+                vue: 'i-[carbon--logo-vue]',
+                'web development': 'i-[carbon--development]',
+                javascript: 'i-[logos--javascript]',
+                html: 'i-[logos--html-5]',
             },
             dateConfig: {
                 format: 'yyyy/MM/dd',

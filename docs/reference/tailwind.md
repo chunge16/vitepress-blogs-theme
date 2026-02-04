@@ -1,82 +1,41 @@
 # VPB Tailwind Configuration
 
-VitePress Blog uses [Tailwind CSS](https://tailwindcss.com).
+VitePress Blog uses [Tailwind CSS](https://tailwindcss.com), version `v4.1`.
 
-Everything is configured and ready to go for you with our [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)
+VPB Tailwind is processed using the PostCSS plugin [tailwindcss](https://tailwindcss.com/docs/installation/using-postcss).
 
-## Tailwind.config.js
+For specific code, please refer to [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template).
 
-The `tailwind.config.js` is very simple:
+## Add Tailwind to your PostCSS configuration
 
+There are 2 ways to add Tailwind to your PostCSS configuration.
+
+### Option 1: postcss.config.mjs configuration
+
+Add the tailwindcss plugin to your PostCSS configuration, as shown below:
+
+::: info postcss.config.mjs
 ```js
-import { defineTailwindConfig } from '@chunge16/vitepress-blogs-theme/config'
-
-module.exports = defineTailwindConfig()
-```
-
-This sets the needed content paths and includes the tailwind css [icons](./icons) plugin
-
-## defineTailwindConfig
-
-If you want to customize `tailwind.config.js` further, you can pass options to `defineTailwindConfig`
-
-```js
-
-defineTailwindConfig(base = './docs', config={})
-```
-
-- base: the path your `vitepress` source is
-- config: standard Tailwind config object.
-
-## defineTailwindContent
-
-```js
-defineTailwindContent((base = './docs'))
-```
-
-- base: the path your vitepress source is
-
-This function returns a list of needed paths to ensure `VitePress Blog's` components are included in `Tailwind's` processing:
-
-```js
-return [
-  './node_modules/@chunge16/vitepress-blogs-theme/config/src/**/*.{js,ts,vue}',
-  path.join(base, '**/*.md'),
-  path.join(base, '.vitepress/**/*.{js,ts,vue}'),
-]
-```
-
-## Full customization
-
-If you want to fully customize your Tailwind configuration, make sure `Tailwind.config.js` contains the following:
-
-```js
-import icons from '@jcamp/tailwindcss-plugin-icons'
-import { defineTailwindContent } from '@chunge16/vitepress-blogs-theme/config/config'
-
-const base = './docs'
-
-return {
-  darkMode: 'class',
-  plugins: [icons()],
-  content: defineTailwindContent(base),
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  }
 }
 ```
+:::
 
-## PostCSS
-[Tailwind CSS installation](https://tailwindcss.com/docs/installation/using-postcss) is a PostCSS plugin.
+### Option 2: package.json configuration
 
-Add the configuration content for postcss in `package.json`
+Add the `postcss` configuration to your `package.json`, as shown below:
 
+::: info package.json
 ```json
-// package.json
 {
-  "postcss":{
+  "postcss": {
     "plugins": {
-      "tailwindcss": {},
-      "autoprefixer": {}
+      "@tailwindcss/postcss": {}
     }
   }
 }
-
 ```
+:::
