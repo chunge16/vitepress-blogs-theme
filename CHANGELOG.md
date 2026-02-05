@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.5.2
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.1...v0.5.2)
+
+### 📦 Build
+
+- 迁移到 Tailwind CSS v4 并更新配置 ([3ed3bf9](https://github.com/chunge16/vitepress-blogs-theme/commit/3ed3bf9))
+- 将 postcss 配置文件添加到发布包中 ([68a0058](https://github.com/chunge16/vitepress-blogs-theme/commit/68a0058))
+
+### 🏡 Chore
+
+- 移除未使用的依赖并调整包管理配置 ([29452ac](https://github.com/chunge16/vitepress-blogs-theme/commit/29452ac))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.5.1
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.0...v0.5.1)
