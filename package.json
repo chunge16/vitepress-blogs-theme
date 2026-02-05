@@ -45,7 +45,6 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "@iconify/tailwind4": "^1.2.1",
     "changelogen": "^0.5.4",
     "cz-git": "^1.7.1",
     "eslint": "^8.55.0",
@@ -56,18 +55,13 @@
   "peerDependencies": {
     "vitepress": "^1.6.4"
   },
-  "postcss": {
-    "plugins": {
-      "@tailwindcss/postcss": {}
-    }
-  },
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "@giscus/vue": "^2.3.0",
     "@iconify-json/carbon": "^1.1.23",
     "@iconify-json/logos": "^1.1.40",
+    "@iconify/tailwind4": "^1.2.1",
     "@tailwindcss/postcss": "^4.1.18",
-    "autoprefixer": "^10.4.16",
     "date-fns": "^2.30.0",
     "picocolors": "^1.1.1",
     "postcss": "^8.4.32",

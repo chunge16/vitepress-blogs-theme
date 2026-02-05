@@ -532,18 +532,15 @@ layout: home
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
-  },
-  "devDependencies": {
-    "vitepress": "^1.6.4",
-    "@chunge16/vitepress-blogs-theme": "latest",
-    "vue": "latest"
   },  
   "dependencies": {
     "@chunge16/vitepress-blogs-theme": "latest",
     "vue": "latest",
     "@tailwindcss/postcss": "^4.1.18",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "@iconify/tailwind4": "^1.2.1",
+    "vitepress": "^1.6.4",
   }
 }
 `;
