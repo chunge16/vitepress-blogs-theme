@@ -7,7 +7,7 @@
 @plugin "@iconify/tailwind4" {
   prefix: "i";
   scale: 1.2;
-}
+};
 
 /**
  * Colors

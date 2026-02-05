@@ -537,16 +537,13 @@ layout: home
     "vitepress": "^1.6.4",
     "@chunge16/vitepress-blogs-theme": "latest",
     "vue": "latest"
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "autoprefixer": {}
-    }
   },  
   "dependencies": {
     "@chunge16/vitepress-blogs-theme": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "@tailwindcss/postcss": "^4.1.18",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }
 `;
@@ -557,9 +554,11 @@ node_modules
 .DS_Store
 `;
 
-  const tailwindConfig = `import {defineTailwindConfig} from "@chunge16/vitepress-blogs-theme/config";
-
-module.exports = defineTailwindConfig();
+  const postcssConfig = `export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  }
+};
 `;
 
 
@@ -577,11 +576,11 @@ module.exports = defineTailwindConfig();
         await writeFile(pkgPath, packageJson);
       }
 
-      const tailwindPath = path.join(process.cwd(), 'tailwind.config.js');
+      const postcssPath = path.join(process.cwd(), 'postcss.config.mjs');
       try {
-        await fs.access(tailwindPath);
+        await fs.access(postcssPath);
       } catch {
-        await writeFile(tailwindPath, tailwindConfig);
+        await writeFile(postcssPath, postcssConfig);
       }
 
 
