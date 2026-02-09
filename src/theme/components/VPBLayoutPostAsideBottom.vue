@@ -5,3 +5,6 @@ import VPBPostLinks from './VPBPostLinks.vue';
 <template>
   <VPBPostLinks />
 </template>
+<style>
+@reference "../style.css";
+</style>

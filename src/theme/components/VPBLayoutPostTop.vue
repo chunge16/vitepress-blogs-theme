@@ -17,3 +17,6 @@ const { post } = usePosts();
   </header>
   <VPBPostDetails inside-doc />
 </template>
+<style>
+@reference "../style.css";
+</style>

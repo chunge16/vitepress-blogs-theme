@@ -47,3 +47,6 @@ const { author, prevAuthor, nextAuthor } = useAuthors();
     </div>
   </div>
 </template>
+<style>
+@reference "../style.css";
+</style>

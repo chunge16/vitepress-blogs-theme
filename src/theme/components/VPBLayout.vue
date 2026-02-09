@@ -34,3 +34,6 @@ const { frontmatter } = useData();
     </template>
   </Layout>
 </template>
+<style>
+@reference "../style.css";
+</style>

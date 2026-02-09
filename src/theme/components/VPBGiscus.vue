@@ -82,3 +82,6 @@ watch(isDark, () => {
 }
 
 </style>
+<style>
+@reference "../style.css";
+</style>

@@ -23,3 +23,6 @@ const { post } = usePosts()
   </div>
   <VPBPostAuthor inside-doc />
 </template>
+<style>
+@reference "../style.css";
+</style>

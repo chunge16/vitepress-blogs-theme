@@ -32,3 +32,6 @@ const path = theme.blog?.tagsPath ?? '/blog/tags'
   </span>
   <VPBPostAuthor />
 </template>
+<style>
+@reference "../style.css";
+</style>

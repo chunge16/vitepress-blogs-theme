@@ -17,3 +17,6 @@ console.log("theme", theme?.blog);
     class="mr-2"
   ></span>
 </template>
+<style>
+@reference "../style.css";
+</style>

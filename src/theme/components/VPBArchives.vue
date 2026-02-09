@@ -44,6 +44,9 @@ const { theme } = useData();
     </div>
   </div>
 </template>
+<style>
+@reference "../style.css";
+</style>
 <style scoped>
 h2 {
   border-top: none;
@@ -54,3 +57,4 @@ a {
   text-decoration: none;
 }
 </style>
+

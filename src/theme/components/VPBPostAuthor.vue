@@ -73,3 +73,6 @@ a {
   transition: color 0.25s;
 }
 </style>
+<style>
+@reference "../style.css";
+</style>

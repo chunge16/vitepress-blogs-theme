@@ -96,3 +96,6 @@ a {
   text-decoration: none;
 }
 </style>
+<style>
+@reference "../style.css";
+</style>

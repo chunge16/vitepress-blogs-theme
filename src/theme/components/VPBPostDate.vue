@@ -17,3 +17,6 @@ function getDateTime() {
     </dd>
   </dl>
 </template>
+<style>
+@reference "../style.css";
+</style>

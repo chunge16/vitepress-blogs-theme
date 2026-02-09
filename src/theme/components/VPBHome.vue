@@ -35,3 +35,6 @@ h2 {
   margin-top: 0;
 }
 </style>
+<style>
+@reference "../style.css";
+</style>
