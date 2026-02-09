@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.5.3
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.2...v0.5.3)
+
+### 🎨 Styles
+
+- **theme:** 为Vue组件添加样式引用并调整导入顺序 ([a91d4fe](https://github.com/chunge16/vitepress-blogs-theme/commit/a91d4fe))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.5.2
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.1...v0.5.2)
