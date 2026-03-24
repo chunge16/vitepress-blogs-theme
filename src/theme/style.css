@@ -5,6 +5,14 @@
 
 @import "tailwindcss";
 
+/*
+ * Tailwind CSS v4 ignores node_modules by default when scanning class names.
+ * This theme is consumed as a dependency, so we explicitly register our source files
+ * to ensure utilities used inside theme components are generated.
+ */
+@source "./components/**/*.{vue,js,ts}";
+@source "./composables/**/*.{js,ts}";
+
 @plugin "@iconify/tailwind4" {
   prefix: "i";
   scale: 1.2;
@@ -95,5 +103,4 @@
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand) !important;
 }
-
 
