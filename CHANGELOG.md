@@ -1,6 +1,28 @@
 # Changelog
 
 
+## v0.5.4
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.3...v0.5.4)
+
+### 🩹 Fixes
+
+- Ensure tailwind v4 scans theme sources ([3b287a1](https://github.com/chunge16/vitepress-blogs-theme/commit/3b287a1))
+
+### 💅 Refactors
+
+- Optimize theme composables and build setup ([8582304](https://github.com/chunge16/vitepress-blogs-theme/commit/8582304))
+
+### 🤖 CI
+
+- Align pnpm and node versions in workflows ([098d1a0](https://github.com/chunge16/vitepress-blogs-theme/commit/098d1a0))
+- Use packageManager version for pnpm setup ([22cc744](https://github.com/chunge16/vitepress-blogs-theme/commit/22cc744))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+- Jack Shi ([@chunge16](http://github.com/chunge16))
+
 ## v0.5.3
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.2...v0.5.3)

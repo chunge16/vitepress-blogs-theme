@@ -3,7 +3,7 @@
   "packageManager": "pnpm@9.15.9",
   "type": "module",
   "description": "VitePress easy to use blog theme",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "main": "src/theme/index.js",
   "bin": {
     "vitepress-blog-init": "./src/cli/index.js"
