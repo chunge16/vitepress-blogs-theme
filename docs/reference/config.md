@@ -170,9 +170,9 @@ Category icons, used in category's class attribute - [More Details](./icons)
 
 ```
 {
-  article: 'i-[carbon/notebook]',
-  tutorial: 'i-[carbon/book]',
-  document: 'i-[carbon/document]',
+  article: 'i-[carbon--notebook]',
+  tutorial: 'i-[carbon--book]',
+  document: 'i-[carbon--document]',
 }
 ```
 
@@ -190,5 +190,4 @@ Tag icons, used in tag's class attribute - [More Details](./icons)
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
 Date  formatting options - [More Details](https://date-fns.org/v2.16.1/docs/format)
-
 

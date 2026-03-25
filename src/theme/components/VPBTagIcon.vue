@@ -1,19 +1,23 @@
 <script setup>
-defineProps({
-    tag: String,
-});
+import { computed } from 'vue';
 import { useData } from 'vitepress';
 
-const { theme } = useData();
+const props = defineProps({
+  tag: String,
+});
 
-console.log("theme", theme?.blog);
+const { theme } = useData();
+const iconClass = computed(() => {
+  const tag = props.tag?.toLowerCase();
+  return tag ? theme.value.blog?.tagIcons?.[tag] ?? null : null;
+});
 
 </script>
 
 <template>
   <span
-    v-if="theme.blog?.tagIcons && theme.blog?.tagIcons[tag.toLowerCase()]"
-    :class="theme.blog?.tagIcons[tag.toLowerCase()]"
+    v-if="iconClass"
+    :class="iconClass"
     class="mr-2"
   ></span>
 </template>

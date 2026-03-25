@@ -32,17 +32,17 @@ const { author, prevAuthor, nextAuthor } = useAuthors();
         :href="withBase(prevAuthor.url)"
         class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)] dark:text-white"
       >
-        <div class="i-[bx/arrow-back] mr-2" ></div>
+        <div class="i-[carbon--arrow-left] mr-2"></div>
         <span>Previous Author</span>
       </a>
-      <div v-if="!prevAuthor" ></div>
+      <div v-if="!prevAuthor"></div>
       <a
         v-if="nextAuthor"
         :href="withBase(nextAuthor.url)"
         class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)] dark:text-white"
       >
         <span>Next Author</span>
-        <div class="i-[bx/right-arrow-alt] ml-2" ></div>
+        <div class="i-[carbon--arrow-right] ml-2"></div>
       </a>
     </div>
   </div>

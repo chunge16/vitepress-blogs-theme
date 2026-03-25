@@ -37,7 +37,7 @@ defineProps({
         class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)]"
       >
         Read more
-        <div class="i-[bx/right-arrow-alt] ml-2" />
+        <div class="i-[carbon--arrow-right] ml-2" />
       </a>
     </div>
   </article>

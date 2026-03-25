@@ -106,7 +106,7 @@ export default defineConfig({
         html: 'i-[logos--html-5]',
         git: 'i-[logos--git-icon]',
         vite: 'i-[logos--vitejs]',
-        locked: 'i-[twemoji--locked]',
+        locked: 'i-[carbon--locked]',
         react: 'i-[logos--react]',
         blog: 'i-[carbon--blog]',
         comment: 'i-[carbon--add-comment]',

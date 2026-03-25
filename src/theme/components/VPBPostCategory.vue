@@ -1,23 +1,25 @@
 <script setup>
+import { computed } from 'vue';
 import { useData } from 'vitepress'
 
-defineProps({
+const props = defineProps({
   category: String
 })
 const { theme } = useData()
+const iconClass = computed(() => {
+  const category = props.category?.toLowerCase();
+  return category ? theme.value.blog?.categoryIcons?.[category] ?? null : null;
+});
 </script>
 
 <template>
   <div class="flex items-center">
     <span
-      v-if="
-        theme?.blog?.categoryIcons &&
-        theme?.blog?.categoryIcons[category.toLowerCase()]
-      "
-      :class="theme?.blog?.categoryIcons[category.toLowerCase()]"
+      v-if="iconClass"
+      :class="iconClass"
       class="mr-2"
     />
-    <span>{{ category }}</span>
+    <span>{{ props.category }}</span>
   </div>
 </template>
 

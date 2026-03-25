@@ -2,24 +2,31 @@ import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import { data as authors } from './authors.data';
 
+function normalizePath(path) {
+  return decodeURI(path ?? '').replace(/\/$/, '');
+}
+
 export function useAuthors() {
   const route = useRoute();
+  const path = computed(() => route.path);
+  const currentPath = computed(() => normalizePath(route.path));
 
-  const path = route.path;
-
-  function findByName(name){
-    return authors.find((p) => p?.name === name);
+  function findByName(name) {
+    return authors.find((entry) => entry?.name === name) ?? null;
   }
 
-  function findCurrentIndex() {
-    const result = authors.findIndex((p) => route.path.includes(p?.url));
-    if (result === -1) console.error(`author page missing: ${route.path}`);
-    return result;
-  }
-
-  const author = computed(() => authors[findCurrentIndex()]);
-  const nextAuthor = computed(() => authors[findCurrentIndex() - 1]);
-  const prevAuthor = computed(() => authors[findCurrentIndex() + 1]);
+  const currentIndex = computed(() =>
+    authors.findIndex((entry) => currentPath.value.includes(normalizePath(entry?.url)))
+  );
+  const author = computed(() =>
+    currentIndex.value >= 0 ? authors[currentIndex.value] : null
+  );
+  const nextAuthor = computed(() =>
+    currentIndex.value > 0 ? authors[currentIndex.value - 1] : null
+  );
+  const prevAuthor = computed(() =>
+    currentIndex.value >= 0 ? authors[currentIndex.value + 1] ?? null : null
+  );
 
   return { authors, author, nextAuthor, prevAuthor, findByName, path };
 }
