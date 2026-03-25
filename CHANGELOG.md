@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.5.6
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.5...v0.5.6)
+
+### 🩹 Fixes
+
+- Improve vitepress-blog-init scaffolding ([4a5e121](https://github.com/chunge16/vitepress-blogs-theme/commit/4a5e121))
+
+### 💅 Refactors
+
+- Switch tailwind to vite plugin ([6e3802a](https://github.com/chunge16/vitepress-blogs-theme/commit/6e3802a))
+
+### 📖 Documentation
+
+- Refine theme docs and translations ([4372c32](https://github.com/chunge16/vitepress-blogs-theme/commit/4372c32))
+- Relax tailwind version note ([826cd5c](https://github.com/chunge16/vitepress-blogs-theme/commit/826cd5c))
+
+### ❤️ Contributors
+
+- Chunge ([@chunge16](http://github.com/chunge16))
+
 ## v0.5.5
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.4...v0.5.5)
