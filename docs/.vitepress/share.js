@@ -1,3 +1,4 @@
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig} from "vitepress";
 import {base, keywords, name} from "./meta.js";
 import { enUS } from "date-fns/locale";
@@ -55,6 +56,7 @@ export const shareConfig = defineConfig({
     },
 
     vite: {
+        plugins: [tailwindcss()],
         optimizeDeps: {
             exclude: ['@chunge16/vitepress-blogs-theme'],
         },

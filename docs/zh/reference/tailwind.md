@@ -1,43 +1,32 @@
 # VPB Tailwind 配置
 
-VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com)，版本为 `v4.1`
+VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com)，版本为 `v4.1`。
 
-VPB Tailwind 是使用使用 PostCSS 插件 [tailwindcss](https://tailwindcss.com/docs/installation/using-postcss) 处理的
+VPB Tailwind 使用官方 Vite 插件 [@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite) 进行处理。
 
-具体代码可以参考 [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)
+具体代码可以参考 [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template)。
 
+## 在 VitePress 配置中接入 Tailwind
 
+先安装依赖：
 
-## 在你的PostCSS配置中添加Tailwind
+```bash
+pnpm add tailwindcss @tailwindcss/vite
+```
 
-在你的PostCSS配置中添加Tailwind，有 2 种方式
+然后在 `.vitepress/config.js` 中注册 Vite 插件：
 
-### 方式1：postcss.config.mjs配置
-
-在你的PostCSS配置中添加tailwindcss插件，示例如下：
-
-::: info postcss.config.mjs
+::: info .vitepress/config.js
 ```js
-export default {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  }
-}
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+})
 ```
 :::
 
-### 方式2：package.json配置
-
-在你的 `package.json` 中添加 `postcss` 配置，示例如下：
-
-::: info package.json
-```json
-{
-  "postcss": {
-    "plugins": {
-      "@tailwindcss/postcss": {}
-    }
-  }
-}
-```
-:::
+启用插件后，主题样式文件中的 `@import "tailwindcss";` 会自动由 Vite 完成编译。

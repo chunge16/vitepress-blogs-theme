@@ -33,8 +33,9 @@ export async function generateTemplate(answers) {
 
   const base = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
 
-  const vitepressConfig = `import { defineConfig } from 'vitepress';
-import { defineTailwindConfig, processData } from '@chunge16/vitepress-blogs-theme/config';
+  const vitepressConfig = `import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vitepress';
+import { processData } from '@chunge16/vitepress-blogs-theme/config';
 import { enUS, zhCN } from 'date-fns/locale';
 
 export default defineConfig({
@@ -135,6 +136,7 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ['@chunge16/vitepress-blogs-theme'],
     },
@@ -536,9 +538,8 @@ layout: home
   "dependencies": {
     "@chunge16/vitepress-blogs-theme": "latest",
     "vue": "latest",
-    "@tailwindcss/postcss": "^4.1.18",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
     "@iconify/tailwind4": "^1.2.1",
     "vitepress": "^1.6.4",
   }
@@ -550,14 +551,6 @@ ${vitePressProjectRoot}/.vitepress/dist
 node_modules
 .DS_Store
 `;
-
-  const postcssConfig = `export default {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  }
-};
-`;
-
 
   try {
     await ensureDir(path.join(vitePressProjectRoot, '.vitepress'));
@@ -572,14 +565,6 @@ node_modules
       } catch {
         await writeFile(pkgPath, packageJson);
       }
-
-      const postcssPath = path.join(process.cwd(), 'postcss.config.mjs');
-      try {
-        await fs.access(postcssPath);
-      } catch {
-        await writeFile(postcssPath, postcssConfig);
-      }
-
 
       const gitignorePath = path.join(process.cwd(), '.gitignore');
       try {

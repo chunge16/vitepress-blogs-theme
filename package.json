@@ -40,12 +40,10 @@
   "exports": {
     ".": "./src/theme/index.js",
     "./config": "./src/config/index.js",
-    "./package.json": "./package.json",
-    "./postcss.config.mjs": "./postcss.config.mjs"
+    "./package.json": "./package.json"
   },
   "files": [
-    "src",
-    "postcss.config.mjs"
+    "src"
   ],
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
@@ -66,11 +64,10 @@
     "@iconify-json/carbon": "^1.1.23",
     "@iconify-json/logos": "^1.1.40",
     "@iconify/tailwind4": "^1.2.1",
-    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.2",
     "date-fns": "^2.30.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.4.32",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.2",
     "vitepress": "^1.6.4",
     "vue": "^3.3.9"
   },

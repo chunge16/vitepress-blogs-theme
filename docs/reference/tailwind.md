@@ -2,40 +2,31 @@
 
 VitePress Blog uses [Tailwind CSS](https://tailwindcss.com), version `v4.1`.
 
-VPB Tailwind is processed using the PostCSS plugin [tailwindcss](https://tailwindcss.com/docs/installation/using-postcss).
+VPB Tailwind is processed with the official Vite plugin [@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite).
 
 For specific code, please refer to [vitepress-blogs-theme-template](https://github.com/chunge16/vitepress-blogs-theme-template).
 
-## Add Tailwind to your PostCSS configuration
+## Add Tailwind to your VitePress config
 
-There are 2 ways to add Tailwind to your PostCSS configuration.
+Install the required packages:
 
-### Option 1: postcss.config.mjs configuration
+```bash
+pnpm add tailwindcss @tailwindcss/vite
+```
 
-Add the tailwindcss plugin to your PostCSS configuration, as shown below:
+Then register the Vite plugin in `.vitepress/config.js`:
 
-::: info postcss.config.mjs
+::: info .vitepress/config.js
 ```js
-export default {
-  plugins: {
-    "@tailwindcss/postcss": {},
-  }
-}
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+})
 ```
 :::
 
-### Option 2: package.json configuration
-
-Add the `postcss` configuration to your `package.json`, as shown below:
-
-::: info package.json
-```json
-{
-  "postcss": {
-    "plugins": {
-      "@tailwindcss/postcss": {}
-    }
-  }
-}
-```
-:::
+Once the plugin is enabled, `@import "tailwindcss";` inside your theme stylesheet will be compiled automatically.
