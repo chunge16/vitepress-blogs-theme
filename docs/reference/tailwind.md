@@ -1,6 +1,6 @@
 # VPB Tailwind Configuration
 
-VitePress Blog uses [Tailwind CSS](https://tailwindcss.com), version `v4.1`.
+VitePress Blog uses [Tailwind CSS](https://tailwindcss.com), version `>= 4.0.0`.
 
 VPB Tailwind is processed with the official Vite plugin [@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite).
 

@@ -1,6 +1,6 @@
 # VPB Tailwind 配置
 
-VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com)，版本为 `v4.1`。
+VitePress Blog 使用 [Tailwind CSS](https://tailwindcss.com)，版本为 `>= 4.0.0`。
 
 VPB Tailwind 使用官方 Vite 插件 [@tailwindcss/vite](https://tailwindcss.com/docs/installation/using-vite) 进行处理。
 
