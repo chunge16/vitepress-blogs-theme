@@ -168,9 +168,9 @@ layout: home
 
 ```
 {
-  article: 'i-[carbon/notebook]',
-  tutorial: 'i-[carbon/book]',
-  document: 'i-[carbon/document]',
+  article: 'i-[carbon--notebook]',
+  tutorial: 'i-[carbon--book]',
+  document: 'i-[carbon--document]',
 }
 ```
 
@@ -188,7 +188,6 @@ layout: home
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
 日期格式 - [More Details](https://date-fns.org/v2.16.1/docs/format)
-
 
 
 

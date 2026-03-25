@@ -36,15 +36,15 @@ export { usePosts } from './composables/usePosts.js';
 export { useTags } from './composables/useTags.js';
 
 const theme = {
-    extends: DefaultTheme,
-    Layout: VPBLayout,
-    enhanceApp({ app, router, siteData }) {
-        // call the base themes enhanceApp
-        app.component('VPBHome', VPBHome);
-        app.component('VPBArchives', VPBArchives);
-        app.component('VPBTags', VPBTags);
-        app.component('VPBHomePost', VPBHomePost);
-    },
+  extends: DefaultTheme,
+  Layout: VPBLayout,
+  enhanceApp({ app }) {
+    app.component('VPBHome', VPBHome);
+    app.component('VPBArchives', VPBArchives);
+    app.component('VPBTags', VPBTags);
+    app.component('VPBHomePost', VPBHomePost);
+  },
 };
 
 export { theme as VPBTheme };
+export default theme;

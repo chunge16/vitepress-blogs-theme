@@ -119,6 +119,6 @@ export async function init() {
   await generateTemplate(finalAnswers);
 
   outro(
-    `Done! Now run:\n\n  ${pc.green(`cd ${finalAnswers.projectRoot}`)}\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nand start writing.`
+    `Done! Now run:\n\n  ${pc.green(`cd ${finalAnswers.vitePressProjectRoot}`)}\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nand start writing.`
   );
 }

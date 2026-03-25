@@ -1,11 +1,9 @@
 import { createContentLoader } from 'vitepress'
-
 import type { SiteConfig } from 'vitepress'
 
 const config: SiteConfig = (globalThis as any).VITEPRESS_CONFIG
 const blogConfig = config.site.themeConfig.blog
-
-const pattern = `${blogConfig?.authorsPath ?? '/blog/authors'}/**/*.md`
+const pattern = `${blogConfig?.authorsPath ?? 'blog/authors'}/**/*.md`
 
 export default createContentLoader(pattern, {
   excerpt: true,

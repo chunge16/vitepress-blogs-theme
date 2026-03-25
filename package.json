@@ -8,7 +8,7 @@
     "vitepress-blog-init": "./src/cli/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "pnpm lint && pnpm docs:build",
     "release": "changelogen --release --push && pnpm publish --access public --no-git-checks",
     "release:minor": "changelogen --release --minor --push && pnpm publish --access public --no-git-checks",
     "release:major": "changelogen --release --major --push && pnpm publish --access public --no-git-checks",
@@ -17,7 +17,9 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "commit": "git add -A && czg",
-    "lint:eslint": "eslint . --ext .ts,.js,.vue --fix",
+    "lint": "eslint . --ext .ts,.js,.vue",
+    "lint:fix": "eslint . --ext .ts,.js,.vue --fix",
+    "lint:eslint": "pnpm lint:fix",
     "prepare": "husky install"
   },
   "author": "chunge16 (https://github.com/chunge16)",
