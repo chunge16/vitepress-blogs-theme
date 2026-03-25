@@ -14,6 +14,115 @@ async function writeFile(filePath, content) {
   await fs.writeFile(filePath, content, 'utf-8');
 }
 
+function toLiteral(value) {
+  return JSON.stringify(value);
+}
+
+function formatJson(value) {
+  return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+function resolveLocaleContent(language) {
+  const isZh = language === 'zh-CN';
+
+  return {
+    homeText: isZh ? '首页' : 'Home',
+    examplesText: isZh ? '示例' : 'Examples',
+    markdownExamplesText: isZh ? 'Markdown 示例' : 'Markdown Examples',
+    runtimeApiExamplesText: isZh ? '运行时 API 示例' : 'Runtime API Examples',
+    blogText: 'Blog',
+    blogHomeText: isZh ? '博客首页' : 'Blog Home',
+    tagsText: isZh ? '标签' : 'Tags',
+    archivesText: isZh ? '归档' : 'Archives',
+    heroTagline: isZh ? '欢迎来到我的博客' : 'Welcome to my blog',
+    featureA: isZh ? '开始写作' : 'Start Writing',
+    featureADetails: isZh ? '使用 VitePress Blog 快速发布你的第一篇文章。' : 'Publish your first post quickly with VitePress Blog.',
+    featureB: isZh ? '管理作者与标签' : 'Organize Authors and Tags',
+    featureBDetails: isZh ? '通过作者页、标签页和归档页组织博客内容。' : 'Organize your content with author pages, tags, and archives.',
+    featureC: isZh ? '自由扩展主题' : 'Extend the Theme',
+    featureCDetails: isZh ? '保留 VitePress 的扩展能力，按需继续自定义。' : 'Keep the flexibility of VitePress and customize the theme as needed.',
+  };
+}
+
+async function ensurePackageJson(addScripts) {
+  if (!addScripts) return;
+
+  const pkgPath = path.join(process.cwd(), 'package.json');
+  const defaultPackageJson = {
+    name: 'your-blog-name',
+    type: 'module',
+    version: '1.0.0',
+    scripts: {
+      'docs:dev': 'vitepress dev docs',
+      'docs:build': 'vitepress build docs',
+      'docs:preview': 'vitepress preview docs',
+    },
+    dependencies: {
+      '@chunge16/vitepress-blogs-theme': 'latest',
+      vue: 'latest',
+      '@tailwindcss/vite': '^4.2.2',
+      tailwindcss: '^4.2.2',
+      '@iconify/tailwind4': '^1.2.1',
+      vitepress: '^1.6.4',
+    },
+  };
+
+  try {
+    const existing = JSON.parse(await fs.readFile(pkgPath, 'utf-8'));
+    existing.scripts = {
+      ...existing.scripts,
+      'docs:dev': existing.scripts?.['docs:dev'] ?? 'vitepress dev docs',
+      'docs:build': existing.scripts?.['docs:build'] ?? 'vitepress build docs',
+      'docs:preview': existing.scripts?.['docs:preview'] ?? 'vitepress preview docs',
+    };
+    await writeFile(pkgPath, formatJson(existing));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      await writeFile(pkgPath, formatJson(defaultPackageJson));
+      return;
+    }
+
+    if (error instanceof SyntaxError) {
+      throw new Error('Existing package.json is invalid JSON. Please fix it before running vitepress-blog-init.');
+    }
+
+    throw error;
+  }
+}
+
+async function ensureGitignore(vitePressProjectRoot) {
+  const gitignorePath = path.join(process.cwd(), '.gitignore');
+  const entries = [
+    `${vitePressProjectRoot}/.vitepress/cache`,
+    `${vitePressProjectRoot}/.vitepress/dist`,
+    'node_modules',
+    '.DS_Store',
+  ];
+
+  try {
+    const existing = await fs.readFile(gitignorePath, 'utf-8');
+    const lines = existing.split(/\r?\n/);
+    let updated = existing;
+
+    for (const entry of entries) {
+      if (!lines.includes(entry)) {
+        updated = `${updated.replace(/\s*$/, '')}\n${entry}\n`;
+      }
+    }
+
+    if (updated !== existing) {
+      await writeFile(gitignorePath, updated);
+    }
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      await writeFile(gitignorePath, `${entries.join('\n')}\n`);
+      return;
+    }
+
+    throw error;
+  }
+}
+
 export async function generateTemplate(answers) {
   const {
     vitePressProjectRoot,
@@ -32,6 +141,7 @@ export async function generateTemplate(answers) {
   } = answers;
 
   const base = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
+  const locale = resolveLocaleContent(language);
 
   const vitepressConfig = `import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
@@ -39,32 +149,32 @@ import { processData } from '@chunge16/vitepress-blogs-theme/config';
 import { enUS, zhCN } from 'date-fns/locale';
 
 export default defineConfig({
-  base: '${base}',
-  title: '${siteTitle}',
-  description: '${siteDescription}',
-  lang: '${language}',
+  base: ${toLiteral(base)},
+  title: ${toLiteral(siteTitle)},
+  description: ${toLiteral(siteDescription)},
+  lang: ${toLiteral(language)},
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: ${toLiteral(locale.homeText)}, link: '/' },
+      { text: ${toLiteral(locale.examplesText)}, link: '/markdown-examples' },
       {
-        text: 'Blog',
+        text: ${toLiteral(locale.blogText)},
         activeMatch: '/blog/',
         items: [
           {
-            text: 'Blog Home',
+            text: ${toLiteral(locale.blogHomeText)},
             link: '/blog/',
             activeMatch: '/blog/$',
           },
           {
-            text: 'Tags',
+            text: ${toLiteral(locale.tagsText)},
             link: '/blog/tags',
             activeMatch: '/blog/tags',
           },
           {
-            text: 'Archives',
+            text: ${toLiteral(locale.archivesText)},
             link: '/blog/archives',
             activeMatch: '/blog/archives',
           },
@@ -78,10 +188,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: ${toLiteral(locale.examplesText)},
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: ${toLiteral(locale.markdownExamplesText)}, link: '/markdown-examples' },
+          { text: ${toLiteral(locale.runtimeApiExamplesText)}, link: '/api-examples' }
         ]
       }
     ],
@@ -91,9 +201,9 @@ export default defineConfig({
     ],
 
     blog: {
-      title: '${siteTitle}',
-      description: '${siteDescription}',
-      defaultAuthor: '${defaultAuthor}',
+      title: ${toLiteral(siteTitle)},
+      description: ${toLiteral(siteDescription)},
+      defaultAuthor: ${toLiteral(defaultAuthor)},
       categoryIcons: {
           article: 'i-[carbon--notebook]',
           tutorial: 'i-[carbon--book]',
@@ -113,17 +223,17 @@ export default defineConfig({
         comment: 'i-[carbon--add-comment]',
       },
       dateConfig: {
-        format: '${dateFormat}',
+        format: ${toLiteral(dateFormat)},
         locale: ${dateLocale === 'zh-CN' ? 'zhCN' : 'enUS'}
       }${enableGiscus ? `,
       giscus: {
-        repo: '${giscusRepo}',
-        repoId: '${giscusRepoId}',
+        repo: ${toLiteral(giscusRepo)},
+        repoId: ${toLiteral(giscusRepoId)},
         category: 'General',
-        categoryId: '${giscusCategoryId}',
+        categoryId: ${toLiteral(giscusCategoryId)},
         mapping: 'pathname',
         inputPosition: 'top',
-        lang: '${language === 'zh-CN' ? 'zh-CN' : 'en'}',
+        lang: ${toLiteral(language === 'zh-CN' ? 'zh-CN' : 'en')},
         lightTheme: 'light',
         darkTheme: 'transparent_dark',
         defaultEnable: true,
@@ -254,29 +364,29 @@ export default {
 }
 `;
 
-  const indexMd = `---
+const indexMd = `---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "${siteTitle}"
-  text: "${siteDescription}"
-  tagline: 欢迎来到我的博客
+  name: ${toLiteral(siteTitle)}
+  text: ${toLiteral(siteDescription)}
+  tagline: ${toLiteral(locale.heroTagline)}
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: ${locale.markdownExamplesText}
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: ${locale.runtimeApiExamplesText}
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: ${locale.featureA}
+    details: ${locale.featureADetails}
+  - title: ${locale.featureB}
+    details: ${locale.featureBDetails}
+  - title: ${locale.featureC}
+    details: ${locale.featureCDetails}
 ---
 `;
 
@@ -526,52 +636,15 @@ layout: home
 <VPBTags />
 `;
 
-  const packageJson = `{
-  "name": "your-blog-name",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
-  },  
-  "dependencies": {
-    "@chunge16/vitepress-blogs-theme": "latest",
-    "vue": "latest",
-    "@tailwindcss/vite": "^4.2.2",
-    "tailwindcss": "^4.2.2",
-    "@iconify/tailwind4": "^1.2.1",
-    "vitepress": "^1.6.4",
-  }
-}
-`;
-
-  const gitignore = `${vitePressProjectRoot}/.vitepress/cache
-${vitePressProjectRoot}/.vitepress/dist
-node_modules
-.DS_Store
-`;
-
   try {
     await ensureDir(path.join(vitePressProjectRoot, '.vitepress'));
     await ensureDir(path.join(vitePressProjectRoot, '.vitepress/theme'));
     await ensureDir(path.join(vitePressProjectRoot, 'blog/posts'));
     await ensureDir(path.join(vitePressProjectRoot, 'blog/authors'));
 
-    const pkgPath = path.join(process.cwd(), 'package.json');
     if (addScripts) {
-      try {
-        await fs.access(pkgPath);
-      } catch {
-        await writeFile(pkgPath, packageJson);
-      }
-
-      const gitignorePath = path.join(process.cwd(), '.gitignore');
-      try {
-        await fs.access(gitignorePath);
-      } catch {
-        await writeFile(gitignorePath, gitignore);
-      }
+      await ensurePackageJson(addScripts);
+      await ensureGitignore(vitePressProjectRoot);
     }
 
     await writeFile(path.join(vitePressProjectRoot, '.vitepress/config.js'), vitepressConfig);

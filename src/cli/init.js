@@ -12,24 +12,37 @@ export async function init() {
           message: 'Where should VitePress initialize the config?',
           placeholder: './docs',
           initialValue: './docs',
+          validate: (value) => {
+            if (!value?.trim()) return 'Please enter a target directory.';
+          },
         }),
       siteTitle: () =>
         text({
           message: 'Site title:',
           placeholder: 'My Awesome Blog',
           initialValue: 'My Awesome Blog',
+          validate: (value) => {
+            if (!value?.trim()) return 'Please enter a site title.';
+          },
         }),
       siteDescription: () =>
         text({
           message: 'Site description:',
           placeholder: 'A VitePress Blog with Theme',
           initialValue: 'A VitePress Blog with Theme',
+          validate: (value) => {
+            if (!value?.trim()) return 'Please enter a site description.';
+          },
         }),
       siteUrl: () =>
         text({
           message: 'Site base URL:',
           placeholder: '/',
           initialValue: '/',
+          validate: (value) => {
+            if (!value?.trim()) return 'Please enter a base URL.';
+            if (!value.startsWith('/')) return 'The base URL should start with "/".';
+          },
         }),
       language: () =>
         select({
@@ -44,7 +57,10 @@ export async function init() {
         text({
           message: 'Default author name:',
           placeholder: 'Blog Author',
-          initialValue: 'AI Writer',
+          initialValue: 'Blog Author',
+          validate: (value) => {
+            if (!value?.trim()) return 'Please enter a default author name.';
+          },
         }),
       enableGiscus: () =>
         confirm({
@@ -110,6 +126,11 @@ export async function init() {
   // Post-process answers
   const finalAnswers = {
     ...answers,
+    vitePressProjectRoot: answers.vitePressProjectRoot.trim(),
+    siteTitle: answers.siteTitle.trim(),
+    siteDescription: answers.siteDescription.trim(),
+    siteUrl: answers.siteUrl.trim(),
+    defaultAuthor: answers.defaultAuthor.trim(),
     dateLocale: answers.language === 'en-US' ? 'enUS' : 'zh-CN',
     giscusRepo: answers.giscusRepo || '',
     giscusRepoId: answers.giscusRepoId || '',
@@ -119,6 +140,6 @@ export async function init() {
   await generateTemplate(finalAnswers);
 
   outro(
-    `Done! Now run:\n\n  ${pc.green(`cd ${finalAnswers.vitePressProjectRoot}`)}\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nand start writing.`
+    `Done! Next steps:\n\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nBlog files were generated in ${pc.green(finalAnswers.vitePressProjectRoot)}.`
   );
 }

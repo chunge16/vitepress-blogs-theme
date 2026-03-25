@@ -105,6 +105,16 @@ $ yarn vitepress-blog-init
   pnpm run docs:dev
 ```
 
+向导会完成以下工作：
+
+- 在目标目录中生成博客页面、作者页面以及 `.vitepress` 主题文件
+- 当项目中不存在 `package.json` 时自动创建一个新的配置文件
+- 如果你选择允许写入脚本，会把 `docs:dev`、`docs:build`、`docs:preview` 合并写入已有的 `package.json`
+- 自动把 VitePress 缓存目录和构建产物目录追加到 `.gitignore`
+- 安全写入站点标题、描述等文本，避免因为特殊字符导致生成的配置文件出错
+
+如果你是在已有项目中运行向导，它会保留现有的 `package.json` 内容，只补充缺失的 VitePress Blog 脚本。
+
 ## 文件结构
 
 如果你将博客初始化到 `./docs`，生成后的目录结构大致如下：
@@ -218,6 +228,8 @@ export default {
   }
 }
 ```
+
+如果这些脚本已经存在，向导会保留原有内容，不会覆盖。
 
 使用 `docs:dev` 即可启动本地开发服务器：
 

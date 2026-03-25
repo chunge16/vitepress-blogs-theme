@@ -105,6 +105,16 @@ The wizard will walk you through a few simple prompts:
   pnpm run docs:dev
 ```
 
+What the wizard does:
+
+- Generates the blog pages, author pages, and `.vitepress` theme files in the target directory
+- Creates a new `package.json` when the project does not already have one
+- Adds `docs:dev`, `docs:build`, and `docs:preview` scripts to an existing `package.json` when you choose that option
+- Appends the required VitePress cache and build output entries to `.gitignore`
+- Safely writes text values such as titles and descriptions into the generated config files
+
+If you run the wizard inside an existing project, your current `package.json` is preserved and only the missing VitePress blog scripts are added.
+
 ## File Structure
 
 If you initialize the blog in `./docs`, the generated structure will look like this:
@@ -218,6 +228,8 @@ If you chose to let the setup wizard update `package.json`, it will add these sc
   }
 }
 ```
+
+If those scripts already exist, the wizard leaves them unchanged.
 
 Start the local development server with `docs:dev`:
 
