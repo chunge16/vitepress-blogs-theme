@@ -7,16 +7,16 @@ const { post } = usePosts();
 </script>
 
 <template>
-  <header class="space-y-1 pt-6 text-center xl:pb-10">
+  <header class="vpb-page-header space-y-3 pt-6 text-center xl:pb-10">
+    <p class="vpb-kicker">Feature</p>
     <VPBPostDate />
-    <h1
-      class="md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-[color:var(--vp-c-brand-dark)] dark:text-[color:var(--vp-c-brand-light)] sm:text-4xl sm:leading-10 md:text-5xl"
-    >
+    <h1 class="vpb-page-title md:text-5xl">
       {{ post.title }}
     </h1>
   </header>
   <VPBPostDetails inside-doc />
 </template>
+
 <style>
 @reference "../style.css";
 </style>

@@ -4,37 +4,30 @@ import { usePosts } from '../composables/usePosts';
 import VPBHomePost from './VPBHomePost.vue';
 
 const { posts } = usePosts();
-
 const { theme } = useData();
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl lg:px-6 lg:py-16">
-    <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
-      <h2
-        class="mb-4 text-3xl font-extrabold tracking-tight text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)] lg:text-4xl"
-      >
-        {{ theme.blog?.title }}
-      </h2>
-      <p
-        class="font-light text-[color:var(--vp-c-text-light-1)] dark:text-[color:var(--vp-c-text-dark-1)] sm:text-xl"
-      >
-        {{ theme.blog?.description }}
-      </p>
-    </div>
-    <div class="grid gap-6 p-2 lg:grid-cols-2">
-      <div v-for="post of posts" :key="post.url">
-        <VPBHomePost :post="post" />
+  <section class="vpb-shell mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-10 lg:py-16">
+    <div class="vpb-page rounded-[2rem] px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <div class="vpb-page-header mx-auto max-w-3xl text-center">
+        <p class="vpb-kicker">Journal</p>
+        <h2 class="vpb-display-title">
+          {{ theme.blog?.title }}
+        </h2>
+        <p class="vpb-lead">
+          {{ theme.blog?.description }}
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2 xl:gap-8">
+        <div v-for="post of posts" :key="post.url">
+          <VPBHomePost :post="post" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
-<style scoped>
-h2 {
-  border-top: none;
-  margin-top: 0;
-}
-</style>
+
 <style>
 @reference "../style.css";
 </style>

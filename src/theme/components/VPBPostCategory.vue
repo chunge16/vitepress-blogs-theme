@@ -1,11 +1,12 @@
 <script setup>
 import { computed } from 'vue';
-import { useData } from 'vitepress'
+import { useData } from 'vitepress';
 
 const props = defineProps({
   category: String
-})
-const { theme } = useData()
+});
+
+const { theme } = useData();
 const iconClass = computed(() => {
   const category = props.category?.toLowerCase();
   return category ? theme.value.blog?.categoryIcons?.[category] ?? null : null;
@@ -13,24 +14,17 @@ const iconClass = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center gap-2">
     <span
       v-if="iconClass"
       :class="iconClass"
-      class="mr-2"
+      class="text-[0.95em]"
     />
     <span>{{ props.category }}</span>
+    <slot />
   </div>
 </template>
 
-<style scoped>
-a {
-  font-weight: 500;
-  color: var(--vp-c-brand);
-  text-decoration-style: dotted;
-  transition: color 0.25s;
-}
-</style>
 <style>
 @reference "../style.css";
 </style>

@@ -1,37 +1,39 @@
 <script setup>
-import { useData, withBase } from 'vitepress'
-import { usePosts } from '../composables/usePosts'
-import VPBPostAuthor from './VPBPostAuthor.vue'
-import VPBPostCategory from './VPBPostCategory.vue'
-import VPBTagIcon from './VPBTagIcon.vue'
+import { useData, withBase } from 'vitepress';
+import { usePosts } from '../composables/usePosts';
+import VPBPostAuthor from './VPBPostAuthor.vue';
+import VPBPostCategory from './VPBPostCategory.vue';
+import VPBTagIcon from './VPBTagIcon.vue';
 
-const { site } = useData()
-const { post } = usePosts()
-const theme = site.value.themeConfig
-const path = theme.blog?.tagsPath ?? '/blog/tags'
+const { site } = useData();
+const { post } = usePosts();
+const theme = site.value.themeConfig;
+const path = theme.blog?.tagsPath ?? '/blog/tags';
 </script>
 
 <template>
-  <span
-    class="bg-primary-100 inline-flex items-center rounded text-sm font-medium"
-  >
-    <VPBPostCategory :category="post.category"></VPBPostCategory>
+  <span class="vpb-pill rounded-full px-4 py-2">
+    <VPBPostCategory :category="post.category" />
   </span>
-  <span class="bg-primary-100 inline-flex rounded text-sm font-medium">
-    <div class="flex flex-wrap gap-2 py-5">
+  <div class="vpb-soft-panel mt-4 rounded-[1.5rem] p-4">
+    <div class="mb-3 font-['Avenir_Next_Condensed','Franklin_Gothic_Medium',sans-serif] text-xs uppercase tracking-[0.22em] text-[color:var(--vpb-text-soft)]">
+      Tagged in
+    </div>
+    <div class="flex flex-wrap gap-2">
       <a
         v-for="tagName in post.tags"
         :key="tagName"
-        class="rounded-sm bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-600 flex items-center"
+        class="vpb-chip rounded-full px-3 py-1.5 text-xs font-semibold no-underline"
         :href="`${withBase(path)}?init=${tagName}`"
       >
         <VPBTagIcon :tag="tagName" />
         {{ tagName }}
       </a>
     </div>
-  </span>
+  </div>
   <VPBPostAuthor />
 </template>
+
 <style>
 @reference "../style.css";
 </style>

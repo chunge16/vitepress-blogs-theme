@@ -7,12 +7,14 @@ import VPBTagIcon from './VPBTagIcon.vue';
 const { postsByTag } = useTags();
 const { theme } = useData();
 const selectedTag = ref('');
+
 function toggleTag(tag) {
   selectedTag.value = tag;
 }
+
 if (inBrowser) {
   const params = new URLSearchParams(window.location.search);
-  const init = params.get('init'); // returns the number 123
+  const init = params.get('init');
   if (init) {
     toggleTag(init);
   }
@@ -21,81 +23,78 @@ if (inBrowser) {
 
 <template>
   <ClientOnly>
-    <div class="mx-auto max-w-screen-xl px-6 lg:px-16 lg:py-16">
-      <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
-        <h2
-          class="mb-4 text-3xl font-extrabold tracking-tight text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)] lg:text-4xl"
-        >
-          {{ theme.blog?.title }} Tags
-        </h2>
-        <p
-          class="font-light text-[color:var(--vp-c-text-light-1)] dark:text-[color:var(--vp-c-text-dark-1)] sm:text-xl"
-        >
-          {{ theme.blog?.description }}
-        </p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-2 p-4 ">
-        <div
-          v-for="(posts, tagName) in postsByTag"
-          :key="tagName"
-          class="flex items-center"
-          :class="{
-            'cursor-pointer rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-600':
-              selectedTag !== tagName,
-            'rounded-full bg-[color:var(--vp-c-brand-light)] px-3 py-1 text-sm font-semibold text-gray-100 dark:bg-[color:var(--vp-c-brand-dark)]':
-              selectedTag === tagName,
-          }"
-          @click="toggleTag(tagName)"
-        >
-          <VPBTagIcon :tag="tagName" />
-          {{ tagName }}
-          <span
-            :class="{
-              'ml-3 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]':
-                selectedTag !== tagName,
-              'ml-3 text-[color:var(--vp-c-brand-dark)] dark:text-[color:var(--vp-c-brand-light)]':
-                selectedTag === tagName,
-            }"
-            >{{ posts.length }}</span
-          >
+    <section class="vpb-shell mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-10 lg:py-16">
+      <div class="vpb-page rounded-[2rem] px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+        <div class="vpb-page-header mx-auto max-w-3xl text-center">
+          <p class="vpb-kicker">Index</p>
+          <h2 class="vpb-display-title">
+            {{ theme.blog?.title }} Tags
+          </h2>
+          <p class="vpb-lead">
+            {{ theme.blog?.description }}
+          </p>
         </div>
-      </div>
 
-      <div v-if="selectedTag">
-        <div
-          class="flex items-center px-0 pb-2 pt-4 text-xl font-semibold leading-6 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
-        >
-          <VPBTagIcon :tag="selectedTag" />{{ selectedTag }}
-          <span class="text-xs"> ( {{ postsByTag[selectedTag].length }} )</span>
+        <div class="mb-8 flex flex-wrap justify-center gap-3">
+          <button
+            v-for="(posts, tagName) in postsByTag"
+            :key="tagName"
+            type="button"
+            class="vpb-chip cursor-pointer rounded-full px-4 py-2 text-sm font-semibold"
+            :class="{ 'is-active': selectedTag === tagName }"
+            @click="toggleTag(tagName)"
+          >
+            <VPBTagIcon :tag="tagName" />
+            <span>{{ tagName }}</span>
+            <span class="rounded-full bg-[color:var(--vp-c-brand-dimm)] px-2 py-0.5 text-xs">
+              {{ posts.length }}
+            </span>
+          </button>
         </div>
-        <a
-          v-for="(post, index) in postsByTag[selectedTag]"
-          :key="index"
-          :href="withBase(post.url)"
-          class="m-2 flex cursor-pointer items-center justify-between leading-6"
+
+        <section
+          v-if="selectedTag"
+          class="vpb-card mx-auto max-w-4xl rounded-[1.75rem] px-5 py-5 sm:px-8 sm:py-7"
         >
-          <div class="cursor-pointer leading-6">
-            <div class="title-o"></div>
-            {{ post.title }}
+          <div class="mb-3 flex items-center gap-3">
+            <span class="vpb-pill rounded-full px-3 py-2">
+              <VPBTagIcon :tag="selectedTag" />
+              {{ selectedTag }}
+            </span>
+            <span class="vpb-meta">
+              {{ postsByTag[selectedTag].length }} posts
+            </span>
           </div>
-          <div class="cursor-pointer font-sans leading-6">
-            {{ post.date.raw }}
-          </div>
-        </a>
+          <a
+            v-for="(post, index) in postsByTag[selectedTag]"
+            :key="index"
+            :href="withBase(post.url)"
+            class="vpb-list-link"
+          >
+            <div class="vpb-list-link__title">{{ post.title }}</div>
+            <div class="vpb-list-link__meta">
+              {{ post.date.raw }}
+            </div>
+          </a>
+        </section>
+
+        <section
+          v-else
+          class="vpb-soft-panel mx-auto max-w-2xl rounded-[1.75rem] px-6 py-10 text-center"
+        >
+          <p class="vpb-kicker">Browse</p>
+          <p class="mt-4 font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-2xl leading-tight text-[color:var(--vpb-text-strong)]">
+            Pick a tag to open a curated slice of the archive.
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--vpb-text-soft)]">
+            标签列表现在更像索引面板，适合快速筛选主题，而不是一堆松散按钮。
+          </p>
+        </section>
       </div>
-    </div>
+    </section>
   </ClientOnly>
 </template>
-<style scoped>
-h2 {
-  border-top: none;
-  margin-top: 0;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-</style>
+
 <style>
 @reference "../style.css";
 </style>
