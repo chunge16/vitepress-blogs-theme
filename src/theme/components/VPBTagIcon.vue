@@ -18,8 +18,8 @@ const iconClass = computed(() => {
   <span
     v-if="iconClass"
     :class="iconClass"
-    class="mr-2"
-  ></span>
+    class="inline-block shrink-0 text-[0.9em] leading-none"
+  />
 </template>
 <style>
 @reference "../style.css";

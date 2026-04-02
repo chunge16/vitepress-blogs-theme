@@ -12,18 +12,18 @@ const path = theme.blog?.tagsPath ?? '/blog/tags';
 </script>
 
 <template>
-  <span class="vpb-pill rounded-full px-4 py-2">
+  <span class="vpb-pill max-w-full rounded-full px-4 py-2">
     <VPBPostCategory :category="post.category" />
   </span>
   <div class="vpb-soft-panel mt-4 rounded-[1.5rem] p-4">
     <div class="mb-3 font-['Avenir_Next_Condensed','Franklin_Gothic_Medium',sans-serif] text-xs uppercase tracking-[0.22em] text-[color:var(--vpb-text-soft)]">
       Tagged in
     </div>
-    <div class="flex flex-wrap gap-2">
+    <div class="flex flex-wrap gap-1.5 sm:gap-2">
       <a
         v-for="tagName in post.tags"
         :key="tagName"
-        class="vpb-chip rounded-full px-3 py-1.5 text-xs font-semibold no-underline"
+        class="vpb-chip rounded-full px-2.5 py-1 text-[0.72rem] font-semibold no-underline sm:px-3 sm:py-1.5 sm:text-xs"
         :href="`${withBase(path)}?init=${tagName}`"
       >
         <VPBTagIcon :tag="tagName" />

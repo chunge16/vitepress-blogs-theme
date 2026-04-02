@@ -8,7 +8,7 @@ const { theme } = useData();
 
 <template>
   <section class="vpb-shell mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-10 lg:py-16">
-    <div class="vpb-page rounded-[2rem] px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <div class="vpb-page rounded-[2rem] px-5 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14">
       <div class="vpb-page-header mx-auto max-w-3xl text-center">
         <p class="vpb-kicker">Archive</p>
         <h2 class="vpb-display-title">
@@ -24,7 +24,7 @@ const { theme } = useData();
           <section
             v-for="(year, yearIndex) in postsByYear"
             :key="yearIndex"
-            class="vpb-card rounded-[1.5rem] px-5 py-4 sm:px-7 sm:py-6"
+            class="vpb-card vpb-card--static rounded-[1.5rem] px-4 py-4 sm:px-7 sm:py-6"
           >
             <h3 class="vpb-divider-title">
               {{ year[0].date.raw.split('-')[0] }}
@@ -44,7 +44,7 @@ const { theme } = useData();
             </div>
           </section>
         </div>
-        <aside class="vpb-soft-panel rounded-[1.5rem] p-6">
+        <aside class="vpb-soft-panel rounded-[1.5rem] p-5 sm:p-6">
           <p class="vpb-kicker">Timeline</p>
           <p class="mt-4 font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-2xl leading-tight text-[color:var(--vpb-text-strong)]">
             A year-by-year map of every published note.
