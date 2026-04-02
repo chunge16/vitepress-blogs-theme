@@ -1,7 +1,7 @@
 <script setup>
-import VPBPostCategory from './VPBPostCategory.vue'
-import VPBHomeAuthor from './VPBHomeAuthor.vue'
-import {withBase} from "vitepress";
+import { withBase } from 'vitepress';
+import VPBHomeAuthor from './VPBHomeAuthor.vue';
+import VPBPostCategory from './VPBPostCategory.vue';
 
 defineProps({
   post: {
@@ -12,41 +12,32 @@ defineProps({
 </script>
 
 <template>
-  <article
-    class="rounded-lg border border-[color:var(--vp-c-brand-light)] p-6 shadow-md dark:border-[color:var(--vp-c-brand-dark)]"
-  >
-    <div class="mb-5 flex items-center justify-between text-gray-500">
-      <span
-        class="bg-primary-100 inline-flex items-center rounded text-sm font-medium text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
-      >
+  <article class="vpb-card flex h-full flex-col rounded-[1.75rem] p-6 sm:p-8">
+    <div class="vpb-meta mb-6 flex items-center justify-between gap-4">
+      <span class="vpb-pill rounded-full px-3 py-2">
         <VPBPostCategory :category="post?.category">
-          <span class="text-sm">{{ post.date.since }}</span>
+          <span>{{ post.date.since }}</span>
         </VPBPostCategory>
       </span>
+      <span class="font-['Avenir_Next_Condensed','Franklin_Gothic_Medium',sans-serif] text-[0.8rem] font-semibold uppercase tracking-[0.22em]">
+        {{ post.date.raw }}
+      </span>
     </div>
-    <h2
-      class="mb-2 text-2xl font-bold tracking-tight text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
-    >
-      <a :href="withBase(post.url)">{{ post.title }}</a>
+    <h2 class="mb-4 font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-3xl font-semibold leading-tight tracking-[-0.04em] text-[color:var(--vpb-text-strong)]">
+      <a :href="withBase(post.url)" class="vpb-link">{{ post.title }}</a>
     </h2>
-    <div class="mb-5 font-light" v-html="post.excerpt"></div>
-    <div class="flex items-center justify-between">
+    <div class="vpb-prose mb-8 text-[1.02rem]" v-html="post.excerpt"></div>
+    <div class="mt-auto flex items-center justify-between gap-4 border-t border-[color:var(--vpb-grid-line)] pt-5">
       <VPBHomeAuthor :name="post.author" />
-      <a
-        :href="withBase(post.url)"
-        class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)]"
-      >
+      <a :href="withBase(post.url)" class="vpb-accent-link">
         Read more
         <div class="i-[carbon--arrow-right] ml-2" />
       </a>
     </div>
   </article>
 </template>
+
 <style scoped>
-a {
-  color: inherit;
-  text-decoration: none;
-}
 h2 {
   margin-top: 0;
 }

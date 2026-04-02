@@ -1,5 +1,6 @@
 <script setup>
 import { usePosts } from '../composables/usePosts';
+
 const { post } = usePosts();
 
 function getDateTime() {
@@ -10,13 +11,12 @@ function getDateTime() {
 <template>
   <dl>
     <dt class="sr-only">Published on</dt>
-    <dd
-      class="text-base font-medium leading-6 text-gray-500 dark:text-gray-300"
-    >
+    <dd class="vpb-meta font-['Avenir_Next_Condensed','Franklin_Gothic_Medium',sans-serif] text-sm font-semibold uppercase tracking-[0.24em]">
       <time :datetime="getDateTime()">{{ post.date.formatted }}</time>
     </dd>
   </dl>
 </template>
+
 <style>
 @reference "../style.css";
 </style>

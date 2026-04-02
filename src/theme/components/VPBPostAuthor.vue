@@ -1,50 +1,51 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { withBase } from 'vitepress'
-import { usePosts } from '../composables/usePosts'
-import { useAuthors } from '../composables/useAuthors'
+import { computed } from 'vue';
+import { withBase } from 'vitepress';
+import { usePosts } from '../composables/usePosts';
+import { useAuthors } from '../composables/useAuthors';
 
 defineProps<{
   insideDoc?: boolean
-}>()
+}>();
 
-const { findByName } = useAuthors()
-const { post } = usePosts()
+const { findByName } = useAuthors();
+const { post } = usePosts();
 
 const author = computed(() => {
-  return findByName(post.value.author)
-})
+  return findByName(post.value.author);
+});
 </script>
 
 <template>
   <dl
-    class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 dark:xl:border-slate-200/5"
+    class="pb-10 pt-6 xl:pt-8"
     :class="{ 'xs:show xl:hidden': insideDoc }"
   >
     <dt class="sr-only">Authors</dt>
     <dd>
-      <ul
-        class="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8"
-      >
-        <li v-if="author" class="flex items-center space-x-2">
+      <ul class="flex justify-center sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
+        <li
+          v-if="author"
+          class="vpb-soft-panel flex items-center gap-3 rounded-[1.5rem] px-4 py-4"
+        >
           <img
             v-if="author?.gravatar"
             :src="`https://gravatar.com/avatar/${author?.gravatar}`"
             alt="author image"
-            class="h-10 w-10 rounded-full"
+            class="h-12 w-12 rounded-full border border-[color:var(--vpb-panel-border)] object-cover"
           />
           <img
             v-else-if="author?.avatar"
             :src="withBase(author?.avatar)"
             alt="author image"
-            class="h-10 w-10 rounded-full"
+            class="h-12 w-12 rounded-full border border-[color:var(--vpb-panel-border)] object-cover"
           />
-          <dl class="whitespace-nowrap text-sm font-medium leading-5">
+          <dl class="min-w-0 text-sm font-medium leading-5">
             <dt class="sr-only">Name</dt>
-            <dd class="text-gray-900 dark:text-white">
+            <dd class="text-[color:var(--vpb-text-strong)]">
               <a
                 :href="withBase(author.url)"
-                class="text-lg text-gray-900 hover:text-[color:var(--vp-c-brand-light)] dark:text-white dark:hover:text-[color:var(--vp-c-brand-dark)]"
+                class="vpb-link font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-xl tracking-[-0.02em]"
               >
                 {{ author?.name }}
               </a>
@@ -55,8 +56,10 @@ const author = computed(() => {
                 :href="`https://twitter.com/${author?.twitter}`"
                 target="_blank"
                 rel="noopener noreferrer"
-                >@{{ author.twitter }}</a
+                class="vpb-link text-xs uppercase tracking-[0.2em] text-[color:var(--vpb-text-soft)]"
               >
+                @{{ author.twitter }}
+              </a>
             </dd>
           </dl>
         </li>
@@ -65,14 +68,6 @@ const author = computed(() => {
   </dl>
 </template>
 
-<style scoped>
-a {
-  font-weight: 500;
-  color: var(--vp-c-brand);
-  text-decoration-style: dotted;
-  transition: color 0.25s;
-}
-</style>
 <style>
 @reference "../style.css";
 </style>

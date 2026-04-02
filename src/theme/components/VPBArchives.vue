@@ -7,54 +7,57 @@ const { theme } = useData();
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl px-6 lg:px-16 lg:py-16">
-    <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
-      <h2
-        class="mb-4 text-3xl font-extrabold tracking-tight text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)] lg:text-4xl"
-      >
-        {{ theme.blog?.title }} Archives
-      </h2>
-      <p
-        class="font-light text-[color:var(--vp-c-text-light-1)] dark:text-[color:var(--vp-c-text-dark-1)] sm:text-xl"
-      >
-        {{ theme.blog?.description }}
-      </p>
-    </div>
-
-    <div v-for="(year, yearIndex) in postsByYear" :key="yearIndex">
-      <div
-        class="px-0 pb-2 pt-4 text-xl font-semibold leading-6 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
-      >
-        {{ year[0].date.raw.split('-')[0] }}
+  <section class="vpb-shell mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-10 lg:py-16">
+    <div class="vpb-page rounded-[2rem] px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <div class="vpb-page-header mx-auto max-w-3xl text-center">
+        <p class="vpb-kicker">Archive</p>
+        <h2 class="vpb-display-title">
+          {{ theme.blog?.title }} Archives
+        </h2>
+        <p class="vpb-lead">
+          {{ theme.blog?.description }}
+        </p>
       </div>
-      <a
-        v-for="(post, index) in year"
-        :key="index"
-        :href="withBase(post.url)"
-        class="m-2 flex cursor-pointer items-center justify-between leading-6 hover:text-[color:var(--vp-c-brand-dark)] dark:hover:text-[color:var(--vp-c-brand-light)]"
-      >
-        <div class="cursor-pointer leading-6">
-          <div class="title-o"></div>
-          {{ post.title }}
+
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div class="space-y-8">
+          <section
+            v-for="(year, yearIndex) in postsByYear"
+            :key="yearIndex"
+            class="vpb-card rounded-[1.5rem] px-5 py-4 sm:px-7 sm:py-6"
+          >
+            <h3 class="vpb-divider-title">
+              {{ year[0].date.raw.split('-')[0] }}
+            </h3>
+            <div class="mt-3">
+              <a
+                v-for="(post, index) in year"
+                :key="index"
+                :href="withBase(post.url)"
+                class="vpb-list-link"
+              >
+                <div class="vpb-list-link__title">{{ post.title }}</div>
+                <div class="vpb-list-link__meta">
+                  {{ post.date.raw.slice(5) }}
+                </div>
+              </a>
+            </div>
+          </section>
         </div>
-        <div class="cursor-pointer font-sans leading-6">
-          {{ post.date.raw.slice(5) }}
-        </div>
-      </a>
+        <aside class="vpb-soft-panel rounded-[1.5rem] p-6">
+          <p class="vpb-kicker">Timeline</p>
+          <p class="mt-4 font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-2xl leading-tight text-[color:var(--vpb-text-strong)]">
+            A year-by-year map of every published note.
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--vpb-text-soft)]">
+            快速按时间回看内容，适合做知识回溯，也让归档页本身更像一本可翻阅的目录。
+          </p>
+        </aside>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
+
 <style>
 @reference "../style.css";
 </style>
-<style scoped>
-h2 {
-  border-top: none;
-  margin-top: 0;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-</style>
-
