@@ -19,7 +19,7 @@ const iconClass = computed(() => {
     v-if="iconClass"
     :class="iconClass"
     class="inline-block shrink-0 text-[0.9em] leading-none"
-  />
+  ></span>
 </template>
 <style>
 @reference "../style.css";

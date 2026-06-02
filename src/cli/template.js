@@ -568,7 +568,7 @@ All in all, Markdown is an incredibly useful language that is fast becoming the 
 ## How do I get started with Markdown?
 
 Getting started with Markdown is a relatively simple process. To begin, you'll need to get familiar with the basic syntax of the language.
-Markdown was designed to be as intuitive and user-friendly as possible. Most of its syntax is self-explanatory and easy to learn. Some basic symbols like "#" for headings, "\*" for italics, and ">" for blockquotes are easy to remember. There are also more specific elements like tables, images, and lists.
+Markdown was designed to be as intuitive and user-friendly as possible. Most of its syntax is self-explanatory and easy to learn. Some basic symbols like "#" for headings, "*" for italics, and ">" for blockquotes are easy to remember. There are also more specific elements like tables, images, and lists.
 To start using Markdown, you'll need a text editor or an online platform that supports it. Popular choices include Ulysses, iA Writer, Texts, Typora, and Dillinger. Most popular blogging platforms like WordPress and Medium also support Markdown.
 When it comes to writing, the best way to learn Markdown is by example. Check out some of the existing posts written in Markdown to get a better understanding of the syntax and how it's used. You can also use an online tool such as Markdown Guide to help you get up to speed quickly.
 Once you have a good handle on the basics of Markdown, you can start writing your own content. Keep in mind that Markdown is flexible and you don't have to follow the same formatting style each time. Feel free to experiment and create your own unique style.
@@ -578,7 +578,7 @@ Once you have a good handle on the basics of Markdown, you can start writing you
 Markdown is a versatile language that can be used for many different purposes. There are a few tips and tricks you can use to make the most of your Markdown experience:
 
 1. Use Headings – The best way to organize your content is to use headings. This will break up your text into sections that are easier to read and understand. To create a heading in Markdown, you simply type a hash (“#”) followed by the title of the section. For example, “# Introduction” will create an introduction section.
-2. Use Lists – To create lists in Markdown, use either hyphens (“-”) or asterisks (“\*”). This is great for breaking down ideas into an organized structure that’s easy to read and follow.
+2. Use Lists – To create lists in Markdown, use either hyphens (“-”) or asterisks (“*”). This is great for breaking down ideas into an organized structure that’s easy to read and follow.
 3. Use Inline HTML – If you’re looking for more control over the look and feel of your document, you can use inline HTML tags to customize it further. This is great if you want to add styling elements such as color, font size, or even images.
 4. Format Your Text – To make your text more readable, you can use formatting tools like bold, italics, and underlines. Just type two asterisks before and after the words you want to emphasize to make them bold. Similarly, for italics, type one asterisk before and after the words you want to italicize. Lastly, for underlining text, use two underscores on either side of the word you want to underline.
 5. Use Emojis – Emojis are great for adding visual interest to your content. Simply type a colon followed by the emoji name (e.g., “:smile:”).
@@ -607,7 +607,7 @@ avatar: https://cdn-icons-png.flaticon.com/64/149/149071.png
 ## AI Writer
 
 An AI writer is a revolutionary machine-learning system that produces flawless writing pieces, quickly and accurately. This computer-based writer uses natural language processing to break down the topic, identify key themes and ideas, and generate human-readable articles with speed and precision. It has a vast library of synonyms and references, enabling it to create articles without plagiarism. By utilizing an AI writer, you can generate error-free articles within minutes, as well as optimizing articles for search engine rankings and targeted readership. In addition, this AI technology allows users to have full control over their content with its customization capabilities. All of these factors make the AI writer an invaluable asset for any type of content production.
-`
+`;
 
 const robotEditorMd = `---
 name: Robot Editor

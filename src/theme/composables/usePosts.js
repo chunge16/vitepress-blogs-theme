@@ -1,28 +1,15 @@
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import { data as posts } from './posts.data';
-
-function normalizePath(path) {
-  return decodeURI(path ?? '').replace(/\/$/, '');
-}
+import { resolveAdjacentEntries } from './shared.js';
 
 export function usePosts() {
   const route = useRoute();
   const path = computed(() => route.path);
-  const currentPath = computed(() => normalizePath(route.path));
-  const currentIndex = computed(() =>
-    posts.findIndex((entry) => currentPath.value.includes(normalizePath(entry?.url)))
-  );
-
-  const post = computed(() =>
-    currentIndex.value >= 0 ? posts[currentIndex.value] : null
-  );
-  const nextPost = computed(() =>
-    currentIndex.value > 0 ? posts[currentIndex.value - 1] : null
-  );
-  const prevPost = computed(() =>
-    currentIndex.value >= 0 ? posts[currentIndex.value + 1] ?? null : null
-  );
+  const adjacentPosts = computed(() => resolveAdjacentEntries(posts, route.path));
+  const post = computed(() => adjacentPosts.value.current);
+  const nextPost = computed(() => adjacentPosts.value.next);
+  const prevPost = computed(() => adjacentPosts.value.prev);
 
   return { posts, post, nextPost, prevPost, path };
 }

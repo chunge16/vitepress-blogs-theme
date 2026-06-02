@@ -19,9 +19,9 @@ const iconClass = computed(() => {
       v-if="iconClass"
       :class="iconClass"
       class="text-[0.95em]"
-    />
+    ></span>
     <span>{{ props.category }}</span>
-    <slot />
+    <slot></slot>
   </div>
 </template>
 

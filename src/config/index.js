@@ -1,3 +1,5 @@
+import { isPathWithinDirectory } from '../theme/composables/shared.js';
+
 export async function processData(
     pageData,
     ctx,
@@ -5,17 +7,17 @@ export async function processData(
     sidebar = false
 ) {
     const config = ctx?.siteConfig?.site?.themeConfig;
-    const postsPattern = config.blog?.postsPath ?? 'blog/posts';
-    const authorsPattern = config.blog?.authorsPath ?? 'blog/authors';
+    const postsPattern = config?.blog?.postsPath ?? 'blog/posts';
+    const authorsPattern = config?.blog?.authorsPath ?? 'blog/authors';
 
-    if (pageData.relativePath.includes(postsPattern)) {
+    if (isPathWithinDirectory(pageData.relativePath, postsPattern)) {
         pageData.frontmatter.blog = 'post';
         pageData.frontmatter.aside = aside;
         pageData.frontmatter.sidebar = sidebar;
         pageData.frontmatter.prev = false;
         pageData.frontmatter.next = false;
     }
-    if (pageData.relativePath.includes(authorsPattern)) {
+    if (isPathWithinDirectory(pageData.relativePath, authorsPattern)) {
         pageData.frontmatter.blog = 'author';
         pageData.frontmatter.aside = aside;
         pageData.frontmatter.sidebar = sidebar;

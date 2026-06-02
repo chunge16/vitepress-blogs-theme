@@ -1,32 +1,20 @@
 import { computed } from 'vue';
 import { useRoute } from 'vitepress';
 import { data as authors } from './authors.data';
-
-function normalizePath(path) {
-  return decodeURI(path ?? '').replace(/\/$/, '');
-}
+import { resolveAdjacentEntries } from './shared.js';
 
 export function useAuthors() {
   const route = useRoute();
   const path = computed(() => route.path);
-  const currentPath = computed(() => normalizePath(route.path));
 
   function findByName(name) {
     return authors.find((entry) => entry?.name === name) ?? null;
   }
 
-  const currentIndex = computed(() =>
-    authors.findIndex((entry) => currentPath.value.includes(normalizePath(entry?.url)))
-  );
-  const author = computed(() =>
-    currentIndex.value >= 0 ? authors[currentIndex.value] : null
-  );
-  const nextAuthor = computed(() =>
-    currentIndex.value > 0 ? authors[currentIndex.value - 1] : null
-  );
-  const prevAuthor = computed(() =>
-    currentIndex.value >= 0 ? authors[currentIndex.value + 1] ?? null : null
-  );
+  const adjacentAuthors = computed(() => resolveAdjacentEntries(authors, route.path));
+  const author = computed(() => adjacentAuthors.value.current);
+  const nextAuthor = computed(() => adjacentAuthors.value.next);
+  const prevAuthor = computed(() => adjacentAuthors.value.prev);
 
   return { authors, author, nextAuthor, prevAuthor, findByName, path };
 }

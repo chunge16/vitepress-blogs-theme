@@ -21,9 +21,9 @@
 </template>
 
 <script setup lang="jsx">
-import {ref, watch, computed} from "vue"
+import { ref, watch, computed } from 'vue';
 import { useData } from 'vitepress';
-import Giscus from "@giscus/vue";
+import Giscus from '@giscus/vue';
 
 const {
   theme,
@@ -59,9 +59,9 @@ const isShowGiscus = computed(() => {
   const comment = frontmatter.value.comment;
 
   if(typeof comment == 'boolean') {
-    return comment
+    return comment;
   } else {
-    return defaultEnable
+    return defaultEnable;
   }
 
 });

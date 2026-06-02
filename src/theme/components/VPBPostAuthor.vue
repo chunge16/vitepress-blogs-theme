@@ -1,18 +1,24 @@
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
-import { withBase } from 'vitepress';
+import { useData, withBase } from 'vitepress';
 import { usePosts } from '../composables/usePosts';
 import { useAuthors } from '../composables/useAuthors';
 
-defineProps<{
-  insideDoc?: boolean
-}>();
+defineProps({
+  insideDoc: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const { findByName } = useAuthors();
 const { post } = usePosts();
+const { frontmatter } = useData();
 
 const author = computed(() => {
-  return findByName(post.value.author);
+  const authorName = post.value?.author ?? frontmatter.value?.author;
+
+  return authorName ? findByName(authorName) : null;
 });
 </script>
 
@@ -26,7 +32,7 @@ const author = computed(() => {
       <ul class="flex justify-center sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
         <li
           v-if="author"
-          class="vpb-soft-panel flex items-center gap-3 rounded-[1.5rem] px-4 py-4"
+          class="vpb-soft-panel flex items-center gap-3 rounded-[1.25rem] px-4 py-4"
         >
           <img
             v-if="author?.gravatar"
@@ -45,7 +51,7 @@ const author = computed(() => {
             <dd class="text-[color:var(--vpb-text-strong)]">
               <a
                 :href="withBase(author.url)"
-                class="vpb-link font-[Iowan_Old_Style,Palatino,'Palatino_Linotype','Book_Antiqua',Georgia,serif] text-xl tracking-[-0.02em]"
+                class="vpb-link font-['Iowan_Old_Style','Palatino_Linotype',Georgia,serif] text-xl tracking-[-0.03em]"
               >
                 {{ author?.name }}
               </a>
@@ -56,7 +62,7 @@ const author = computed(() => {
                 :href="`https://twitter.com/${author?.twitter}`"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="vpb-link text-xs uppercase tracking-[0.2em] text-[color:var(--vpb-text-soft)]"
+                class="vpb-link text-[0.72rem] uppercase tracking-[0.16em] text-[color:var(--vpb-text-soft)]"
               >
                 @{{ author.twitter }}
               </a>

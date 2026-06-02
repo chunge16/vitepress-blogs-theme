@@ -1,4 +1,4 @@
-import { intro, outro, text, select, confirm, isCancel, cancel, group } from '@clack/prompts';
+import { intro, outro, text, select, confirm, cancel, group } from '@clack/prompts';
 import pc from 'picocolors';
 import { generateTemplate } from './template.js';
 

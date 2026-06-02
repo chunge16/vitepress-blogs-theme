@@ -13,7 +13,7 @@ export default {
         const { lang } = useData();
         watchEffect(() => {
             if (inBrowser) {
-                document.cookie = `nf_lang=${lang.value}; expires=Mon, 1 Jan 2024 00:00:00 UTC; path=/`;
+                document.cookie = `nf_lang=${encodeURIComponent(lang.value)}; max-age=31536000; path=/; SameSite=Lax`;
             }
         });
     }
