@@ -190,7 +190,7 @@ layout: home
 - Type: `object`
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
-基于 [date-fns](https://date-fns.org/v2.16.1/docs/format) 的日期格式化配置。
+基于 [date-fns](https://date-fns.org/) 的日期格式化配置。
 
 常见用途包括：
 

@@ -83,7 +83,9 @@ async function ensurePackageJson(addScripts) {
     }
 
     if (error instanceof SyntaxError) {
-      throw new Error('Existing package.json is invalid JSON. Please fix it before running vitepress-blog-init.');
+      throw new Error('Existing package.json is invalid JSON. Please fix it before running vitepress-blog-init.', {
+        cause: error,
+      });
     }
 
     throw error;

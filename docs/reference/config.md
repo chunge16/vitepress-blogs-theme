@@ -190,7 +190,7 @@ Maps tag names to icons. See [Icons](./icons) for the icon format.
 - Type: `object`
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
-Controls date formatting with [date-fns](https://date-fns.org/v2.16.1/docs/format).
+Controls date formatting with [date-fns](https://date-fns.org/).
 
 Typical use cases:
 

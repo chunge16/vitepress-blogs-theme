@@ -1,5 +1,5 @@
 import { formatDistance, format } from 'date-fns';
-import enUS from 'date-fns/locale/en-US/index.js';
+import { enUS } from 'date-fns/locale';
 import { normalizePath } from './shared.js';
 
 const defaultDateFormat = 'yyyy/MM/dd';
