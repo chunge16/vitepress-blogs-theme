@@ -5,4 +5,4 @@ node_modules
 /docs/.vitepress/dist/
 /docs/.vitepress/.temp
 .codex
-
+.baoyu-skills
