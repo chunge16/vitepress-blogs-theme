@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#F5F0E8"/>
+  <path d="M65 110 C180 70, 305 82, 402 112 S640 144, 812 104" fill="none" stroke="#D5C6E0" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="92" cy="1032" r="34" fill="#B5E5CF" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <circle cx="806" cy="146" r="24" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <text x="72" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="58" font-weight="850" fill="#1F2933" text-anchor="start">哪只更适合你？</text>
+  <text x="76" y="166" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="29" font-weight="550" fill="#64748B" text-anchor="start">先看自己的组合里已经有什么</text>
+  
+      <rect x="82" y="248" width="736" height="164" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="138" y="312" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="32" font-weight="700" fill="#1F2933" text-anchor="start">想更集中押 AI 龙头与台积电链条</text>
+      <text x="738" y="366" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="850" fill="#E8655A" text-anchor="end">更关注 SMH</text>
+      <path d="M628 356 H510" stroke="#E8655A" stroke-width="6" stroke-linecap="round"/>
+      <rect x="82" y="464" width="736" height="164" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="138" y="528" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="32" font-weight="700" fill="#1F2933" text-anchor="start">想要更均衡的半导体行业暴露</text>
+      <text x="738" y="582" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="850" fill="#2B8CB8" text-anchor="end">更关注 SOXX</text>
+      <path d="M628 572 H510" stroke="#2B8CB8" stroke-width="6" stroke-linecap="round"/>
+      <rect x="82" y="680" width="736" height="164" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="138" y="744" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="32" font-weight="700" fill="#1F2933" text-anchor="start">已持有大量 NVDA / TSM / AVGO</text>
+      <text x="738" y="798" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="850" fill="#1F2933" text-anchor="end">注意重叠风险</text>
+      <circle cx="156" cy="922" r="34" fill="#F8B8A8" stroke="#1F2933" stroke-width="3"/>
+      <circle cx="190" cy="922" r="34" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" opacity="0.82"/>
+      <text x="450" y="936" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="32" font-weight="780" fill="#1F2933" text-anchor="middle">选择 ETF 不是只看名字，要看底层押注</text>
+    
+  <text x="820" y="1140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="21" font-weight="500" fill="#64748B" text-anchor="end">西门吹雪的资产修行</text>
+</svg>

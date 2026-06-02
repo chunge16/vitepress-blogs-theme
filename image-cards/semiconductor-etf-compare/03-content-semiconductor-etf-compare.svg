@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#F5F0E8"/>
+  <path d="M65 110 C180 70, 305 82, 402 112 S640 144, 812 104" fill="none" stroke="#D5C6E0" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="92" cy="1032" r="34" fill="#B5E5CF" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <circle cx="806" cy="146" r="24" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <text x="72" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="58" font-weight="850" fill="#1F2933" text-anchor="start">真正差异在“押了谁”</text>
+  <text x="76" y="166" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="29" font-weight="550" fill="#64748B" text-anchor="start">看头部权重，风格就很清楚</text>
+  
+      <rect x="58" y="220" width="380" height="610" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <rect x="462" y="220" width="380" height="610" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="248" y="288" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="36" font-weight="850" fill="#E8655A" text-anchor="middle">SMH：更集中</text>
+      <text x="652" y="288" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="36" font-weight="850" fill="#2B8CB8" text-anchor="middle">SOXX：更均衡</text>
+      <g>
+      <text x="82" y="383" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">NVDA</text>
+      <rect x="192" y="352" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="192" y="352" width="283.96000000000004" height="38" rx="18" fill="#F8B8A8" stroke="#1F2933" stroke-width="2" />
+      <text x="544" y="382" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">18.32%</text>
+    </g>
+<g>
+      <text x="82" y="457" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">TSM</text>
+      <rect x="192" y="426" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="192" y="426" width="168.95000000000002" height="38" rx="18" fill="#F8B8A8" stroke="#1F2933" stroke-width="2" />
+      <text x="544" y="456" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">10.90%</text>
+    </g>
+<g>
+      <text x="82" y="531" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">AVGO</text>
+      <rect x="192" y="500" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="192" y="500" width="132.525" height="38" rx="18" fill="#F8B8A8" stroke="#1F2933" stroke-width="2" />
+      <text x="544" y="530" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">8.55%</text>
+    </g>
+<g>
+      <text x="82" y="605" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">AMD</text>
+      <rect x="192" y="574" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="192" y="574" width="88" height="38" rx="18" fill="#F8B8A8" stroke="#1F2933" stroke-width="2" />
+      <text x="544" y="604" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">5.61%</text>
+    </g>
+<g>
+      <text x="82" y="679" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">INTC</text>
+      <rect x="192" y="648" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="192" y="648" width="88" height="38" rx="18" fill="#F8B8A8" stroke="#1F2933" stroke-width="2" />
+      <text x="544" y="678" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">5.15%</text>
+    </g>
+      <g>
+      <text x="486" y="383" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">AVGO</text>
+      <rect x="596" y="352" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="596" y="352" width="137.95" height="38" rx="18" fill="#A8D8EA" stroke="#1F2933" stroke-width="2" />
+      <text x="948" y="382" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">约 5-9%</text>
+    </g>
+<g>
+      <text x="486" y="457" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">NVDA</text>
+      <rect x="596" y="426" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="596" y="426" width="130.20000000000002" height="38" rx="18" fill="#A8D8EA" stroke="#1F2933" stroke-width="2" />
+      <text x="948" y="456" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">约 5-9%</text>
+    </g>
+<g>
+      <text x="486" y="531" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">MU</text>
+      <rect x="596" y="500" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="596" y="500" width="117.8" height="38" rx="18" fill="#A8D8EA" stroke="#1F2933" stroke-width="2" />
+      <text x="948" y="530" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">约 5-9%</text>
+    </g>
+<g>
+      <text x="486" y="605" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">AMD</text>
+      <rect x="596" y="574" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="596" y="574" width="103.85000000000001" height="38" rx="18" fill="#A8D8EA" stroke="#1F2933" stroke-width="2" />
+      <text x="948" y="604" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">约 5-9%</text>
+    </g>
+<g>
+      <text x="486" y="679" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="27" font-weight="650" fill="#1F2933" text-anchor="start">MRVL</text>
+      <rect x="596" y="648" width="330" height="38" rx="18" fill="#FFF9EF" stroke="#1F2933" stroke-width="2" />
+      <rect x="596" y="648" width="89.89999999999999" height="38" rx="18" fill="#A8D8EA" stroke="#1F2933" stroke-width="2" />
+      <text x="948" y="678" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="25" font-weight="650" fill="#1F2933" text-anchor="start">约 5-9%</text>
+    </g>
+      <rect x="172" y="910" width="556" height="86" rx="22" fill="#D5C6E0" stroke="#1F2933" stroke-width="3" />
+      <text x="450" y="965" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="38" font-weight="850" fill="#1F2933" text-anchor="middle">SMH 更尖，SOXX 更平</text>
+    
+  <text x="820" y="1140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="21" font-weight="500" fill="#64748B" text-anchor="end">西门吹雪的资产修行</text>
+</svg>

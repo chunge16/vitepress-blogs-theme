@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#F5F0E8"/>
+  <path d="M65 110 C180 70, 305 82, 402 112 S640 144, 812 104" fill="none" stroke="#D5C6E0" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="92" cy="1032" r="34" fill="#B5E5CF" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <circle cx="806" cy="146" r="24" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <text x="72" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="58" font-weight="850" fill="#1F2933" text-anchor="start">先看基础档案</text>
+  <text x="76" y="166" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="29" font-weight="550" fill="#64748B" text-anchor="start">费率差异很小，重点看持仓结构</text>
+  
+      <rect x="72" y="230" width="360" height="620" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <rect x="468" y="230" width="360" height="620" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="252" y="300" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="50" font-weight="850" fill="#E8655A" text-anchor="middle">SMH</text>
+      <text x="648" y="300" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="50" font-weight="850" fill="#2B8CB8" text-anchor="middle">SOXX</text>
+      <text x="112" y="392" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">规模：约 55.04B 美元</text>
+<text x="112" y="478" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">费用率：0.35%</text>
+<text x="112" y="564" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">持仓：26 只</text>
+<text x="112" y="650" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">指数：MVIS 半导体 25</text>
+      <text x="508" y="392" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">规模：约 30.42B 美元</text>
+<text x="508" y="478" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">费用率：0.34%</text>
+<text x="508" y="564" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">持仓：30 只</text>
+<text x="508" y="650" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="30" font-weight="600" fill="#1F2933" text-anchor="start">指数：NYSE 半导体</text>
+      <rect x="110" y="914" width="680" height="92" rx="22" fill="#B5E5CF" stroke="#1F2933" stroke-width="3" />
+      <text x="450" y="972" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="800" fill="#1F2933" text-anchor="middle">核心差异不在费率，而在持仓结构</text>
+      <text x="450" y="1050" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="22" font-weight="500" fill="#64748B" text-anchor="middle">数据约截至 2026-04-22 / 04-24</text>
+    
+  <text x="820" y="1140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="21" font-weight="500" fill="#64748B" text-anchor="end">西门吹雪的资产修行</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#F5F0E8"/>
+  <path d="M65 110 C180 70, 305 82, 402 112 S640 144, 812 104" fill="none" stroke="#D5C6E0" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="92" cy="1032" r="34" fill="#B5E5CF" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <circle cx="806" cy="146" r="24" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" opacity="0.9"/>
+  <text x="72" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="58" font-weight="850" fill="#1F2933" text-anchor="start">一句话总结</text>
+  
+  
+      <g><line x1="156" y1="252" x2="156" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="156" y1="490" x2="156" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="180.66666666666666" y1="252" x2="180.66666666666666" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="180.66666666666666" y1="490" x2="180.66666666666666" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="205.33333333333334" y1="252" x2="205.33333333333334" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="205.33333333333334" y1="490" x2="205.33333333333334" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="230" y1="252" x2="230" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="230" y1="490" x2="230" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="254.66666666666669" y1="252" x2="254.66666666666669" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="254.66666666666669" y1="490" x2="254.66666666666669" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="279.33333333333337" y1="252" x2="279.33333333333337" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="279.33333333333337" y1="490" x2="279.33333333333337" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="252" x2="304" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="304" y1="490" x2="304" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="314" x2="106" y2="314" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="354" y1="314" x2="372" y2="314" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="347" x2="106" y2="347" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="354" y1="347" x2="372" y2="347" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="380" x2="106" y2="380" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="354" y1="380" x2="372" y2="380" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="413" x2="106" y2="413" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="354" y1="413" x2="372" y2="413" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="88" y1="446" x2="106" y2="446" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="354" y1="446" x2="372" y2="446" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/><rect x="106" y="270" width="248" height="220" rx="22" fill="#F8B8A8" stroke="#1F2933" stroke-width="3" /><path d="M198 438 L278 322 L244 402 L312 372" fill="none" stroke="#E8655A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><text x="230" y="398" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="56" font-weight="800" fill="#1F2933" text-anchor="middle">SMH</text></g>
+      <g><line x1="596" y1="252" x2="596" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="596" y1="490" x2="596" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="620.6666666666666" y1="252" x2="620.6666666666666" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="620.6666666666666" y1="490" x2="620.6666666666666" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="645.3333333333334" y1="252" x2="645.3333333333334" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="645.3333333333334" y1="490" x2="645.3333333333334" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="670" y1="252" x2="670" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="670" y1="490" x2="670" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="694.6666666666666" y1="252" x2="694.6666666666666" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="694.6666666666666" y1="490" x2="694.6666666666666" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="719.3333333333334" y1="252" x2="719.3333333333334" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="719.3333333333334" y1="490" x2="719.3333333333334" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="744" y1="252" x2="744" y2="270" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="744" y1="490" x2="744" y2="508" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="528" y1="314" x2="546" y2="314" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="794" y1="314" x2="812" y2="314" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="528" y1="347" x2="546" y2="347" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="794" y1="347" x2="812" y2="347" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="528" y1="380" x2="546" y2="380" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="794" y1="380" x2="812" y2="380" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="528" y1="413" x2="546" y2="413" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="794" y1="413" x2="812" y2="413" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="528" y1="446" x2="546" y2="446" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/>
+<line x1="794" y1="446" x2="812" y2="446" stroke="#1F2933" stroke-width="3" stroke-linecap="round"/><rect x="546" y="270" width="248" height="220" rx="22" fill="#A8D8EA" stroke="#1F2933" stroke-width="3" /><g stroke="#2B8CB8" stroke-width="5" fill="none"><path d="M616 352H724M616 410H724M616 468H724"/><path d="M662 318V442M742 318V442M822 318V442"/></g><text x="670" y="398" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="56" font-weight="800" fill="#1F2933" text-anchor="middle">SOXX</text></g>
+      <text x="450" y="626" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="48" font-weight="850" fill="#E8655A" text-anchor="middle">SMH 是“尖刀型”</text>
+      <text x="450" y="698" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="48" font-weight="850" fill="#2B8CB8" text-anchor="middle">SOXX 是“均衡型”</text>
+      <text x="450" y="800" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="34" font-weight="750" fill="#1F2933" text-anchor="middle">先理解押注结构，再谈配置比例</text>
+      <rect x="162" y="888" width="576" height="152" rx="22" fill="#FFF9EF" stroke="#1F2933" stroke-width="3" />
+      <text x="220" y="942" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="28" font-weight="650" fill="#1F2933" text-anchor="start">行业 ETF 波动大</text>
+<text x="220" y="984" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="28" font-weight="650" fill="#1F2933" text-anchor="start">持仓会变化</text>
+<text x="220" y="1026" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="28" font-weight="650" fill="#1F2933" text-anchor="start">不是买卖建议</text>
+      <path d="M196 934 l14 14 l24 -30 M196 976 l14 14 l24 -30 M196 1018 l14 14 l24 -30" fill="none" stroke="#E8655A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+  <text x="820" y="1140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans CJK SC', Arial, sans-serif" font-size="21" font-weight="500" fill="#64748B" text-anchor="end">西门吹雪的资产修行</text>
+</svg>
