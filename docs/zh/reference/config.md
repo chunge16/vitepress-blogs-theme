@@ -61,6 +61,17 @@ export default defineConfig({
 })
 ```
 
+## 先看重点
+
+初始化站点时，通常最先会接触到这些配置：
+
+- `title` 和 `description` 决定博客首页的标题与说明
+- `path`、`postsPath`、`authorsPath`、`tagsPath` 控制博客相关页面的路由
+- `defaultAuthor` 和 `defaultCategory` 用来给不完整的 frontmatter 提供兜底值
+- `categoryIcons` 和 `tagIcons` 用来增强分类与标签的可读性
+- `dateConfig` 控制日期展示格式
+- `giscus` 用来开启并配置内置评论区
+
 ## giscus
 
 - Type: `object`
@@ -92,7 +103,7 @@ export default defineConfig({
 
 - Type: `string`
 
-博客区域显示的标题。
+博客相关页面显示的标题。
 
 ## description
 
@@ -119,7 +130,7 @@ export default defineConfig({
 - Type: `string`
 - Default: `/blog/authors`
 
-作者页面使用的路由前缀。
+作者资料页使用的路由前缀。
 
 ## tagsPath
 
@@ -157,7 +168,7 @@ layout: home
 - Type: `Record<string, string>`
 - Default: `none`
 
-分类图标映射。图标格式请参考 [Icons](./icons)。
+用于把分类名称映射到图标。这样在分类标签或列表中会更容易扫读。图标格式请参考 [Icons](./icons)。
 
 ```js
 {
@@ -172,7 +183,7 @@ layout: home
 - Type: `Record<string, string>`
 - Default: `none`
 
-标签图标映射。图标格式请参考 [Icons](./icons)。
+用于把标签名称映射到图标。图标格式请参考 [Icons](./icons)。
 
 ## dateConfig
 
@@ -180,3 +191,8 @@ layout: home
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
 基于 [date-fns](https://date-fns.org/v2.16.1/docs/format) 的日期格式化配置。
+
+常见用途包括：
+
+- 修改日期展示格式，比如 `MMM d, yyyy`
+- 切换语言地区，以匹配月份名称和日期习惯

@@ -12,22 +12,27 @@
     </a>
 </p>
 
-## Try It Online
+## Before You Start
 
-Try `VitePress Blog` directly in your browser on [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template).
+`VitePress Blog` works well in two common situations:
 
-## Installation
+- You are starting a brand-new VitePress blog project
+- You already have a VitePress site and want to add blog functionality to it
 
-### Prerequisites
+If you just want to explore the generated structure first, try the template in [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template).
+
+## Prerequisites
 
 - [Node.js](https://nodejs.org/) 18 or later
 - A terminal to run the VitePress CLI
 - A text editor with [Markdown](https://en.wikipedia.org/wiki/Markdown) support
 - [VS Code](https://code.visualstudio.com/) with the official [Vue extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar) is recommended
 
+## Install the Packages
+
 `VitePress Blog` can be used in a brand-new project or added to an existing VitePress site.
 
-The theme is built on top of [Extending the Default Theme](https://vitepress.dev/guide/custom-theme#extending-the-default-theme), so you can keep customizing `docs/.vitepress/theme/index.js` as your site grows.
+The theme extends the [default VitePress theme](https://vitepress.dev/guide/custom-theme#extending-the-default-theme), so the setup stays familiar and you can keep customizing `docs/.vitepress/theme/index.js` as your site grows.
 
 Install the required packages first:
 
@@ -49,7 +54,7 @@ $ yarn add -D vitepress @chunge16/vitepress-blogs-theme tailwindcss @tailwindcss
 
 ### Setup Wizard
 
-`VitePress Blog` includes a setup wizard that can scaffold the basic blog structure for you. After installing the package, run:
+`VitePress Blog` includes a setup wizard that scaffolds the basic blog structure for you. After installing the package, run:
 
 ::: code-group
 
@@ -67,7 +72,7 @@ $ yarn vitepress-blog-init
 
 :::
 
-The wizard will walk you through a few simple prompts:
+The wizard walks you through the core setup values for your site:
 
 ```txt
 ┌   VitePress Blog Theme Init
@@ -105,7 +110,7 @@ The wizard will walk you through a few simple prompts:
   pnpm run docs:dev
 ```
 
-What the wizard does:
+After that, it will:
 
 - Generates the blog pages, author pages, and `.vitepress` theme files in the target directory
 - Creates a new `package.json` when the project does not already have one
@@ -115,7 +120,7 @@ What the wizard does:
 
 If you run the wizard inside an existing project, your current `package.json` is preserved and only the missing VitePress blog scripts are added.
 
-## File Structure
+## What You Get
 
 If you initialize the blog in `./docs`, the generated structure will look like this:
 
@@ -138,13 +143,21 @@ If you initialize the blog in `./docs`, the generated structure will look like t
 └── package.json
 ```
 
-The `docs` directory is the root of your VitePress site. The `.vitepress` directory contains site configuration, theme extensions, cache files, and build output.
+This gives you a usable VitePress site with a blog section already wired in.
 
-The `blog` directory is reserved for blog content. By default, posts live in `blog/posts` and authors live in `blog/authors`.
+## File Structure
+
+The generated structure is intentionally simple:
+
+- `docs` is the root of your VitePress site
+- `.vitepress` contains site config and theme entry files
+- `blog/posts` is where your post content lives
+- `blog/authors` stores author profile pages
+- `blog/index.md`, `tags.md`, and `archives.md` are the built-in blog landing pages
 
 ### Config File
 
-Configure the theme in `.vitepress/config.js` under `themeConfig.blog`.
+Most theme-specific options live in `.vitepress/config.js` under `themeConfig.blog`.
 
 You can find the full list of blog-specific options in [VPB Theme Config](/reference/config).
 
@@ -200,7 +213,7 @@ export default defineConfig({
 
 ### Theme Entry
 
-`VitePress Blog` extends the default VitePress theme, so you can add your own components, styles, or app enhancements in `.vitepress/theme/index.js`.
+`VitePress Blog` extends the default VitePress theme, so `.vitepress/theme/index.js` is still your place to add custom components, styles, or app enhancements.
 
 ::: info .vitepress/theme/index.js
 ```js
@@ -248,3 +261,10 @@ $ yarn docs:dev
 ```
 
 :::
+
+Once the site is running, the usual next steps are:
+
+- update the site title and description
+- replace the example author content
+- add your first post in `docs/blog/posts`
+- review [VPB Theme Config](/reference/config) for paths, icons, and date formatting

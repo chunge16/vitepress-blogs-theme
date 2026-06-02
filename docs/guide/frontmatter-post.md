@@ -1,6 +1,8 @@
 # Post Front Matter
 
-Each post at the top of its Markdown file can have `frontmatter` set. You can use any [frontmatter](https://vitepress.dev/reference/frontmatter-config) provided by VitePress as well. These are the ones that VitePress Blog deals with.
+Each blog post can define frontmatter at the top of its Markdown file. You can still use any standard [VitePress frontmatter](https://vitepress.dev/reference/frontmatter-config); this page only covers the fields used by `VitePress Blog`.
+
+## Example
 
 ```yaml
 ---
@@ -8,55 +10,77 @@ date: 2022-12-01
 title: 'Markdown: The Language of the Web'
 author: Robot Editor
 category: Tutorial
-next: false
+comment: true
 top: true
+sticky: 10
 tags:
   - vue
   - web development
 ---
 ```
 
-## date
+## Available Fields
 
-The post's date, in yyyy-mm-dd format.
+### date
 
-## title
+The publish date of the post.
 
-The post's title
+- Format: `yyyy-mm-dd`
+- Example: `2024-01-26`
 
-## author
+This value is used for display and sorting.
 
-Specify the author for the post. Additional details can set in the authors file. A default author can be set in config.
-This should match the name in one of the [author](./frontmatter-author) files to ensure additional information shown.
+### title
 
-## category
+The title of the post.
 
-Specify what category you want for the post, limited to one. A default category can be set in config.
+If omitted, the theme will fall back to a title derived from the page path.
 
-## tags
+### author
 
-Tags for this post, can be listed comma separated or individually
+The author name for the post.
+
+- Type: `string`
+- Example: `Robot Editor`
+
+This should match the `name` field in one of your [author frontmatter](./frontmatter-author) files if you want the post to link to a full author profile. If omitted, the theme uses the configured default author.
+
+### category
+
+The category for the post.
+
+- Type: `string`
+- Example: `Tutorial`
+
+Only one category is supported per post. If omitted, the theme uses the configured default category.
+
+### tags
+
+Tags help group related posts.
+
+You can define them as a YAML array:
 
 ```yaml
 ---
 tags:
   - vue
   - web development
-    
 ---
-
-or
-
----
-tags: vue, 'web development'
-
----
-
 ```
 
-## comment
+Or as a comma-separated string:
 
-When the configuration option enables the comment area by default, add the following code, the comment area will not be generated
+```yaml
+---
+tags: vue, 'web development'
+---
+```
+
+### comment
+
+Controls whether the comment section appears on the current post.
+
+If comments are enabled globally in theme config, you can turn them off for one post:
 
 ```md
 ---
@@ -64,15 +88,17 @@ comment: false
 ---
 ```
 
-When the configuration options do not enable the comment area by default, you can still enable the comment area on the current page through the following code
+If comments are disabled globally, you can still turn them on for one post:
 
 ```md
 ---
 comment: true
 ---
 ```
-## top
-Top of the article
+
+### top
+
+Marks the post as pinned.
 
 ```md
 ---
@@ -80,11 +106,17 @@ top: true
 ---
 ```
 
-## sticky
-When Top is true in an article, sort it by sticky value and place it at the top; otherwise, sort it by default and in reverse order
+Pinned posts appear before normal posts.
+
+### sticky
+
+Controls the order of pinned posts.
 
 ```md
 ---
 top: true
 sticky: 10
 ---
+```
+
+Higher-priority pinned posts can be given a larger `sticky` value. For non-pinned posts, normal date-based sorting still applies.

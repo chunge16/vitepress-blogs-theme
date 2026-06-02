@@ -61,6 +61,17 @@ export default defineConfig({
 })
 ```
 
+## At a Glance
+
+These options usually matter first when setting up a site:
+
+- `title` and `description` shape the blog landing page
+- `path`, `postsPath`, `authorsPath`, and `tagsPath` control blog routes
+- `defaultAuthor` and `defaultCategory` provide fallbacks for incomplete frontmatter
+- `categoryIcons` and `tagIcons` improve scanning and visual grouping
+- `dateConfig` controls how dates are displayed
+- `giscus` enables and configures the built-in comments area
+
 ## giscus
 
 - Type: `object`
@@ -92,41 +103,41 @@ If you set it to `false`, you can still enable comments for individual posts wit
 
 - Type: `string`
 
-Blog title shown in blog-related views.
+The title shown across blog-related pages.
 
 ## description
 
 - Type: `string`
 
-Blog description shown on the blog home page.
+The description shown on the main blog page.
 
 ## path
 
 - Type: `string`
 - Default: `/blog`
 
-Base route for the blog section.
+The base route for the blog section.
 
 ## postsPath
 
 - Type: `string`
 - Default: `/blog/posts`
 
-Route prefix used for blog posts.
+The route prefix used for blog post pages.
 
 ## authorsPath
 
 - Type: `string`
 - Default: `/blog/authors`
 
-Route prefix used for author pages.
+The route prefix used for author profile pages.
 
 ## tagsPath
 
 - Type: `string`
 - Default: `/blog/tags`
 
-Page path used to render the tag list.
+The page path used to render the tag list.
 
 ```md
 <!-- /blog/tags.md -->
@@ -143,21 +154,21 @@ layout: home
 - Type: `string`
 - Default: `Unknown`
 
-Fallback author name for posts without an explicit author.
+The fallback author name used when a post does not declare an explicit author.
 
 ## defaultCategory
 
 - Type: `string`
 - Default: `Article`
 
-Fallback category name for posts without an explicit category.
+The fallback category used when a post does not declare one.
 
 ## categoryIcons
 
 - Type: `Record<string, string>`
 - Default: `none`
 
-Category icon mapping. See [Icons](./icons) for the icon format.
+Maps category names to icons. This is useful when you want category badges or labels to be easier to scan. See [Icons](./icons) for the icon format.
 
 ```js
 {
@@ -172,11 +183,16 @@ Category icon mapping. See [Icons](./icons) for the icon format.
 - Type: `Record<string, string>`
 - Default: `none`
 
-Tag icon mapping. See [Icons](./icons) for the icon format.
+Maps tag names to icons. See [Icons](./icons) for the icon format.
 
 ## dateConfig
 
 - Type: `object`
 - Default: `{ format: 'yyyy/MM/dd', locale: enUS }`
 
-Date formatting options powered by [date-fns](https://date-fns.org/v2.16.1/docs/format).
+Controls date formatting with [date-fns](https://date-fns.org/v2.16.1/docs/format).
+
+Typical use cases:
+
+- change the display format, such as `MMM d, yyyy`
+- switch locale for month names and formatting conventions

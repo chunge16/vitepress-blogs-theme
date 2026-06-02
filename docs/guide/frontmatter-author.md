@@ -1,32 +1,51 @@
 # Author Front Matter
 
-Each author at the top of its Markdown file can have frontmatter set. You can use any frontmatter provided by VitePress as well. These are the ones that VitePress Blog deals with.
+Author pages can also define frontmatter at the top of the Markdown file. You can still use standard VitePress frontmatter, but the fields below are the ones used by `VitePress Blog`.
+
+## Example
 
 ```yaml
 ---
 name: Robot Editor
-avatar: <any image file>
+avatar: /authors/robot-editor.png
 gravatar: gravatarid
 twitter: '@twitter'
 ---
 ```
 
-## name
+## Available Fields
 
-The author's name, also used in [posts](./frontmatter-post) to connect to the author's details.
+### name
 
-## avatar
+The display name of the author.
 
-Link to any image file you wish to show for the author
+This value is also used to match posts to the author profile, so it should stay consistent with the `author` field in your [post frontmatter](./frontmatter-post).
 
-## gravatar
+### avatar
 
-If you prefer to use gravatar, simply put the gravatar id here
+The image shown for the author.
 
-## twitter
+- Type: `string`
+- Example: `/authors/robot-editor.png`
 
-Use to include a link to a twitter account
+Use this when you want full control over the author image.
 
-## tags
+### gravatar
 
-Tags for this post, can be listed comma separated or individually
+The Gravatar identifier for the author.
+
+If you prefer using Gravatar instead of a local avatar image, provide the Gravatar ID here.
+
+### twitter
+
+The author's X or Twitter handle.
+
+- Example: `@chunge16`
+
+Use this to render a social profile link on the author page.
+
+### tags
+
+Tags associated with the author.
+
+These can be written as a list or a comma-separated string, similar to [post tags](./frontmatter-post). They can be useful for describing expertise or topics the author writes about.

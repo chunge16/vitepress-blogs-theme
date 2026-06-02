@@ -1,0 +1,96 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="112" y1="74" x2="1114" y2="672" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F3EA"/>
+      <stop offset="0.52" stop-color="#E7F2F1"/>
+      <stop offset="1" stop-color="#DEE8F5"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="241" y1="147" x2="1019" y2="575" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="206" y1="196" x2="577" y2="458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D56C3E"/>
+      <stop offset="1" stop-color="#E8A24D"/>
+    </linearGradient>
+    <filter id="shadow" x="158" y="107" width="964" height="516" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="26"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.102 0 0 0 0 0.145 0 0 0 0 0.2 0 0 0 0.14 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1094" cy="128" r="152" fill="#F3CDA0" fill-opacity="0.28"/>
+  <circle cx="156" cy="630" r="132" fill="#BFD8D3" fill-opacity="0.42"/>
+  <circle cx="1222" cy="610" r="110" fill="#C7D8F1" fill-opacity="0.55"/>
+
+  <g filter="url(#shadow)">
+    <rect x="210" y="141" width="860" height="412" rx="28" fill="url(#panel)"/>
+    <rect x="210" y="141" width="860" height="412" rx="28" stroke="#E4E0D7"/>
+  </g>
+
+  <rect x="210" y="141" width="860" height="46" rx="28" fill="#F6F1E7"/>
+  <circle cx="242" cy="164" r="6" fill="#E68A6A"/>
+  <circle cx="262" cy="164" r="6" fill="#E6BF6A"/>
+  <circle cx="282" cy="164" r="6" fill="#86C395"/>
+  <rect x="334" y="154" width="208" height="20" rx="10" fill="#ECE5D9"/>
+  <rect x="894" y="154" width="58" height="20" rx="10" fill="#ECE5D9"/>
+  <rect x="964" y="154" width="78" height="20" rx="10" fill="#E2EBEA"/>
+
+  <rect x="250" y="220" width="378" height="264" rx="24" fill="url(#accent)"/>
+  <rect x="682" y="220" width="108" height="100" rx="20" fill="#FAF4EA"/>
+  <rect x="808" y="220" width="108" height="100" rx="20" fill="#F3F7FB"/>
+  <rect x="934" y="220" width="96" height="100" rx="20" fill="#EDF6F2"/>
+  <rect x="682" y="342" width="348" height="142" rx="22" fill="#FAF7F1"/>
+
+  <rect x="706" y="246" width="56" height="8" rx="4" fill="#D9CFC1"/>
+  <rect x="706" y="264" width="66" height="16" rx="8" fill="#453B32"/>
+  <rect x="706" y="290" width="54" height="8" rx="4" fill="#D9CFC1"/>
+
+  <rect x="832" y="246" width="56" height="8" rx="4" fill="#D6DEEA"/>
+  <rect x="832" y="264" width="54" height="16" rx="8" fill="#2E4E75"/>
+  <rect x="832" y="290" width="48" height="8" rx="4" fill="#D6DEEA"/>
+
+  <rect x="954" y="246" width="48" height="8" rx="4" fill="#D4E5DC"/>
+  <rect x="954" y="264" width="42" height="16" rx="8" fill="#2F6A52"/>
+  <rect x="954" y="290" width="36" height="8" rx="4" fill="#D4E5DC"/>
+
+  <rect x="706" y="368" width="126" height="12" rx="6" fill="#D9CFC1"/>
+  <rect x="706" y="392" width="244" height="18" rx="9" fill="#3F362F"/>
+  <rect x="706" y="422" width="290" height="10" rx="5" fill="#D9CFC1"/>
+  <rect x="706" y="442" width="272" height="10" rx="5" fill="#D9CFC1"/>
+
+  <text x="288" y="286" fill="white" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700">
+    VitePress Blog
+  </text>
+  <text x="288" y="330" fill="#FFF4E9" font-family="Arial, Helvetica, sans-serif" font-size="23">
+    A Blog Theme Built for VitePress
+  </text>
+  <text x="288" y="373" fill="#FFE8D4" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Authors, tags, archives, and a cleaner publishing flow.
+  </text>
+  <text x="288" y="401" fill="#FFE8D4" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    Markdown-first. VitePress-native. Easy to extend.
+  </text>
+
+  <rect x="288" y="428" width="126" height="38" rx="19" fill="white" fill-opacity="0.2"/>
+  <rect x="430" y="428" width="140" height="38" rx="19" fill="white" fill-opacity="0.12"/>
+  <text x="320" y="452" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">
+    Get Started
+  </text>
+  <text x="465" y="452" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">
+    View on GitHub
+  </text>
+
+  <text x="210" y="632" fill="#2E2A25" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">
+    Preview
+  </text>
+  <text x="210" y="668" fill="#5E5A54" font-family="Arial, Helvetica, sans-serif" font-size="20">
+    A polished README card for the VitePress Blog homepage.
+  </text>
+</svg>

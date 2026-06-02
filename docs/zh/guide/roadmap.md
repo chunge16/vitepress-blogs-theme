@@ -1,5 +1,25 @@
 # Roadmap
 
-- Init tool (vitepress-blog-init)
-- Easily replaceable components
-- Giscus integration
+`VitePress Blog` 希望保持轻量、实用、易扩展。它的目标不是把 VitePress 变成一个复杂的 CMS，而是让“拿来做博客”这件事从一开始就更完整。
+
+## 当前方向
+
+目前主要关注这几个方向：
+
+- `vitepress-blog-init`
+  让新项目初始化更顺手，也让已有 VitePress 站点接入博客能力时更省事。
+- 可替换的组件结构
+  让主题中的关键组件更容易替换和定制，而不是把页面结构写死。
+- Giscus 集成
+  给评论能力提供一个足够轻量、足够直接的接入方式，而不是强行引入笨重系统。
+
+## 设计取向
+
+后续即使继续增加能力，这个主题也会尽量保持下面这些原则：
+
+- 以 Markdown 内容工作流为中心
+- 配置项尽量少而清晰
+- 尽量兼容 VitePress 默认开发方式
+- 优先保证可定制，而不是封死扩展空间
+
+如果你有符合这些方向的想法或需求，也欢迎继续提出建议或参与改进。

@@ -12,22 +12,27 @@
     </a>
 </p>
 
-## 在线体验
+## 开始之前
 
-你可以直接在浏览器中通过 [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template) 体验 `VitePress Blog`。
+`VitePress Blog` 主要适合两类场景：
 
-## 安装
+- 你准备从零开始搭一个基于 VitePress 的博客
+- 你已经有一个 VitePress 站点，想把它扩展成“文档 + 博客”
 
-### 前置条件
+如果你想先看看生成后的结构和效果，可以直接在浏览器中通过 [StackBlitz](https://stackblitz.com/~/github.com/chunge16/vitepress-blogs-theme-template) 体验 `VitePress Blog`。
+
+## 前置条件
 
 - [Node.js](https://nodejs.org/) 18 或更高版本
 - 一个可运行 VitePress CLI 的终端环境
 - 一个支持 [Markdown](https://en.wikipedia.org/wiki/Markdown) 的编辑器
 - 推荐使用 [VS Code](https://code.visualstudio.com/) 和官方 [Vue 插件](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
+## 安装依赖
+
 `VitePress Blog` 既可以用于全新项目，也可以集成到已有的 VitePress 站点中。
 
-这个主题基于 [扩展默认主题](https://vitepress.dev/zh/guide/custom-theme#extending-the-default-theme) 的方式构建，因此你仍然可以在 `docs/.vitepress/theme/index.js` 中继续自定义站点。
+这个主题基于 [扩展默认主题](https://vitepress.dev/zh/guide/custom-theme#extending-the-default-theme) 的方式构建，所以整体配置方式依然是 VitePress 那一套，你也可以继续在 `docs/.vitepress/theme/index.js` 中扩展站点。
 
 先安装所需依赖：
 
@@ -49,7 +54,7 @@ $ yarn add -D vitepress @chunge16/vitepress-blogs-theme tailwindcss @tailwindcss
 
 ### 安装向导
 
-`VitePress Blog` 提供了一个初始化向导，可以帮你快速生成博客目录结构。安装完成后，运行下面的命令启动向导：
+`VitePress Blog` 提供了一个初始化向导，可以帮你快速生成博客所需的基础目录和配置。安装完成后，运行下面的命令启动向导：
 
 ::: code-group
 
@@ -67,7 +72,7 @@ $ yarn vitepress-blog-init
 
 :::
 
-向导会依次询问一些基础配置：
+向导会依次询问站点初始化所需的几个关键配置：
 
 ```txt
 ┌   VitePress Blog Theme Init
@@ -105,7 +110,7 @@ $ yarn vitepress-blog-init
   pnpm run docs:dev
 ```
 
-向导会完成以下工作：
+确认完成后，向导会自动帮你完成这些事情：
 
 - 在目标目录中生成博客页面、作者页面以及 `.vitepress` 主题文件
 - 当项目中不存在 `package.json` 时自动创建一个新的配置文件
@@ -115,7 +120,7 @@ $ yarn vitepress-blog-init
 
 如果你是在已有项目中运行向导，它会保留现有的 `package.json` 内容，只补充缺失的 VitePress Blog 脚本。
 
-## 文件结构
+## 你会得到什么
 
 如果你将博客初始化到 `./docs`，生成后的目录结构大致如下：
 
@@ -138,13 +143,21 @@ $ yarn vitepress-blog-init
 └── package.json
 ```
 
-`docs` 是 VitePress 站点根目录，`.vitepress` 用来存放站点配置、主题扩展、缓存以及构建产物。
+也就是说，向导跑完后，你拿到的不是一堆零散配置，而是一套已经把博客结构接好的 VitePress 站点。
 
-`blog` 是博客内容目录。默认情况下，文章位于 `blog/posts`，作者信息位于 `blog/authors`。
+## 文件结构
+
+这套结构刻意保持得比较简单：
+
+- `docs` 是整个 VitePress 站点的根目录
+- `.vitepress` 里放的是站点配置和主题入口
+- `blog/posts` 用来存放博客文章
+- `blog/authors` 用来存放作者资料页
+- `blog/index.md`、`tags.md`、`archives.md` 是主题内置的博客导航页面
 
 ### 配置文件
 
-在 `.vitepress/config.js` 的 `themeConfig.blog` 下配置主题。
+主题的主要配置放在 `.vitepress/config.js` 的 `themeConfig.blog` 下。
 
 完整的主题配置项请参考 [VPB 主题配置](/zh/reference/config)。
 
@@ -200,7 +213,7 @@ export default defineConfig({
 
 ### 主题入口
 
-`VitePress Blog` 是在 VitePress 默认主题之上扩展出来的，因此你可以继续在 `.vitepress/theme/index.js` 中添加组件、样式或 `enhanceApp` 逻辑。
+`VitePress Blog` 是在 VitePress 默认主题之上扩展出来的，所以你依然可以继续在 `.vitepress/theme/index.js` 中添加组件、样式或 `enhanceApp` 逻辑。
 
 ::: info .vitepress/theme/index.js
 ```js
@@ -248,3 +261,10 @@ $ yarn docs:dev
 ```
 
 :::
+
+站点跑起来之后，通常下一步会是：
+
+- 改掉默认的站点标题和描述
+- 替换示例作者信息
+- 在 `docs/blog/posts` 下新增第一篇文章
+- 去 [VPB 主题配置](/zh/reference/config) 里继续调整路径、图标和日期格式

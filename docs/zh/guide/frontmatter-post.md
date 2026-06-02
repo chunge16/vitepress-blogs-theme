@@ -1,6 +1,8 @@
-# Post 前置内容
+# 文章 Frontmatter
 
-每篇文章在其Markdown文件的顶部可以设置前置内容。你也可以使用VitePress提供的任何[frontmatter](https://vitepress.dev/reference/frontmatter-config)。这些都是VitePress博客会处理的`frontmatter`
+每篇博客文章都可以在 Markdown 文件顶部定义 frontmatter。你依然可以使用标准的 [VitePress frontmatter](https://vitepress.dev/reference/frontmatter-config)，这里重点说明的是 `VitePress Blog` 会实际处理的这些字段。
+
+## 示例
 
 ```yaml
 ---
@@ -8,58 +10,77 @@ date: 2022-12-01
 title: 'Markdown: The Language of the Web'
 author: Robot Editor
 category: Tutorial
-next: false
+comment: true
 top: true
+sticky: 10
 tags:
   - vue
   - web development
-
 ---
 ```
 
-## date
+## 可用字段
 
-文章的日期，采用 yyyy-mm-dd 格式。
+### date
 
-## title
+文章的发布日期。
 
-文章的标题
+- 格式：`yyyy-mm-dd`
+- 示例：`2024-01-26`
 
-## author
-为文章指定作者。可以在作者文件中设置额外的详细信息。默认的作者可以在配置中设置。
+这个值会同时用于页面展示和文章排序。
 
-这应该与 [author](./frontmatter-author) 文件中的一个名字相匹配，以确保显示额外的信息。
+### title
 
+文章标题。
 
-## category
-为文章指定你想要的类别，限制为一个。默认的类别可以在配置中设置。
+如果不填写，主题会尝试根据页面路径生成一个兜底标题。
 
-## tags
+### author
 
-为这篇文章设置标签，可以用逗号分隔列出，或者单独列出。
+文章作者名。
 
+- 类型：`string`
+- 示例：`Robot Editor`
+
+如果你希望文章自动关联到作者资料页，这里的值应当与某个 [作者 frontmatter](./frontmatter-author) 文件里的 `name` 保持一致。如果不填写，主题会使用配置中的默认作者。
+
+### category
+
+文章分类。
+
+- 类型：`string`
+- 示例：`Tutorial`
+
+每篇文章只支持一个分类。如果不填写，主题会使用配置中的默认分类。
+
+### tags
+
+标签用于归类和关联文章。
+
+你可以使用 YAML 数组：
 
 ```yaml
 ---
 tags:
   - vue
   - web development
-    
 ---
-
-or
-
----
-tags: vue, 'web development'
-
----
-
 ```
 
+也可以使用逗号分隔的字符串：
 
-## comment
+```yaml
+---
+tags: vue, 'web development'
+---
+```
 
-当配置选项默认启用评论区时，添加以下代码，则不会生成评论区
+### comment
+
+控制当前文章是否显示评论区。
+
+如果你已经在主题配置里默认开启评论，可以对单篇文章关闭：
 
 ```md
 ---
@@ -67,7 +88,7 @@ comment: false
 ---
 ```
 
-当配置选项默认不启用评论区时，您仍可以通过以下代码在当前页面启用评论区
+如果你在主题配置里默认关闭评论，也可以对单篇文章单独开启：
 
 ```md
 ---
@@ -75,9 +96,21 @@ comment: true
 ---
 ```
 
-## top
-文章置顶功能
+### top
 
+将文章标记为置顶。
+
+```md
+---
+top: true
+---
+```
+
+置顶文章会排在普通文章前面。
+
+### sticky
+
+控制置顶文章之间的排序优先级。
 
 ```md
 ---
@@ -86,11 +119,4 @@ sticky: 10
 ---
 ```
 
-## sticky
-当文章中出现top为true时，按sticky值的大小排序置顶排列，否则按默认的时间倒序排列
-
-```md
----
-top: true
-sticky: 10
----
+通常 `sticky` 值越大，置顶优先级越高。对于没有置顶的文章，仍然会按照默认的日期顺序排序。

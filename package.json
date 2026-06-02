@@ -2,7 +2,7 @@
   "name": "@chunge16/vitepress-blogs-theme",
   "packageManager": "pnpm@9.15.9",
   "type": "module",
-  "description": "VitePress easy to use blog theme",
+  "description": "A VitePress blog theme with authors, tags, archives, and a built-in setup wizard",
   "version": "0.5.6",
   "main": "src/theme/index.js",
   "bin": {
@@ -22,7 +22,7 @@
     "lint": "eslint . --ext .ts,.js,.vue",
     "lint:fix": "eslint . --ext .ts,.js,.vue --fix",
     "lint:eslint": "pnpm lint:fix",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "author": "chunge16 (https://github.com/chunge16)",
   "license": "MIT",
@@ -36,7 +36,10 @@
     "vue",
     "vitepress",
     "theme",
-    "blog"
+    "blog",
+    "markdown",
+    "ssg",
+    "static-site-generator"
   ],
   "exports": {
     ".": "./src/theme/index.js",
@@ -47,13 +50,13 @@
     "src"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "changelogen": "^0.5.4",
     "cz-git": "^1.7.1",
     "eslint": "^8.55.0",
     "eslint-plugin-vue": "^9.19.2",
-    "husky": "^8.0.0",
+    "husky": "^9.1.7",
     "lint-staged": "^15.1.0"
   },
   "peerDependencies": {
@@ -70,7 +73,7 @@
     "picocolors": "^1.1.1",
     "tailwindcss": "^4.2.2",
     "vitepress": "^1.6.4",
-    "vue": "^3.3.9"
+    "vue": "^3.5.35"
   },
   "config": {
     "commitizen": {
