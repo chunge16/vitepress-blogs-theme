@@ -23,43 +23,43 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-    --vp-c-brand: #a5482f;
-    --vp-c-brand-light: #c46445;
-    --vp-c-brand-lighter: #dd8d72;
-    --vp-c-brand-lightest: #f2d2c3;
-    --vp-c-brand-dark: #893621;
-    --vp-c-brand-darker: #642415;
-    --vp-c-brand-dimm: rgba(165, 72, 47, 0.12);
-    --vpb-bg: #f7f1e8;
-    --vpb-bg-soft: rgba(255, 251, 245, 0.84);
-    --vpb-bg-strong: rgba(255, 248, 239, 0.96);
-    --vpb-panel-border: rgba(117, 70, 47, 0.14);
-    --vpb-panel-shadow: 0 24px 70px rgba(89, 51, 31, 0.12);
-    --vpb-panel-shadow-hover: 0 28px 88px rgba(89, 51, 31, 0.18);
-    --vpb-text-strong: #2f211c;
-    --vpb-text-soft: #70534a;
-    --vpb-grid-line: rgba(117, 70, 47, 0.1);
-    --vpb-accent-glow: radial-gradient(circle at top, rgba(218, 145, 101, 0.24), transparent 58%);
+    --vp-c-brand: #2f5d50;
+    --vp-c-brand-light: #3d7364;
+    --vp-c-brand-lighter: #609381;
+    --vp-c-brand-lightest: #d6e5de;
+    --vp-c-brand-dark: #24473d;
+    --vp-c-brand-darker: #183129;
+    --vp-c-brand-dimm: rgba(47, 93, 80, 0.1);
+    --vpb-bg: #f5f3ee;
+    --vpb-bg-soft: rgba(255, 255, 255, 0.82);
+    --vpb-bg-strong: rgba(255, 255, 255, 0.94);
+    --vpb-panel-border: rgba(24, 49, 41, 0.1);
+    --vpb-panel-shadow: 0 18px 40px rgba(24, 33, 29, 0.06);
+    --vpb-panel-shadow-hover: 0 26px 56px rgba(24, 33, 29, 0.1);
+    --vpb-text-strong: #1e2422;
+    --vpb-text-soft: #5e6763;
+    --vpb-grid-line: rgba(24, 49, 41, 0.08);
+    --vpb-accent-glow: radial-gradient(circle at top, rgba(47, 93, 80, 0.08), transparent 58%);
 }
 
 .dark {
-    --vp-c-brand: #f0a17f;
-    --vp-c-brand-light: #f6b293;
-    --vp-c-brand-lighter: #f8cbb6;
-    --vp-c-brand-lightest: #ffe6da;
-    --vp-c-brand-dark: #d67d57;
-    --vp-c-brand-darker: #ba6540;
-    --vp-c-brand-dimm: rgba(240, 161, 127, 0.16);
-    --vpb-bg: #16110f;
-    --vpb-bg-soft: rgba(31, 24, 21, 0.84);
-    --vpb-bg-strong: rgba(36, 28, 24, 0.94);
-    --vpb-panel-border: rgba(255, 222, 204, 0.12);
-    --vpb-panel-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-    --vpb-panel-shadow-hover: 0 28px 88px rgba(0, 0, 0, 0.36);
-    --vpb-text-strong: #f9eadf;
-    --vpb-text-soft: #c4a99c;
-    --vpb-grid-line: rgba(255, 223, 206, 0.08);
-    --vpb-accent-glow: radial-gradient(circle at top, rgba(240, 161, 127, 0.18), transparent 55%);
+    --vp-c-brand: #8db8aa;
+    --vp-c-brand-light: #a8ccbf;
+    --vp-c-brand-lighter: #c7e0d6;
+    --vp-c-brand-lightest: #edf6f2;
+    --vp-c-brand-dark: #6f988a;
+    --vp-c-brand-darker: #bed9cf;
+    --vp-c-brand-dimm: rgba(141, 184, 170, 0.14);
+    --vpb-bg: #101513;
+    --vpb-bg-soft: rgba(20, 27, 24, 0.82);
+    --vpb-bg-strong: rgba(25, 32, 29, 0.94);
+    --vpb-panel-border: rgba(215, 233, 226, 0.1);
+    --vpb-panel-shadow: 0 20px 48px rgba(0, 0, 0, 0.26);
+    --vpb-panel-shadow-hover: 0 28px 66px rgba(0, 0, 0, 0.34);
+    --vpb-text-strong: #edf3f0;
+    --vpb-text-soft: #a7b2ad;
+    --vpb-grid-line: rgba(215, 233, 226, 0.08);
+    --vpb-accent-glow: radial-gradient(circle at top, rgba(141, 184, 170, 0.12), transparent 55%);
 }
 
 /**
@@ -86,17 +86,17 @@
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(
             120deg,
-            #8a2c21 20%,
-            #d97d4f 55%,
-            #f0c59a
+            #17332b 18%,
+            #2f5d50 55%,
+            #7ca696
     );
 
     --vp-home-hero-image-background-image: linear-gradient(
             -45deg,
-            #d97d4f 35%,
-            #f0c59a 100%
+            #3d7364 25%,
+            #dfe9e3 100%
     );
-    --vp-home-hero-image-filter: blur(40px);
+    --vp-home-hero-image-filter: blur(56px);
 }
 
 @media (min-width: 640px) {
@@ -138,15 +138,16 @@
 body {
     background:
             var(--vpb-accent-glow),
-            linear-gradient(180deg, var(--vpb-bg) 0%, color-mix(in srgb, var(--vpb-bg) 82%, #fff 18%) 100%);
+            linear-gradient(180deg, #faf8f4 0%, var(--vpb-bg) 100%);
     color: var(--vpb-text-strong);
-    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    font-family: "Neue Haas Grotesk Text Pro", "Avenir Next", "Helvetica Neue", sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .dark body {
     background:
-            radial-gradient(circle at top, rgba(240, 161, 127, 0.16), transparent 36%),
-            linear-gradient(180deg, #120e0c 0%, #1a1412 100%);
+            radial-gradient(circle at top, rgba(141, 184, 170, 0.12), transparent 34%),
+            linear-gradient(180deg, #0d1210 0%, #111816 100%);
 }
 
 .vp-doc,
@@ -168,9 +169,9 @@ body {
 }
 
 .vp-doc h1 {
-    font-family: Iowan Old Style, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: clamp(2.8rem, 5vw, 4.4rem);
-    line-height: 0.96;
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 0.98;
 }
 
 .vp-doc p,
@@ -219,7 +220,7 @@ body {
     border: 1px solid var(--vpb-panel-border);
     background: var(--vpb-bg-soft);
     box-shadow: var(--vpb-panel-shadow);
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(14px);
 }
 
 .vpb-page::before {
@@ -230,13 +231,13 @@ body {
     background:
             linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), var(--vpb-grid-line) calc(100% - 1px), var(--vpb-grid-line) 100%),
             linear-gradient(180deg, transparent 0, transparent calc(100% - 1px), var(--vpb-grid-line) calc(100% - 1px), var(--vpb-grid-line) 100%);
-    opacity: 0.45;
+    opacity: 0.22;
 }
 
 .vpb-page-header {
     position: relative;
     margin-bottom: 2.75rem;
-    padding-bottom: 1.25rem;
+    padding-bottom: 1.4rem;
 }
 
 .vpb-page-header::after {
@@ -245,21 +246,21 @@ body {
     left: 50%;
     bottom: 0;
     height: 1px;
-    width: min(160px, 40%);
+    width: min(120px, 34%);
     transform: translateX(-50%);
-    background: linear-gradient(90deg, transparent, var(--vp-c-brand), transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--vp-c-brand) 78%, transparent), transparent);
 }
 
 .vpb-kicker {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
     color: var(--vp-c-brand);
-    font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.28em;
+    font-family: "Neue Haas Grotesk Display Pro", "Avenir Next", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
 }
 
@@ -268,18 +269,18 @@ body {
     content: "";
     display: block;
     height: 1px;
-    width: 2.4rem;
-    background: color-mix(in srgb, var(--vp-c-brand) 55%, transparent);
+    width: 1.85rem;
+    background: color-mix(in srgb, var(--vp-c-brand) 34%, transparent);
 }
 
 .vpb-display-title {
     margin: 0;
     border-top: none !important;
-    font-family: Iowan Old Style, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
+    letter-spacing: -0.05em;
+    line-height: 0.98;
     color: var(--vpb-text-strong);
     text-wrap: balance;
 }
@@ -287,21 +288,21 @@ body {
 .vpb-page-title {
     margin: 0;
     border-top: none !important;
-    font-family: Iowan Old Style, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: clamp(2.35rem, 4vw, 3.4rem);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: clamp(2.35rem, 4vw, 3.55rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 1;
+    letter-spacing: -0.05em;
+    line-height: 0.99;
     color: var(--vpb-text-strong);
     text-wrap: balance;
 }
 
 .vpb-lead {
-    margin: 1.25rem auto 0;
-    max-width: 46rem;
+    margin: 1.15rem auto 0;
+    max-width: 42rem;
     color: var(--vpb-text-soft);
-    font-size: clamp(1rem, 1.8vw, 1.18rem);
-    line-height: 1.8;
+    font-size: clamp(1rem, 1.65vw, 1.14rem);
+    line-height: 1.9;
     text-wrap: pretty;
 }
 
@@ -309,8 +310,7 @@ body {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--vpb-panel-border);
-    background:
-            linear-gradient(180deg, color-mix(in srgb, var(--vpb-bg-strong) 92%, transparent) 0%, color-mix(in srgb, var(--vpb-bg-soft) 96%, transparent) 100%);
+    background: linear-gradient(180deg, var(--vpb-bg-strong) 0%, color-mix(in srgb, var(--vpb-bg-soft) 98%, transparent) 100%);
     box-shadow: var(--vpb-panel-shadow);
     transition:
             transform 0.28s ease,
@@ -323,13 +323,11 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background:
-            radial-gradient(circle at top right, rgba(217, 125, 79, 0.14), transparent 38%),
-            linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 30%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), transparent 30%);
 }
 
 .vpb-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--vp-c-brand) 30%, var(--vpb-panel-border));
     box-shadow: var(--vpb-panel-shadow-hover);
 }
@@ -360,12 +358,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    border: 1px solid color-mix(in srgb, var(--vp-c-brand) 18%, transparent);
-    background: color-mix(in srgb, var(--vp-c-brand-dimm) 78%, var(--vpb-bg-strong));
-    color: var(--vp-c-brand-darker);
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    border: 1px solid color-mix(in srgb, var(--vp-c-brand) 14%, transparent);
+    background: color-mix(in srgb, var(--vp-c-brand-dimm) 56%, var(--vpb-bg-strong));
+    color: var(--vp-c-brand-dark);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
@@ -376,7 +374,7 @@ body {
 .vpb-chip {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.7rem;
     border: 1px solid var(--vpb-panel-border);
     background: color-mix(in srgb, var(--vpb-bg-strong) 88%, transparent);
     color: var(--vpb-text-soft);
@@ -385,6 +383,33 @@ body {
             border-color 0.2s ease,
             color 0.2s ease,
             background-color 0.2s ease;
+}
+
+.vpb-chip-strip {
+    position: relative;
+    margin: 0 auto;
+    max-width: 76rem;
+}
+
+.vpb-chip-icon {
+    display: inline-flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--vpb-panel-border) 90%, transparent);
+    background: color-mix(in srgb, var(--vpb-bg-strong) 96%, transparent);
+    color: var(--vpb-text-soft);
+}
+
+.vpb-chip-count {
+    min-width: 1.75rem;
+    margin-left: 0.15rem;
+    justify-content: center;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--vp-c-brand-dimm) 38%, var(--vpb-bg-strong));
+    color: var(--vpb-text-soft);
 }
 
 .vpb-chip:hover,
@@ -400,14 +425,24 @@ body {
     color: var(--vp-c-brand-lightest);
 }
 
+.vpb-chip.is-active .vpb-chip-icon {
+    border-color: color-mix(in srgb, var(--vp-c-brand) 22%, transparent);
+    background: color-mix(in srgb, var(--vp-c-brand-dimm) 32%, var(--vpb-bg-strong));
+    color: var(--vp-c-brand-dark);
+}
+
+.vpb-chip.is-active .vpb-chip-count {
+    background: color-mix(in srgb, var(--vp-c-brand) 16%, var(--vpb-bg-strong));
+}
+
 .vpb-divider-title {
     position: relative;
     margin: 0;
     padding-top: 1.5rem;
-    font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
+    font-family: "Neue Haas Grotesk Display Pro", "Avenir Next", sans-serif;
+    font-size: 0.96rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--vp-c-brand);
 }
@@ -427,7 +462,7 @@ body {
     align-items: center;
     gap: 1.25rem;
     border-top: 1px solid var(--vpb-grid-line);
-    padding: 1rem 0;
+    padding: 1.05rem 0;
     color: inherit;
     text-decoration: none;
     transition:
@@ -436,7 +471,7 @@ body {
 }
 
 .vpb-list-link:hover {
-    transform: translateX(3px);
+    transform: translateX(2px);
     color: var(--vp-c-brand);
 }
 
@@ -445,7 +480,7 @@ body {
 }
 
 .vpb-list-link__title {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 600;
     letter-spacing: -0.02em;
     color: var(--vpb-text-strong);
@@ -453,9 +488,9 @@ body {
 
 .vpb-list-link__meta {
     color: var(--vpb-text-soft);
-    font-family: "Avenir Next Condensed", "Franklin Gothic Medium", sans-serif;
-    font-size: 0.84rem;
-    letter-spacing: 0.14em;
+    font-family: "Neue Haas Grotesk Display Pro", "Avenir Next", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -465,8 +500,8 @@ body {
     align-items: center;
     gap: 0.55rem;
     color: var(--vp-c-brand);
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     text-decoration: none;
     transition:
             gap 0.2s ease,
@@ -484,7 +519,7 @@ body {
 
 .vpb-prose {
     color: var(--vpb-text-soft);
-    line-height: 1.85;
+    line-height: 1.82;
 }
 
 .vpb-prose :is(p, ul, ol) {
@@ -494,8 +529,92 @@ body {
 
 .vpb-soft-panel {
     border: 1px solid var(--vpb-panel-border);
-    background: color-mix(in srgb, var(--vpb-bg-strong) 92%, transparent);
+    background: color-mix(in srgb, var(--vpb-bg-strong) 94%, transparent);
     box-shadow: var(--vpb-panel-shadow);
+}
+
+.vpb-results-panel {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 76rem;
+    border: 1px solid var(--vpb-panel-border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.94) 18%, rgba(255, 255, 255, 0.98) 100%);
+    box-shadow: 0 22px 48px rgba(24, 33, 29, 0.06);
+}
+
+.dark .vpb-results-panel {
+    border-color: rgba(215, 233, 226, 0.1);
+    background:
+            linear-gradient(180deg, rgba(24, 34, 30, 0.96) 0%, rgba(16, 23, 20, 0.98) 100%);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+}
+
+.vpb-results-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent 22%);
+}
+
+.dark .vpb-results-panel::before {
+    background:
+            radial-gradient(circle at top left, rgba(141, 184, 170, 0.12), transparent 34%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 26%);
+}
+
+.vpb-results-panel > * {
+    position: relative;
+}
+
+.vpb-results-head {
+    display: grid;
+    gap: 1rem;
+    align-items: end;
+}
+
+.vpb-results-kicker {
+    color: var(--vpb-text-soft);
+    font-family: "Neue Haas Grotesk Display Pro", "Avenir Next", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.vpb-results-summary {
+    max-width: 34rem;
+}
+
+.vpb-results-title {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--vpb-text-strong);
+}
+
+.vpb-results-copy {
+    margin: 0.7rem 0 0;
+    color: var(--vpb-text-soft);
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.vpb-results-stat {
+    justify-self: start;
+    color: var(--vpb-text-soft);
+    font-family: "Neue Haas Grotesk Display Pro", "Avenir Next", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.vpb-results-list {
+    border-top: 1px solid var(--vpb-grid-line);
 }
 
 @media (max-width: 768px) {
@@ -564,6 +683,28 @@ body {
     .vpb-accent-link {
         gap: 0.4rem;
         font-size: 0.94rem;
+    }
+
+    .vpb-results-panel {
+        border-radius: 1.5rem;
+    }
+
+    .vpb-results-head {
+        gap: 0.85rem;
+    }
+
+    .vpb-results-title {
+        font-size: 1.6rem;
+    }
+
+    .vpb-results-copy {
+        font-size: 0.94rem;
+        line-height: 1.72;
+    }
+
+    .vpb-results-stat {
+        font-size: 0.74rem;
+        letter-spacing: 0.14em;
     }
 
     .vpb-prose {
