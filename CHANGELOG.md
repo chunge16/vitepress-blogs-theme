@@ -1,6 +1,40 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.6...v1.0.0)
+
+### 🚀 Enhancements
+
+- Refresh theme ui ([25f339c](https://github.com/chunge16/vitepress-blogs-theme/commit/25f339c))
+- Refine blog theme presentation ([ad07cde](https://github.com/chunge16/vitepress-blogs-theme/commit/ad07cde))
+
+### 🩹 Fixes
+
+- Improve mobile blog ui ([e411a10](https://github.com/chunge16/vitepress-blogs-theme/commit/e411a10))
+
+### 💅 Refactors
+
+- Harden content loaders and add unit tests ([61df117](https://github.com/chunge16/vitepress-blogs-theme/commit/61df117))
+
+### 📖 Documentation
+
+- Polish project docs and refresh package metadata ([7d3b624](https://github.com/chunge16/vitepress-blogs-theme/commit/7d3b624))
+- Add article assets and publishing materials ([050da38](https://github.com/chunge16/vitepress-blogs-theme/commit/050da38))
+
+### 📦 Build
+
+- Upgrade dependencies to latest stable versions ([0ab5c7d](https://github.com/chunge16/vitepress-blogs-theme/commit/0ab5c7d))
+
+### 🏡 Chore
+
+- Ignore local baoyu skill settings ([0e3c60f](https://github.com/chunge16/vitepress-blogs-theme/commit/0e3c60f))
+
+### ❤️ Contributors
+
+- Chunge1945 <chunge1945@outlook.com>
+
 ## v0.5.6
 
 [compare changes](https://github.com/chunge16/vitepress-blogs-theme/compare/v0.5.5...v0.5.6)

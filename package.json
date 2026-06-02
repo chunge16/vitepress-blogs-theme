@@ -3,7 +3,7 @@
   "packageManager": "pnpm@9.15.9",
   "type": "module",
   "description": "A VitePress blog theme with authors, tags, archives, and a built-in setup wizard",
-  "version": "0.5.6",
+  "version": "1.0.0",
   "main": "src/theme/index.js",
   "bin": {
     "vitepress-blog-init": "./src/cli/index.js"
