@@ -12,6 +12,7 @@ import {
   normalizeName,
   transformAuthors,
 } from '../src/theme/composables/author-utils.js';
+import { groupPostsByYear } from '../src/theme/composables/archive-utils.js';
 
 test('formatTags handles strings, arrays, and invalid input', () => {
   assert.deepEqual(formatTags('vue, vitepress,  blog '), ['vue', 'vitepress', 'blog']);
@@ -72,6 +73,22 @@ test('transformPosts applies defaults and preserves sticky/top sorting', () => {
   assert.equal(posts[0].category, 'Article');
   assert.equal(posts[1].title, 'Second');
   assert.equal(posts[2].title, 'Older');
+});
+
+test('groupPostsByYear groups adjacent dated posts by year', () => {
+  const posts = [
+    { title: 'Latest', date: { raw: '2024-03-01' } },
+    { title: 'Earlier', date: { raw: '2024-01-01' } },
+    { title: 'Older', date: { raw: '2023-12-01' } },
+    { title: 'Undated' },
+  ];
+
+  const groups = groupPostsByYear(posts);
+
+  assert.deepEqual(groups.map((group) => group.map((post) => post.title)), [
+    ['Latest', 'Earlier'],
+    ['Older'],
+  ]);
 });
 
 test('normalizeName and transformAuthors sort and fall back safely', () => {

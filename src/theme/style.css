@@ -435,6 +435,73 @@ body {
     background: color-mix(in srgb, var(--vp-c-brand) 16%, var(--vpb-bg-strong));
 }
 
+.vpb-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.vpb-search__icon {
+    position: absolute;
+    left: 1.15rem;
+    z-index: 1;
+    color: var(--vpb-text-soft);
+    font-size: 1.05rem;
+    pointer-events: none;
+}
+
+.vpb-search__input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--vpb-panel-border);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--vpb-bg-strong) 94%, transparent);
+    box-shadow: var(--vpb-panel-shadow);
+    color: var(--vpb-text-strong);
+    font: inherit;
+    font-size: 0.98rem;
+    line-height: 1.4;
+    outline: none;
+    padding: 0.95rem 3.25rem 0.95rem 3rem;
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.vpb-search__input::placeholder {
+    color: var(--vpb-text-soft);
+}
+
+.vpb-search__input:focus {
+    border-color: color-mix(in srgb, var(--vp-c-brand) 42%, var(--vpb-panel-border));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--vp-c-brand-dimm) 48%, transparent), var(--vpb-panel-shadow);
+}
+
+.vpb-search__clear {
+    position: absolute;
+    right: 0.65rem;
+    display: inline-flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid color-mix(in srgb, var(--vpb-panel-border) 82%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--vpb-bg-strong) 96%, transparent);
+    color: var(--vpb-text-soft);
+    cursor: pointer;
+    transition:
+            border-color 0.2s ease,
+            color 0.2s ease,
+            background-color 0.2s ease;
+}
+
+.vpb-search__clear:hover {
+    border-color: color-mix(in srgb, var(--vp-c-brand) 32%, var(--vpb-panel-border));
+    background: color-mix(in srgb, var(--vp-c-brand-dimm) 72%, var(--vpb-bg-strong));
+    color: var(--vp-c-brand-dark);
+}
+
 .vpb-divider-title {
     position: relative;
     margin: 0;
@@ -522,9 +589,21 @@ body {
     line-height: 1.82;
 }
 
+.vpb-post-excerpt {
+    display: -webkit-box;
+    min-height: calc(1em * 1.82 * 6);
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+}
+
 .vpb-prose :is(p, ul, ol) {
     margin-top: 0;
     color: inherit;
+}
+
+.vpb-post-excerpt :is(p, ul, ol) {
+    margin-bottom: 0;
 }
 
 .vpb-soft-panel {

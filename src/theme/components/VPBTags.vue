@@ -43,6 +43,7 @@ if (inBrowser) {
               type="button"
               class="vpb-chip cursor-pointer rounded-full pl-3 pr-4.5 py-2 text-sm font-semibold sm:pl-4.5 sm:pr-6 sm:py-2.5"
               :class="{ 'is-active': selectedTag === tagName }"
+              :aria-pressed="selectedTag === tagName"
               @click="toggleTag(tagName)"
             >
               <span class="vpb-chip-icon shrink-0">
@@ -59,8 +60,8 @@ if (inBrowser) {
         <section
           v-if="selectedTag"
           class="vpb-results-panel mt-12 rounded-[2rem] px-6 py-6 sm:mt-14 sm:px-10 sm:py-9"
-          >
-            <div class="vpb-results-head mb-7 sm:mb-9 sm:grid-cols-[minmax(0,1fr)_auto]">
+        >
+          <div class="vpb-results-head mb-7 sm:mb-9 sm:grid-cols-[minmax(0,1fr)_auto]">
             <div class="vpb-results-summary">
               <p class="vpb-results-kicker">Selected tag</p>
               <h3 class="vpb-results-title">

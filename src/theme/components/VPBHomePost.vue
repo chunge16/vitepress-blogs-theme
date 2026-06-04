@@ -26,10 +26,10 @@ defineProps({
         {{ post.date.raw }}
       </span>
     </div>
-    <h2 class="mb-4 max-w-[18ch] font-['Iowan_Old_Style','Palatino_Linotype',Georgia,serif] text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.045em] text-[color:var(--vpb-text-strong)] sm:text-[2.15rem]">
+    <h2 class="mb-4 w-full font-['Iowan_Old_Style','Palatino_Linotype',Georgia,serif] text-[1.85rem] font-semibold leading-[1.06] tracking-[-0.045em] text-[color:var(--vpb-text-strong)] sm:text-[2.15rem]">
       <a :href="withBase(post.url)" class="vpb-link">{{ post.title }}</a>
     </h2>
-    <div class="vpb-prose mb-7 text-[0.97rem] sm:mb-8 sm:text-[1rem]" v-html="post.excerpt"></div>
+    <div class="vpb-prose vpb-post-excerpt mb-7 text-[0.97rem] sm:mb-8 sm:text-[1rem]" v-html="post.excerpt"></div>
     <div class="mt-auto flex flex-col items-start gap-4 border-t border-[color:var(--vpb-grid-line)] pt-5 sm:flex-row sm:items-center sm:justify-between">
       <VPBHomeAuthor :name="post.author" />
       <a :href="withBase(post.url)" class="vpb-accent-link">

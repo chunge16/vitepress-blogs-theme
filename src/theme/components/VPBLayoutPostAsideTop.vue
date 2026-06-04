@@ -20,6 +20,10 @@ const postMeta = computed(() => {
     tags: Array.isArray(frontmatter.value?.tags) ? frontmatter.value.tags : [],
   };
 });
+
+function buildTagUrl(tagName) {
+  return `${withBase(path)}?init=${encodeURIComponent(tagName)}`;
+}
 </script>
 
 <template>
@@ -35,7 +39,7 @@ const postMeta = computed(() => {
         v-for="tagName in postMeta.tags"
         :key="tagName"
         class="vpb-chip rounded-full px-2.5 py-1 text-[0.72rem] font-semibold no-underline sm:px-3 sm:py-1.5 sm:text-xs"
-        :href="`${withBase(path)}?init=${tagName}`"
+        :href="buildTagUrl(tagName)"
       >
         <VPBTagIcon :tag="tagName" />
         {{ tagName }}
