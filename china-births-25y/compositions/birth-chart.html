@@ -1,0 +1,394 @@
+<template id="birth-chart-template">
+  <div id="birth-chart" data-composition-id="birth-chart" data-width="1920" data-height="1080" data-duration="30">
+    <div class="scene">
+      <div class="topline">
+        <div>
+          <p class="kicker">中国大陆出生人口 · 2001-2025</p>
+          <h1>近 25 年出生人口对比</h1>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">2025 年</span>
+          <strong>792</strong>
+          <span class="metric-unit">万人</span>
+        </div>
+      </div>
+
+      <div class="story-row">
+        <div class="stat stat-peak">
+          <span>峰值</span>
+          <strong>1786 万</strong>
+          <em>2016 年</em>
+        </div>
+        <div class="stat stat-now">
+          <span>近 25 年低点</span>
+          <strong>792 万</strong>
+          <em>2025 年</em>
+        </div>
+        <div class="stat stat-drop">
+          <span>较 2016 年</span>
+          <strong>-55.7%</strong>
+          <em>下降 994 万</em>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <svg class="chart" viewBox="0 0 1640 610" preserveAspectRatio="xMidYMid meet" aria-label="中国 2001 到 2025 年出生人口柱状图">
+          <g class="grid"></g>
+          <g class="bars"></g>
+          <g class="year-labels"></g>
+          <g class="value-labels"></g>
+          <line class="baseline" x1="80" y1="520" x2="1580" y2="520"></line>
+          <text class="axis-note" x="80" y="38">单位：万人</text>
+          <text class="axis-note right" x="1580" y="38">每根柱代表一个年份</text>
+        </svg>
+        <div class="callout callout-2016">
+          <b>全面二孩后的高点</b>
+          <span>2016 年出生人口达到 1786 万</span>
+        </div>
+        <div class="callout callout-2025">
+          <b>跌破 800 万</b>
+          <span>2025 年全年出生人口 792 万</span>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>数据：国家统计局《中国统计年鉴》及 2024、2025 年国民经济和社会发展统计公报</span>
+        <span>注：2001-2025 年，出生人口，万人</span>
+      </div>
+    </div>
+
+    <style>
+      #birth-chart {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #090d12;
+        color: #f4f1ea;
+        font-family: sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+
+      #birth-chart .scene {
+        width: 100%;
+        height: 100%;
+        padding: 72px 104px 52px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        box-sizing: border-box;
+        background: linear-gradient(180deg, rgba(17, 24, 33, 0.98), rgba(9, 13, 18, 1));
+      }
+
+      #birth-chart .topline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 72px;
+      }
+
+      #birth-chart .kicker {
+        margin: 0 0 16px;
+        color: #9ba7b4;
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      #birth-chart h1 {
+        margin: 0;
+        max-width: 1060px;
+        font-size: 82px;
+        line-height: 1.05;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      #birth-chart .metric-card {
+        min-width: 280px;
+        padding: 24px 28px;
+        border: 1px solid #263241;
+        background: rgba(17, 24, 33, 0.82);
+        border-radius: 8px;
+        text-align: right;
+      }
+
+      #birth-chart .metric-label,
+      #birth-chart .metric-unit {
+        display: block;
+        color: #9ba7b4;
+        font-size: 26px;
+        line-height: 1.2;
+      }
+
+      #birth-chart .metric-card strong {
+        display: block;
+        margin: 8px 0 4px;
+        color: #5ed5f1;
+        font-size: 86px;
+        line-height: 0.95;
+      }
+
+      #birth-chart .story-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      #birth-chart .stat {
+        border-top: 1px solid #263241;
+        padding-top: 18px;
+      }
+
+      #birth-chart .stat span,
+      #birth-chart .stat em {
+        display: block;
+        color: #9ba7b4;
+        font-size: 24px;
+        font-style: normal;
+        line-height: 1.28;
+      }
+
+      #birth-chart .stat strong {
+        display: block;
+        margin: 8px 0;
+        font-size: 54px;
+        line-height: 1;
+      }
+
+      #birth-chart .stat-peak strong {
+        color: #f2b35d;
+      }
+
+      #birth-chart .stat-now strong {
+        color: #5ed5f1;
+      }
+
+      #birth-chart .stat-drop strong {
+        color: #e85c4a;
+      }
+
+      #birth-chart .chart-wrap {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        border-top: 1px solid #263241;
+        border-bottom: 1px solid #263241;
+        padding: 18px 0 10px;
+      }
+
+      #birth-chart .chart {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      #birth-chart .grid-line {
+        stroke: #263241;
+        stroke-width: 1;
+      }
+
+      #birth-chart .grid-label,
+      #birth-chart .axis-note {
+        fill: #9ba7b4;
+        font-size: 22px;
+      }
+
+      #birth-chart .axis-note.right {
+        text-anchor: end;
+      }
+
+      #birth-chart .baseline {
+        stroke: #6d7886;
+        stroke-width: 2;
+      }
+
+      #birth-chart .bar {
+        fill: #6d7886;
+      }
+
+      #birth-chart .bar.peak {
+        fill: #f2b35d;
+      }
+
+      #birth-chart .bar.low {
+        fill: #5ed5f1;
+      }
+
+      #birth-chart .year-label {
+        fill: #9ba7b4;
+        font-size: 18px;
+        text-anchor: middle;
+      }
+
+      #birth-chart .value-label {
+        fill: #f4f1ea;
+        font-size: 24px;
+        font-weight: 700;
+        text-anchor: middle;
+      }
+
+      #birth-chart .callout {
+        position: absolute;
+        width: 280px;
+        padding: 16px 18px;
+        border: 1px solid #263241;
+        border-radius: 8px;
+        background: rgba(9, 13, 18, 0.86);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+      }
+
+      #birth-chart .callout b,
+      #birth-chart .callout span {
+        display: block;
+        line-height: 1.28;
+      }
+
+      #birth-chart .callout b {
+        margin-bottom: 6px;
+        font-size: 26px;
+      }
+
+      #birth-chart .callout span {
+        color: #9ba7b4;
+        font-size: 20px;
+      }
+
+      #birth-chart .callout-2016 {
+        left: 980px;
+        top: 86px;
+        border-color: rgba(242, 179, 93, 0.52);
+      }
+
+      #birth-chart .callout-2016 b {
+        color: #f2b35d;
+      }
+
+      #birth-chart .callout-2025 {
+        right: 24px;
+        bottom: 86px;
+        border-color: rgba(94, 213, 241, 0.52);
+      }
+
+      #birth-chart .callout-2025 b {
+        color: #5ed5f1;
+      }
+
+      #birth-chart .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        color: #9ba7b4;
+        font-size: 20px;
+        line-height: 1.35;
+      }
+    </style>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const data = [
+        { year: 2001, value: 1702 },
+        { year: 2002, value: 1647 },
+        { year: 2003, value: 1599 },
+        { year: 2004, value: 1593 },
+        { year: 2005, value: 1617 },
+        { year: 2006, value: 1584 },
+        { year: 2007, value: 1594 },
+        { year: 2008, value: 1608 },
+        { year: 2009, value: 1615 },
+        { year: 2010, value: 1588 },
+        { year: 2011, value: 1600 },
+        { year: 2012, value: 1635 },
+        { year: 2013, value: 1640 },
+        { year: 2014, value: 1687 },
+        { year: 2015, value: 1655 },
+        { year: 2016, value: 1786 },
+        { year: 2017, value: 1723 },
+        { year: 2018, value: 1523 },
+        { year: 2019, value: 1465 },
+        { year: 2020, value: 1202 },
+        { year: 2021, value: 1062 },
+        { year: 2022, value: 956 },
+        { year: 2023, value: 902 },
+        { year: 2024, value: 954 },
+        { year: 2025, value: 792 },
+      ];
+
+      const svg = document.querySelector('#birth-chart .chart');
+      const grid = svg.querySelector(".grid");
+      const bars = svg.querySelector(".bars");
+      const yearLabels = svg.querySelector(".year-labels");
+      const valueLabels = svg.querySelector(".value-labels");
+      const ns = "http://www.w3.org/2000/svg";
+      const chart = { left: 80, right: 1580, top: 70, bottom: 520, max: 1900 };
+      const width = chart.right - chart.left;
+      const step = width / data.length;
+      const barWidth = 34;
+
+      function yFor(value) {
+        return chart.bottom - (value / chart.max) * (chart.bottom - chart.top);
+      }
+
+      function makeSvg(tag, attrs, text) {
+        const el = document.createElementNS(ns, tag);
+        Object.entries(attrs).forEach(([key, val]) => el.setAttribute(key, val));
+        if (text) el.textContent = text;
+        return el;
+      }
+
+      [500, 1000, 1500].forEach((tick) => {
+        const y = yFor(tick);
+        grid.appendChild(makeSvg("line", { class: "grid-line", x1: chart.left, y1: y, x2: chart.right, y2: y }));
+        grid.appendChild(makeSvg("text", { class: "grid-label", x: 18, y: y + 8 }, tick));
+      });
+
+      data.forEach((d, i) => {
+        const x = chart.left + step * i + step / 2;
+        const y = yFor(d.value);
+        const h = chart.bottom - y;
+        const classes = ["bar"];
+        if (d.year === 2016) classes.push("peak");
+        if (d.year === 2025) classes.push("low");
+
+        bars.appendChild(makeSvg("rect", {
+          class: classes.join(" "),
+          x: x - barWidth / 2,
+          y,
+          width: barWidth,
+          height: h,
+          rx: 3,
+        }));
+
+        if (d.year % 4 === 1 || d.year === 2025) {
+          yearLabels.appendChild(makeSvg("text", { class: "year-label", x, y: 560 }, d.year));
+        }
+
+        if ([2001, 2016, 2020, 2023, 2024, 2025].includes(d.year)) {
+          valueLabels.appendChild(makeSvg("text", { class: "value-label", x, y: y - 14 }, d.value));
+        }
+      });
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from(".kicker", { opacity: 0, y: 22, duration: 0.55, ease: "power3.out" }, 0.15)
+        .from("h1", { opacity: 0, y: 34, duration: 0.72, ease: "power3.out" }, 0.3)
+        .from(".metric-card", { opacity: 0, y: -18, duration: 0.58, ease: "power3.out" }, 0.8)
+        .from(".stat", { opacity: 0, y: 24, duration: 0.55, stagger: 0.16, ease: "power3.out" }, 1.15)
+        .from(".grid-line", { opacity: 0, scaleX: 0, transformOrigin: "left center", duration: 0.6, stagger: 0.08, ease: "power2.out" }, 1.65)
+        .from(".grid-label, .axis-note, .baseline", { opacity: 0, duration: 0.45, stagger: 0.05 }, 1.95)
+        .from(".bar", { scaleY: 0, transformOrigin: "bottom center", duration: 0.72, stagger: 0.055, ease: "power3.out" }, 2.15)
+        .from(".year-label", { opacity: 0, y: -10, duration: 0.35, stagger: 0.04 }, 3.4)
+        .from(".value-label", { opacity: 0, y: 12, duration: 0.44, stagger: 0.1, ease: "power2.out" }, 3.85)
+        .from(".callout-2016", { opacity: 0, y: 22, scale: 0.96, duration: 0.55, ease: "power3.out" }, 5.15)
+        .to(".bar:not(.peak)", { opacity: 0.42, duration: 0.45, ease: "power2.out" }, 5.25)
+        .to(".bar:not(.peak)", { opacity: 1, duration: 0.55, ease: "power2.out" }, 7.2)
+        .from(".callout-2025", { opacity: 0, y: 26, scale: 0.96, duration: 0.58, ease: "power3.out" }, 8.0)
+        .to(".bar:not(.low)", { opacity: 0.48, duration: 0.45, ease: "power2.out" }, 8.1)
+        .to(".bar:not(.low)", { opacity: 1, duration: 0.55, ease: "power2.out" }, 10.4)
+        .to(".metric-card", { scale: 1.04, duration: 0.38, yoyo: true, repeat: 1, ease: "power2.inOut" }, 11.15)
+        .from(".footer", { opacity: 0, y: 16, duration: 0.55, ease: "power2.out" }, 12.0)
+        .to(".scene", { opacity: 0, duration: 0.75, ease: "power2.in" }, 29.15);
+
+      window.__timelines["birth-chart"] = tl;
+    </script>
+  </div>
+</template>
