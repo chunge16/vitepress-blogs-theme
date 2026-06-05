@@ -92,6 +92,9 @@ The wizard walks you through the core setup values for your site:
 ◇  Choose site language:
 │  简体中文 (zh-CN)
 │
+◇  Choose starter template:
+│  minimal - core blog structure only
+│
 ◇  Default author name:
 │  Blog Author
 │
@@ -101,10 +104,16 @@ The wizard walks you through the core setup values for your site:
 ◇  Add VitePress npm scripts to package.json?
 │  yes
 │
+◇  Add VitePress output entries to .gitignore?
+│  Yes
+│
+◇  Overwrite generated files if they already exist?
+│  No
+│
 ◇  Date format:
 │  yyyy/MM/dd (e.g., 2024/01/26)
 │
-└  Done! Now run:
+└  Done! Next steps:
 
   pnpm install
   pnpm run docs:dev
@@ -113,12 +122,15 @@ The wizard walks you through the core setup values for your site:
 After that, it will:
 
 - Generates the blog pages, author pages, and `.vitepress` theme files in the target directory
+- Lets you choose a minimal blog scaffold or a demo scaffold with localized example content
 - Creates a new `package.json` when the project does not already have one
-- Adds `docs:dev`, `docs:build`, and `docs:preview` scripts to an existing `package.json` when you choose that option
+- Adds VitePress scripts for the selected target directory to an existing `package.json` when you choose that option
+- Adds missing runtime packages to `package.json` without duplicating dependencies already declared elsewhere
 - Appends the required VitePress cache and build output entries to `.gitignore`
 - Safely writes text values such as titles and descriptions into the generated config files
+- Stops before replacing existing generated files unless you explicitly choose overwrite
 
-If you run the wizard inside an existing project, your current `package.json` is preserved and only the missing VitePress blog scripts are added.
+If you run the wizard inside an existing project, your current `package.json` is preserved and only the missing VitePress blog scripts and dependencies are added.
 
 ## What You Get
 
@@ -136,14 +148,14 @@ If you initialize the blog in `./docs`, the generated structure will look like t
 │   │   ├── archives.md
 │   │   ├── index.md
 │   │   └── tags.md
-│   ├── api-examples.md
 │   ├── index.md
-│   ├── markdown-examples.md
 │   └── public
 └── package.json
 ```
 
 This gives you a usable VitePress site with a blog section already wired in.
+
+Choose the demo starter if you also want `markdown-examples.md`, `api-examples.md`, sample posts, and sample author pages.
 
 ## File Structure
 

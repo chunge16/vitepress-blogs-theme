@@ -14,6 +14,16 @@ async function writeFile(filePath, content) {
   await fs.writeFile(filePath, content, 'utf-8');
 }
 
+async function pathExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch (error) {
+    if (error.code === 'ENOENT') return false;
+    throw error;
+  }
+}
+
 function toLiteral(value) {
   return JSON.stringify(value);
 }
@@ -44,18 +54,251 @@ function resolveLocaleContent(language) {
   };
 }
 
-async function ensurePackageJson(addScripts) {
+function resolveDemoContent(language) {
+  const isZh = language === 'zh-CN';
+  const now = new Date().toISOString();
+
+  return {
+    markdownExamplesMd: isZh ? `# Markdown 示例
+
+这个页面展示 VitePress 内置 Markdown 扩展的常见用法。
+
+## 代码高亮
+
+\`\`\`js{2}
+const message = 'Hello VitePress Blog'
+console.log(message)
+\`\`\`
+
+## 自定义容器
+
+::: tip
+你可以用自定义容器突出提示、警告和补充说明。
+:::
+
+::: details
+这里适合放折叠内容。
+:::
+` : `# Markdown Extension Examples
+
+This page demonstrates common built-in Markdown extensions provided by VitePress.
+
+## Syntax Highlighting
+
+\`\`\`js{2}
+const message = 'Hello VitePress Blog'
+console.log(message)
+\`\`\`
+
+## Custom Containers
+
+::: tip
+Use custom containers to highlight tips, warnings, and extra notes.
+:::
+
+::: details
+This is a good place for collapsible details.
+:::
+`,
+    apiExamplesMd: isZh ? `---
+outline: deep
+---
+
+# 运行时 API 示例
+
+这个页面展示如何在 Markdown 中读取 VitePress 运行时数据。
+
+<script setup>
+import { useData } from 'vitepress'
+
+const { site, theme, page, frontmatter } = useData()
+</script>
+
+## 当前页面
+
+<pre>{{ page }}</pre>
+
+## 站点配置
+
+<pre>{{ site }}</pre>
+` : `---
+outline: deep
+---
+
+# Runtime API Examples
+
+This page demonstrates how to read VitePress runtime data from Markdown.
+
+<script setup>
+import { useData } from 'vitepress'
+
+const { site, theme, page, frontmatter } = useData()
+</script>
+
+## Current Page
+
+<pre>{{ page }}</pre>
+
+## Site Config
+
+<pre>{{ site }}</pre>
+`,
+    post1Md: isZh ? `---
+date: ${now}
+title: '开始写第一篇博客'
+author: 机器人编辑
+category: Tutorial
+tags:
+  - vite
+  - blog
+comment: false
+---
+
+欢迎使用 VitePress Blog。你可以从这篇文章开始，熟悉文章 frontmatter、标签、分类和作者信息。
+
+## 下一步
+
+把这篇示例文章替换成你的第一篇正式内容，然后在 \`blog/posts\` 目录继续添加 Markdown 文件。
+` : `---
+date: ${now}
+title: 'Start Your First Blog Post'
+author: Robot Editor
+category: Tutorial
+tags:
+  - vite
+  - blog
+comment: false
+---
+
+Welcome to VitePress Blog. Use this post to explore frontmatter, tags, categories, and author metadata.
+
+## Next Step
+
+Replace this sample with your first real post, then keep adding Markdown files under \`blog/posts\`.
+`,
+    post2Md: isZh ? `---
+title: 第二篇文章
+date: ${now}
+tags: [vue, javascript]
+author: AI 写作者
+---
+
+这是第二篇示例文章，用来展示多作者和多标签列表。
+` : `---
+title: Second Post
+date: ${now}
+tags: [vue, javascript]
+author: AI Writer
+---
+
+This second sample post demonstrates multiple authors and tag lists.
+`,
+    aiWriterMd: isZh ? `---
+name: AI 写作者
+avatar: https://cdn-icons-png.flaticon.com/64/149/149071.png
+---
+
+## AI 写作者
+
+这是一个示例作者页面。你可以在这里补充作者简介、头像和社交链接。
+` : `---
+name: AI Writer
+avatar: https://cdn-icons-png.flaticon.com/64/149/149071.png
+---
+
+## AI Writer
+
+This is a sample author page. Add a bio, avatar, and social links here.
+`,
+    robotEditorMd: isZh ? `---
+name: 机器人编辑
+gravatar: eca93da2c67aadafe35d477aa8f454b8
+twitter: '@getanyword'
+---
+
+## 机器人编辑
+
+这是另一个示例作者页面，用来展示 Gravatar 和社交账号字段。
+` : `---
+name: Robot Editor
+gravatar: eca93da2c67aadafe35d477aa8f454b8
+twitter: '@getanyword'
+---
+
+## Robot Editor
+
+This second sample author demonstrates Gravatar and social profile fields.
+`,
+  };
+}
+
+function normalizeProjectRoot(projectRoot) {
+  return String(projectRoot ?? '')
+    .trim()
+    .replace(/\\/g, '/')
+    .replace(/\/+$/, '')
+    .replace(/^\.\//, '');
+}
+
+function quoteCommandPath(projectRoot) {
+  if (/^[\w./-]+$/.test(projectRoot)) return projectRoot;
+
+  return JSON.stringify(projectRoot);
+}
+
+function resolveScriptNames(projectRoot) {
+  const normalizedRoot = normalizeProjectRoot(projectRoot);
+  const scriptPrefix = normalizedRoot === 'docs' ? 'docs' : normalizedRoot.replace(/[^\w:-]+/g, '-');
+
+  return {
+    dev: `${scriptPrefix}:dev`,
+    build: `${scriptPrefix}:build`,
+    preview: `${scriptPrefix}:preview`,
+  };
+}
+
+function resolveScriptCommands(projectRoot) {
+  const commandRoot = quoteCommandPath(normalizeProjectRoot(projectRoot));
+
+  return {
+    dev: `vitepress dev ${commandRoot}`,
+    build: `vitepress build ${commandRoot}`,
+    preview: `vitepress preview ${commandRoot}`,
+  };
+}
+
+function hasPackageDependency(pkg, dependencyName) {
+  return Boolean(
+    pkg.dependencies?.[dependencyName]
+    || pkg.devDependencies?.[dependencyName]
+    || pkg.peerDependencies?.[dependencyName]
+    || pkg.optionalDependencies?.[dependencyName]
+  );
+}
+
+function ensureDependency(pkg, dependencyName, version) {
+  if (hasPackageDependency(pkg, dependencyName)) return;
+
+  pkg.dependencies = {
+    ...pkg.dependencies,
+    [dependencyName]: version,
+  };
+}
+
+async function ensurePackageJson({ addScripts, vitePressProjectRoot }) {
   if (!addScripts) return;
 
   const pkgPath = path.join(process.cwd(), 'package.json');
+  const scriptNames = resolveScriptNames(vitePressProjectRoot);
+  const scriptCommands = resolveScriptCommands(vitePressProjectRoot);
   const defaultPackageJson = {
     name: 'your-blog-name',
     type: 'module',
     version: '1.0.0',
     scripts: {
-      'docs:dev': 'vitepress dev docs',
-      'docs:build': 'vitepress build docs',
-      'docs:preview': 'vitepress preview docs',
+      [scriptNames.dev]: scriptCommands.dev,
+      [scriptNames.build]: scriptCommands.build,
+      [scriptNames.preview]: scriptCommands.preview,
     },
     dependencies: {
       '@chunge16/vitepress-blogs-theme': 'latest',
@@ -71,10 +314,16 @@ async function ensurePackageJson(addScripts) {
     const existing = JSON.parse(await fs.readFile(pkgPath, 'utf-8'));
     existing.scripts = {
       ...existing.scripts,
-      'docs:dev': existing.scripts?.['docs:dev'] ?? 'vitepress dev docs',
-      'docs:build': existing.scripts?.['docs:build'] ?? 'vitepress build docs',
-      'docs:preview': existing.scripts?.['docs:preview'] ?? 'vitepress preview docs',
+      [scriptNames.dev]: existing.scripts?.[scriptNames.dev] ?? scriptCommands.dev,
+      [scriptNames.build]: existing.scripts?.[scriptNames.build] ?? scriptCommands.build,
+      [scriptNames.preview]: existing.scripts?.[scriptNames.preview] ?? scriptCommands.preview,
     };
+    ensureDependency(existing, '@chunge16/vitepress-blogs-theme', 'latest');
+    ensureDependency(existing, 'vue', 'latest');
+    ensureDependency(existing, '@tailwindcss/vite', '^4.2.2');
+    ensureDependency(existing, 'tailwindcss', '^4.2.2');
+    ensureDependency(existing, '@iconify/tailwind4', '^1.2.1');
+    ensureDependency(existing, 'vitepress', '^1.6.4');
     await writeFile(pkgPath, formatJson(existing));
   } catch (error) {
     if (error.code === 'ENOENT') {
@@ -94,9 +343,10 @@ async function ensurePackageJson(addScripts) {
 
 async function ensureGitignore(vitePressProjectRoot) {
   const gitignorePath = path.join(process.cwd(), '.gitignore');
+  const normalizedRoot = normalizeProjectRoot(vitePressProjectRoot);
   const entries = [
-    `${vitePressProjectRoot}/.vitepress/cache`,
-    `${vitePressProjectRoot}/.vitepress/dist`,
+    `${normalizedRoot}/.vitepress/cache`,
+    `${normalizedRoot}/.vitepress/dist`,
     'node_modules',
     '.DS_Store',
   ];
@@ -125,6 +375,24 @@ async function ensureGitignore(vitePressProjectRoot) {
   }
 }
 
+async function assertNoFileConflicts(files, overwriteExisting) {
+  if (overwriteExisting) return;
+
+  const conflicts = [];
+
+  for (const filePath of files) {
+    if (await pathExists(filePath)) {
+      conflicts.push(path.relative(process.cwd(), filePath));
+    }
+  }
+
+  if (conflicts.length) {
+    throw new Error(
+      `The following files already exist:\n${conflicts.map((file) => `  - ${file}`).join('\n')}\n\nRun vitepress-blog-init again and choose overwrite if you want to replace them.`
+    );
+  }
+}
+
 export async function generateTemplate(answers) {
   const {
     vitePressProjectRoot,
@@ -132,6 +400,7 @@ export async function generateTemplate(answers) {
     siteDescription,
     siteUrl,
     language,
+    starterTemplate = 'demo',
     enableGiscus,
     giscusRepo,
     giscusRepoId,
@@ -140,10 +409,36 @@ export async function generateTemplate(answers) {
     dateLocale,
     dateFormat,
     addScripts,
+    updateGitignore,
+    overwriteExisting,
   } = answers;
 
   const base = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
   const locale = resolveLocaleContent(language);
+  const includeDemo = starterTemplate !== 'minimal';
+  const demoContent = resolveDemoContent(language);
+  const normalizedProjectRoot = normalizeProjectRoot(vitePressProjectRoot);
+  const outputRoot = path.join(process.cwd(), normalizedProjectRoot);
+  const scripts = resolveScriptNames(normalizedProjectRoot);
+  const exampleNavItem = includeDemo ? `
+      { text: ${toLiteral(locale.examplesText)}, link: '/markdown-examples' },` : '';
+  const sidebarConfig = includeDemo ? `sidebar: [
+      {
+        text: ${toLiteral(locale.examplesText)},
+        items: [
+          { text: ${toLiteral(locale.markdownExamplesText)}, link: '/markdown-examples' },
+          { text: ${toLiteral(locale.runtimeApiExamplesText)}, link: '/api-examples' }
+        ]
+      }
+    ],` : 'sidebar: [],';
+  const homeActions = includeDemo ? `    - theme: brand
+      text: ${locale.markdownExamplesText}
+      link: /markdown-examples
+    - theme: alt
+      text: ${locale.runtimeApiExamplesText}
+      link: /api-examples` : `    - theme: brand
+      text: ${locale.blogText}
+      link: /blog/`;
 
   const vitepressConfig = `import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
@@ -159,8 +454,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: ${toLiteral(locale.homeText)}, link: '/' },
-      { text: ${toLiteral(locale.examplesText)}, link: '/markdown-examples' },
+      { text: ${toLiteral(locale.homeText)}, link: '/' },${exampleNavItem}
       {
         text: ${toLiteral(locale.blogText)},
         activeMatch: '/blog/',
@@ -188,15 +482,7 @@ export default defineConfig({
       },
     ],
 
-    sidebar: [
-      {
-        text: ${toLiteral(locale.examplesText)},
-        items: [
-          { text: ${toLiteral(locale.markdownExamplesText)}, link: '/markdown-examples' },
-          { text: ${toLiteral(locale.runtimeApiExamplesText)}, link: '/api-examples' }
-        ]
-      }
-    ],
+    ${sidebarConfig}
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
@@ -264,6 +550,7 @@ export default defineConfig({
 `;
 
   const themeConfig = `import { VPBTheme } from '@chunge16/vitepress-blogs-theme';
+import './style.css';
 
 export default {
   extends: VPBTheme,
@@ -375,12 +662,7 @@ hero:
   text: ${toLiteral(siteDescription)}
   tagline: ${toLiteral(locale.heroTagline)}
   actions:
-    - theme: brand
-      text: ${locale.markdownExamplesText}
-      link: /markdown-examples
-    - theme: alt
-      text: ${locale.runtimeApiExamplesText}
-      link: /api-examples
+${homeActions}
 
 features:
   - title: ${locale.featureA}
@@ -392,237 +674,12 @@ features:
 ---
 `;
 
-  const markdownExamplesMd = `# Markdown Extension Examples
-
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
-
-## Syntax Highlighting
-
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
-
-\`\`\`\`
-\`\`\`js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-\`\`\`
-\`\`\`\`
-
-**Output**
-
-\`\`\`js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-\`\`\`
-
-## Custom Containers
-
-**Input**
-
-\`\`\`md
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-\`\`\`
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
-`;
-
-  const apiExamplesMd = `---
-outline: deep
----
-
-# Runtime API Examples
-
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
-
-The main \`useData()\` API can be used to access site, theme, and page data for the current page. It works in both \`.md\` and \`.vue\` files:
-
-\`\`\`md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-\`\`\`
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
-`;
-
 const blogIndexMd = `---
 layout: home
 ---
 
 <VPBHome />
 `;
-
-const post1Md = `---
-date: ${new Date().toISOString()}
-title: 'Markdown: The Language of the Web'
-author: Robot Editor
-category: Tutorial
-tags:
-  - vue
-  - web development
-comment: false
----
-
-Are you a web developer or content creator looking to make your life easier? Then Markdown is the language for you! Markdown is a plain text formatting syntax that allows you to create documents for the web quickly and easily. This blog post will teach you the basics of Markdown so you can start using it right away. Whether you're a beginner or an experienced user, you'll be able to pick up the syntax quickly and start creating beautiful web content with ease. Let's dive into the world of Markdown!
-
----
-
-## What is Markdown?
-
-Markdown is a lightweight markup language created by John Gruber in 2004 as a way to write formatted text for the web. It is designed to be easy to read and write, even for those who are not tech savvy. Markdown utilizes symbols, punctuation, and other special characters to format text, making it both easier and faster to create content.
-Markdown is commonly used in websites such as GitHub, Reddit, and Stack Overflow, but it can also be used to create blog posts, websites, and even email. With Markdown, it’s easy to create simple, clean HTML without having to write code.
-Markdown has become an industry standard for writing formatted text on the web. It’s been embraced by developers and non-developers alike as a way to quickly and easily create content that looks professional. Markdown is especially useful for those who don’t have a lot of coding experience but want to create clean and presentable HTML code.
-
-## What are the benefits of using Markdown?
-
-Markdown is a lightweight markup language that makes it easy to format text for the web. It is often used for writing articles, blog posts, and documentation for software projects.
-One of the main benefits of using Markdown is that it is quick and simple to learn. Most people can become proficient with the language in a matter of hours. This means you don’t need to take time out of your day to learn complex coding languages.
-Using Markdown also has the benefit of streamlining workflow. You can write content quickly and easily, then convert it into HTML to post on your blog or website. The process is faster than writing HTML code from scratch and ensures that your code is up to standard.
-Markdown also allows for more flexibility than other languages, allowing you to customize the look and feel of your content without having to learn HTML or CSS. This means you can create documents with bold, italic, and other formatting without having to manually enter any code.
-Finally, Markdown documents are easy to read. Unlike HTML documents, Markdown documents can be read without any extra effort or knowledge. This means it’s easy for collaborators or editors to understand the structure of your documents and make changes when needed.
-All in all, Markdown is an incredibly useful language that is fast becoming the go-to choice for web writers and developers alike. Its simplicity and flexibility make it an ideal choice for anyone looking to quickly create well-formatted content for the web.
-
-## How do I get started with Markdown?
-
-Getting started with Markdown is a relatively simple process. To begin, you'll need to get familiar with the basic syntax of the language.
-Markdown was designed to be as intuitive and user-friendly as possible. Most of its syntax is self-explanatory and easy to learn. Some basic symbols like "#" for headings, "*" for italics, and ">" for blockquotes are easy to remember. There are also more specific elements like tables, images, and lists.
-To start using Markdown, you'll need a text editor or an online platform that supports it. Popular choices include Ulysses, iA Writer, Texts, Typora, and Dillinger. Most popular blogging platforms like WordPress and Medium also support Markdown.
-When it comes to writing, the best way to learn Markdown is by example. Check out some of the existing posts written in Markdown to get a better understanding of the syntax and how it's used. You can also use an online tool such as Markdown Guide to help you get up to speed quickly.
-Once you have a good handle on the basics of Markdown, you can start writing your own content. Keep in mind that Markdown is flexible and you don't have to follow the same formatting style each time. Feel free to experiment and create your own unique style.
-
-## Tips and Tricks for Using Markdown
-
-Markdown is a versatile language that can be used for many different purposes. There are a few tips and tricks you can use to make the most of your Markdown experience:
-
-1. Use Headings – The best way to organize your content is to use headings. This will break up your text into sections that are easier to read and understand. To create a heading in Markdown, you simply type a hash (“#”) followed by the title of the section. For example, “# Introduction” will create an introduction section.
-2. Use Lists – To create lists in Markdown, use either hyphens (“-”) or asterisks (“*”). This is great for breaking down ideas into an organized structure that’s easy to read and follow.
-3. Use Inline HTML – If you’re looking for more control over the look and feel of your document, you can use inline HTML tags to customize it further. This is great if you want to add styling elements such as color, font size, or even images.
-4. Format Your Text – To make your text more readable, you can use formatting tools like bold, italics, and underlines. Just type two asterisks before and after the words you want to emphasize to make them bold. Similarly, for italics, type one asterisk before and after the words you want to italicize. Lastly, for underlining text, use two underscores on either side of the word you want to underline.
-5. Use Emojis – Emojis are great for adding visual interest to your content. Simply type a colon followed by the emoji name (e.g., “:smile:”).
-   By using these tips and tricks, you’ll be able to get the most out of the Markdown language. With some practice and experimentation, you’ll be creating beautiful documents in no time!
-
-## References
-
-- https://guides.github.com/features/mastering-markdown/
-`;
-
-const post2Md = `---
-title: Post 2
-date: ${new Date().toISOString()}
-tags: [vue, javascript, web development]
-author: AI Writer
----
-
-This is the second post in our series.
-`;
-
-const aiWriterMd = `---
-name: AI Writer
-avatar: https://cdn-icons-png.flaticon.com/64/149/149071.png
----
-
-## AI Writer
-
-An AI writer is a revolutionary machine-learning system that produces flawless writing pieces, quickly and accurately. This computer-based writer uses natural language processing to break down the topic, identify key themes and ideas, and generate human-readable articles with speed and precision. It has a vast library of synonyms and references, enabling it to create articles without plagiarism. By utilizing an AI writer, you can generate error-free articles within minutes, as well as optimizing articles for search engine rankings and targeted readership. In addition, this AI technology allows users to have full control over their content with its customization capabilities. All of these factors make the AI writer an invaluable asset for any type of content production.
-`;
-
-const robotEditorMd = `---
-name: Robot Editor
-gravatar: eca93da2c67aadafe35d477aa8f454b8
-twitter: '@getanyword'
----
-
-## Robot Editor
-
-A robot editor is a sophisticated software tool that automates the process of editing and formatting text. It uses advanced algorithms to identify and correct grammar, spelling, and punctuation errors, as well as to optimize the layout and structure of the document. This AI-powered editor can save hours of manual work and ensure that your writing is of the highest quality. Whether you're a student, writer, or professional, a robot editor is an invaluable asset for any type of content production.
-`;
-
-
 
 const archivesMd = `---
 layout: home
@@ -638,34 +695,46 @@ layout: home
 <VPBTags />
 `;
 
-  try {
-    await ensureDir(path.join(vitePressProjectRoot, '.vitepress'));
-    await ensureDir(path.join(vitePressProjectRoot, '.vitepress/theme'));
-    await ensureDir(path.join(vitePressProjectRoot, 'blog/posts'));
-    await ensureDir(path.join(vitePressProjectRoot, 'blog/authors'));
+  const generatedFiles = [
+      ['.vitepress/config.js', vitepressConfig],
+      ['.vitepress/theme/index.js', themeConfig],
+      ['.vitepress/theme/style.css', themeStyle],
+      ['index.md', indexMd],
+      ['blog/index.md', blogIndexMd],
+      ['blog/archives.md', archivesMd],
+      ['blog/tags.md', tagsMd],
+      ...(includeDemo ? [
+        ['markdown-examples.md', demoContent.markdownExamplesMd],
+        ['api-examples.md', demoContent.apiExamplesMd],
+        ['blog/posts/post1.md', demoContent.post1Md],
+        ['blog/posts/post2.md', demoContent.post2Md],
+        ['blog/authors/ai-writer.md', demoContent.aiWriterMd],
+        ['blog/authors/robot-editor.md', demoContent.robotEditorMd],
+      ] : []),
+  ].map(([filePath, content]) => [path.join(outputRoot, filePath), content]);
 
-    if (addScripts) {
-      await ensurePackageJson(addScripts);
-      await ensureGitignore(vitePressProjectRoot);
-    }
+  await assertNoFileConflicts(
+    generatedFiles.map(([filePath]) => filePath),
+    overwriteExisting
+  );
 
-    await writeFile(path.join(vitePressProjectRoot, '.vitepress/config.js'), vitepressConfig);
-    await writeFile(path.join(vitePressProjectRoot, '.vitepress/theme/index.js'), themeConfig);
-    await writeFile(path.join(vitePressProjectRoot, '.vitepress/theme/style.css'), themeStyle);
+  await ensureDir(path.join(outputRoot, '.vitepress'));
+  await ensureDir(path.join(outputRoot, '.vitepress/theme'));
+  await ensureDir(path.join(outputRoot, 'blog/posts'));
+  await ensureDir(path.join(outputRoot, 'blog/authors'));
+  await ensureDir(path.join(outputRoot, 'public'));
 
-    await writeFile(path.join(vitePressProjectRoot, 'index.md'), indexMd);
-    await writeFile(path.join(vitePressProjectRoot, 'markdown-examples.md'), markdownExamplesMd);
-    await writeFile(path.join(vitePressProjectRoot, 'api-examples.md'), apiExamplesMd);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/index.md'), blogIndexMd);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/archives.md'), archivesMd);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/tags.md'), tagsMd);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/posts/post1.md'), post1Md);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/posts/post2.md'), post2Md);
-
-    await writeFile(path.join(vitePressProjectRoot, 'blog/authors/ai-writer.md'), aiWriterMd);
-    await writeFile(path.join(vitePressProjectRoot, 'blog/authors/robot-editor.md'), robotEditorMd);
-  } catch (error) {
-    console.error('\nError generating files:', error.message);
-    throw error;
+  if (addScripts) {
+    await ensurePackageJson({ addScripts, vitePressProjectRoot: normalizedProjectRoot });
   }
+
+  if (updateGitignore) {
+    await ensureGitignore(normalizedProjectRoot);
+  }
+
+  for (const [filePath, content] of generatedFiles) {
+    await writeFile(filePath, content);
+  }
+
+  return { scripts };
 }

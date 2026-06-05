@@ -2,6 +2,15 @@ import { intro, outro, text, select, confirm, cancel, group } from '@clack/promp
 import pc from 'picocolors';
 import { generateTemplate } from './template.js';
 
+function validateProjectRoot(value) {
+  const target = value?.trim();
+
+  if (!target) return 'Please enter a target directory.';
+  if (target === '.' || target === './') return 'Please choose a directory, for example ./docs.';
+  if (target.startsWith('/') || /^[A-Za-z]:/.test(target)) return 'Please choose a relative directory inside the current project.';
+  if (target.includes('..')) return 'Please choose a directory inside the current project.';
+}
+
 export async function init() {
   intro(pc.inverse(' VitePress Blog Theme Init '));
 
@@ -12,9 +21,7 @@ export async function init() {
           message: 'Where should VitePress initialize the config?',
           placeholder: './docs',
           initialValue: './docs',
-          validate: (value) => {
-            if (!value?.trim()) return 'Please enter a target directory.';
-          },
+          validate: validateProjectRoot,
         }),
       siteTitle: () =>
         text({
@@ -42,6 +49,7 @@ export async function init() {
           validate: (value) => {
             if (!value?.trim()) return 'Please enter a base URL.';
             if (!value.startsWith('/')) return 'The base URL should start with "/".';
+            if (value.startsWith('//')) return 'The base URL should not start with "//".';
           },
         }),
       language: () =>
@@ -52,6 +60,15 @@ export async function init() {
             { value: 'en-US', label: 'English (en-US)' },
           ],
           initialValue: 'zh-CN',
+        }),
+      starterTemplate: () =>
+        select({
+          message: 'Choose starter template:',
+          options: [
+            { value: 'minimal', label: 'minimal - core blog structure only' },
+            { value: 'demo', label: 'demo - include example pages and posts' },
+          ],
+          initialValue: 'minimal',
         }),
       defaultAuthor: () =>
         text({
@@ -73,7 +90,8 @@ export async function init() {
           message: 'GitHub repository (format: owner/repo):',
           placeholder: 'owner/repo',
           validate: (value) => {
-            if (!value) return 'Please enter a repository.';
+            if (!value?.trim()) return 'Please enter a repository.';
+            if (!/^[\w.-]+\/[\w.-]+$/.test(value.trim())) return 'Please use the owner/repo format.';
           },
         });
       },
@@ -82,7 +100,7 @@ export async function init() {
         return text({
           message: 'Giscus Repository ID:',
           validate: (value) => {
-            if (!value) return 'Please enter a repository ID.';
+            if (!value?.trim()) return 'Please enter a repository ID.';
           },
         });
       },
@@ -91,7 +109,7 @@ export async function init() {
         return text({
           message: 'Giscus Category ID:',
           validate: (value) => {
-            if (!value) return 'Please enter a category ID.';
+            if (!value?.trim()) return 'Please enter a category ID.';
           },
         });
       },
@@ -103,6 +121,16 @@ export async function init() {
             { value: false, label: 'no' },
           ],
           initialValue: true,
+        }),
+      updateGitignore: () =>
+        confirm({
+          message: 'Add VitePress output entries to .gitignore?',
+          initialValue: true,
+        }),
+      overwriteExisting: () =>
+        confirm({
+          message: 'Overwrite generated files if they already exist?',
+          initialValue: false,
         }),
       dateFormat: () =>
         select({
@@ -132,14 +160,23 @@ export async function init() {
     siteUrl: answers.siteUrl.trim(),
     defaultAuthor: answers.defaultAuthor.trim(),
     dateLocale: answers.language === 'en-US' ? 'enUS' : 'zh-CN',
-    giscusRepo: answers.giscusRepo || '',
-    giscusRepoId: answers.giscusRepoId || '',
-    giscusCategoryId: answers.giscusCategoryId || '',
+    giscusRepo: answers.giscusRepo?.trim() || '',
+    giscusRepoId: answers.giscusRepoId?.trim() || '',
+    giscusCategoryId: answers.giscusCategoryId?.trim() || '',
   };
 
-  await generateTemplate(finalAnswers);
+  let result;
+
+  try {
+    result = await generateTemplate(finalAnswers);
+  } catch (error) {
+    cancel(error.message);
+    process.exit(1);
+  }
+
+  const devScript = result?.scripts?.dev ?? 'docs:dev';
 
   outro(
-    `Done! Next steps:\n\n  ${pc.green('pnpm install')}\n  ${pc.green('pnpm run docs:dev')}\n\nBlog files were generated in ${pc.green(finalAnswers.vitePressProjectRoot)}.`
+    `Done! Next steps:\n\n  ${pc.green('pnpm install')}\n  ${pc.green(`pnpm run ${devScript}`)}\n\nBlog files were generated in ${pc.green(finalAnswers.vitePressProjectRoot)}.`
   );
 }

@@ -92,6 +92,9 @@ $ yarn vitepress-blog-init
 ◇  Choose site language:
 │  简体中文 (zh-CN)
 │
+◇  Choose starter template:
+│  minimal - core blog structure only
+│
 ◇  Default author name:
 │  Blog Author
 │
@@ -101,10 +104,16 @@ $ yarn vitepress-blog-init
 ◇  Add VitePress npm scripts to package.json?
 │  yes
 │
+◇  Add VitePress output entries to .gitignore?
+│  Yes
+│
+◇  Overwrite generated files if they already exist?
+│  No
+│
 ◇  Date format:
 │  yyyy/MM/dd (e.g., 2024/01/26)
 │
-└  Done! Now run:
+└  Done! Next steps:
 
   pnpm install
   pnpm run docs:dev
@@ -113,12 +122,15 @@ $ yarn vitepress-blog-init
 确认完成后，向导会自动帮你完成这些事情：
 
 - 在目标目录中生成博客页面、作者页面以及 `.vitepress` 主题文件
+- 可以选择最小博客结构，或带本地化示例内容的 demo 结构
 - 当项目中不存在 `package.json` 时自动创建一个新的配置文件
-- 如果你选择允许写入脚本，会把 `docs:dev`、`docs:build`、`docs:preview` 合并写入已有的 `package.json`
+- 如果你选择允许写入脚本，会根据目标目录把对应的 VitePress 脚本合并写入已有的 `package.json`
+- 自动补充缺失的运行依赖，并避免重复添加已经写在其他依赖字段里的包
 - 自动把 VitePress 缓存目录和构建产物目录追加到 `.gitignore`
 - 安全写入站点标题、描述等文本，避免因为特殊字符导致生成的配置文件出错
+- 默认不会覆盖已有生成文件，除非你明确选择覆盖
 
-如果你是在已有项目中运行向导，它会保留现有的 `package.json` 内容，只补充缺失的 VitePress Blog 脚本。
+如果你是在已有项目中运行向导，它会保留现有的 `package.json` 内容，只补充缺失的 VitePress Blog 脚本和依赖。
 
 ## 你会得到什么
 
@@ -136,14 +148,14 @@ $ yarn vitepress-blog-init
 │   │   ├── archives.md
 │   │   ├── index.md
 │   │   └── tags.md
-│   ├── api-examples.md
 │   ├── index.md
-│   ├── markdown-examples.md
 │   └── public
 └── package.json
 ```
 
 也就是说，向导跑完后，你拿到的不是一堆零散配置，而是一套已经把博客结构接好的 VitePress 站点。
+
+如果你选择 demo 模板，还会额外生成 `markdown-examples.md`、`api-examples.md`、示例文章和示例作者页。
 
 ## 文件结构
 
